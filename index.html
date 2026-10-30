@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ABENWORK — Get found. Get customers.</title>
+<title>ABENWERK — Get found. Get customers.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -508,6 +508,61 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .hz-c{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 #dash .hz-c span{background:var(--bg3);border-radius:99px;padding:4px 10px;font-size:12px}
 #dash .hz-c b{cursor:pointer;margin-left:4px;color:var(--err)}
+
+/* ===== v4: plans, banner + profile picture, cropper ===== */
+.plans3{grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch}
+#signup>.in.wide{max-width:1180px}
+@media (max-width:1100px){.plans3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.plans3{grid-template-columns:1fr}}
+.pl{display:flex}
+.pl .card{display:flex;flex-direction:column;width:100%;padding:22px 18px}
+.pl.pop .card{padding:30px 18px 22px;box-shadow:0 0 0 1px #ffd40088,0 24px 70px -28px var(--y)}
+.pl .mp{position:absolute;top:0;left:50%;transform:translateX(-50%);background:var(--y);color:#000;font-size:10px;font-weight:700;letter-spacing:.14em;padding:5px 16px;border-radius:0 0 12px 12px;white-space:nowrap}
+.pl .ph2{display:flex;align-items:center;gap:12px}
+.pl .ph2 i{width:44px;height:44px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-style:normal;font-size:20px;flex:none}
+.pl .ph2 h3{font-size:21px;letter-spacing:-.01em;text-transform:none;color:var(--fg)}
+.pl .ph2 small{font-size:10.5px;letter-spacing:.16em;color:var(--mut)}
+.pl .pr{display:inline-block;align-self:flex-start;background:var(--y);color:#000;border-radius:99px;padding:7px 16px;font-size:18px;font-weight:700;margin:14px 0 4px;letter-spacing:0}
+.pl .pr small{font-size:11.5px;font-weight:500;color:#000;opacity:.7}
+.pl ul{flex:1;gap:8px;font-size:12.5px;margin-top:14px}
+.pl li{line-height:1.35}
+.pl .tl{margin-top:14px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-size:12px;font-weight:700;color:var(--yt);text-align:center}
+.pl.pop .tl{background:var(--y);color:#000;border-color:var(--y)}
+.pl .pick{margin-top:12px}
+.drop.sq{width:150px;height:150px;border-radius:26px;padding:8px}
+.drop.bn3{height:auto;aspect-ratio:3/1;width:100%}
+.crp{position:fixed;inset:0;z-index:100;background:#000d;display:grid;place-items:center;padding:16px}
+.crp-b{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:18px;display:grid;gap:12px;max-width:100%}
+.crp-b b{font-size:13px;color:var(--mut)}
+.crp canvas{border-radius:12px;background:#000;touch-action:none;cursor:grab;max-width:100%}
+.crp input[type=range]{width:100%;accent-color:var(--y)}
+.crp-a{display:flex;gap:10px}.crp-a button{flex:1;height:42px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+.crp-a .ok{background:var(--y);color:#000;border-color:var(--y)}
+
+#dash .ph{aspect-ratio:1/1;max-width:200px}
+#dash .bph{aspect-ratio:3/1;border-radius:14px;overflow:hidden;background:var(--bg3);display:grid;place-items:center;color:var(--mut);margin-top:10px}
+#dash .bph img{width:100%;height:100%;object-fit:cover}
+#dash .rg{display:flex;gap:8px;margin-top:16px}
+#dash .rg button{padding:8px 16px;border-radius:99px;border:1px solid var(--line);font-size:13px;color:var(--mut);transition:.2s}
+#dash .rg button:hover{border-color:var(--y);color:var(--fg)}
+#dash .rg button.on{background:var(--y);color:#000;border-color:var(--y);font-weight:700}
+#dash .dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:16px}
+#dash .dg .pn{margin:0;display:flex;flex-direction:column;align-items:center}
+#dash .dg h3{align-self:flex-start}
+#dash .dsvg{width:170px;height:170px;margin-top:8px}
+#dash .dsvg circle[data-len]{transition:stroke-dasharray 1.1s cubic-bezier(.2,.9,.2,1)}
+#dash .dtx{font-size:24px;font-weight:700;fill:var(--fg)}
+#dash .dts{font-size:9px;fill:var(--mut)}
+#dash .dl{list-style:none;padding:0;margin:10px 0 0;width:100%;display:grid;gap:6px;font-size:12.5px}
+#dash .dl li{display:flex;align-items:center;gap:8px}
+#dash .dl i{width:10px;height:10px;border-radius:3px}
+#dash .dl b{margin-left:auto}
+#dash .lc{width:100%;height:auto;margin-top:8px}
+#dash .lc .ln{fill:none;stroke:var(--y);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:dash 1.4s .1s forwards}
+#dash .lc .ar{opacity:0;animation:fi .8s .9s forwards}
+#dash .lc .dt2{fill:var(--bg);stroke:var(--y);stroke-width:2;opacity:0;animation:fi .4s forwards}
+@keyframes dash{to{stroke-dashoffset:0}}
+#dash .gb{display:block}
 </style>
 </head>
 <body>
@@ -526,8 +581,8 @@ h2{font-size:25px;letter-spacing:-.02em}
     </div>
     <div class="copy">
       <h1>Be seen by the customers who <em>pay.</em></h1>
-      <p>ABENWORK is the business network built to advertise you, connect you, and deliver real customers — at a price that makes sense.</p>
-      <span class="pill"><b>●</b> 3 plans · start free, scale when you win</span>
+      <p>ABENWERK is the business network built to advertise you, connect you, and deliver real customers — at a price that makes sense.</p>
+      <span class="pill"><b>●</b> 4 plans · start free, scale when you win</span>
     </div>
     <div class="ticker"><span>Retail · Logistics · Legal · Fintech · Construction · Agriculture · Design · Health · Education · Energy · Retail · Logistics · Legal · Fintech · Construction · Agriculture · Design · Health · Education · Energy · </span></div>
   </section>
@@ -543,7 +598,7 @@ h2{font-size:25px;letter-spacing:-.02em}
       <div class="fld"><label>Password</label><input id="lp" type="password" autocomplete="current-password" placeholder="••••••••"><button class="eye" data-eye="lp" type="button">SHOW</button></div>
       <div class="between"><label class="chk" style="margin:0"><input type="checkbox"> Keep me signed in</label><a href="#login" onclick="return false">Forgot password?</a></div>
       <button class="btn p" id="signin">Sign in</button>
-      <div class="or">New to ABENWORK?</div>
+      <div class="or">New to ABENWERK?</div>
       <button class="btn o" id="toSignup">Create a business account →</button>
       <div class="offer" id="offer" title="Tap for the next one"><div class="ic" id="offerIc">◎</div><div class="tx" id="offerTx"></div><div class="pg" id="offerPg"></div></div>
     </div></div>
@@ -552,7 +607,7 @@ h2{font-size:25px;letter-spacing:-.02em}
     <div class="view" id="signup"><div class="in">
       <div class="top2"><div class="brand open"><div class="logo" data-logo></div><span class="wm" data-wm></span></div><button class="link" id="toLogin">← Back to sign in</button></div>
       <div class="prog"><i id="pbar"></i></div>
-      <div class="dots" id="dots"><span>1 · You</span><span>2 · Business</span><span>3 · Location</span><span>4 · Plan</span><span>5 · Agreement</span></div>
+      <div class="dots" id="dots"><span>1 · You</span><span>2 · Business</span><span>3 · Location</span><span>4 · Look</span><span>5 · Plan</span><span>6 · Agreement</span></div>
 
       <div class="steps">
         <!-- STEP 1 -->
@@ -587,24 +642,31 @@ h2{font-size:25px;letter-spacing:-.02em}
             <div class="locres" id="locres"></div><div class="locpick" id="locpick"></div>
             <div class="msg">Choose your business location to continue.</div></div>
           <div class="hzw" style="margin-bottom:16px"><div class="lbl">Opening hours</div><div class="hz" id="hz"></div></div>
-          <div class="fld" id="fPhoto"><label>Business photo (required)</label>
-            <div class="drop" id="drop" role="button" tabindex="0"><span id="dropt">＋ Upload a photo of your shop, office or team</span></div><input type="file" id="photo" accept="image/*" hidden>
-            <div class="msg">Please add a photo of your business.</div></div>
+          </div>
+        <!-- STEP 4: LOOK -->
+        <div class="step" data-step="3">
+          <h2>Show your best side</h2><p class="sub">Add a profile picture and a banner. Both are required.</p>
+          <div class="fld" id="fPhoto"><label>Profile picture</label>
+            <div class="drop sq" id="drop" role="button" tabindex="0"><span id="dropt">＋ Logo or storefront</span></div><input type="file" id="photo" accept="image/*" hidden>
+            <div class="msg">Please add a profile picture.</div></div>
+          <div class="fld" id="fBanner"><label>Banner (cover image)</label>
+            <div class="drop bn3" id="bdrop" role="button" tabindex="0"><span id="bdropt">＋ Wide photo of your business or products · 3:1</span></div><input type="file" id="bphoto" accept="image/*" hidden>
+            <div class="msg">Please add a banner.</div></div>
           <div id="pvslot"></div>
         </div>
-        <!-- STEP 4: PLAN -->
-        <div class="step" data-step="3">
-          <h2>Pick your plan</h2><p class="sub">Start free and upgrade whenever you are ready.</p>
-          <div class="plans3"><label class="pl"><input type="radio" name="plan" value="Free" checked><div class="card"><h3>Free</h3><div class="pr">$0<small>/mo</small></div><ul><li>Basic business profile</li><li>5 leads per month</li><li>Directory listing</li></ul><span class="pick"></span></div></label><label class="pl pop"><input type="radio" name="plan" value="Growth"><div class="card"><span class="tag">POPULAR</span><h3>Growth</h3><div class="pr">$29<small>/mo</small></div><ul><li>Promoted listing</li><li>50 leads per month</li><li>Analytics dashboard</li><li>BIZ reels</li></ul><span class="pick"></span></div></label><label class="pl"><input type="radio" name="plan" value="Pro"><div class="card"><h3>Pro</h3><div class="pr">$79<small>/mo</small></div><ul><li>Unlimited leads</li><li>Ads manager</li><li>CRM &amp; chat tools</li><li>Verified badge</li><li>Priority support</li></ul><span class="pick"></span></div></label></div>
-          <p class="plnote">Paid plans are activated at checkout (coming soon). You will start on Free.</p>
-        </div>
-        <!-- STEP 5 -->
+        <!-- STEP 5: PLAN -->
         <div class="step" data-step="4">
+          <h2>Pick your plan</h2><p class="sub">Start free and upgrade whenever you are ready.</p>
+          <div class="plans3" id="plans4"></div>
+          <p class="plnote">Prices in Kenyan shillings, billed monthly. Paid plans activate after checkout (M-Pesa coming soon) — you start on Free.</p>
+        </div>
+        <!-- STEP 6 -->
+        <div class="step" data-step="5">
           <h2>Agreement &amp; terms</h2><p class="sub">Almost there — please review before creating your account.</p>
           <div class="sum"><span>Account <b id="sAcc">—</b></span><span>Plan <b id="sPlan">Free</b></span></div>
           <div class="terms">
             <h4>1. Your account</h4>You confirm the information provided is accurate and that you are authorised to represent this business.
-            <h4>2. Advertising &amp; content</h4>Listings and ads must be truthful, lawful and not misleading. ABENWORK may remove content that breaks these rules.
+            <h4>2. Advertising &amp; content</h4>Listings and ads must be truthful, lawful and not misleading. ABENWERK may remove content that breaks these rules.
             <h4>3. Plans &amp; payments</h4>Paid plans renew until cancelled. Lead and ad charges are shown before you confirm any purchase.
             <h4>4. Privacy</h4>We process your data to run the service and match you with customers. We never sell your personal data.
             <h4>5. Termination</h4>You may close your account at any time. We may suspend accounts that violate these terms.
@@ -616,10 +678,10 @@ h2{font-size:25px;letter-spacing:-.02em}
           <div class="fld bad" id="tErr" style="display:none;margin:0"><div class="msg">Please accept the terms and privacy policy to continue.</div></div>
         </div>
         <!-- DONE -->
-        <div class="step" data-step="5"><div class="fin"><div class="logo" data-logo></div><h2>Welcome to ABENWORK, <span id="wName" style="color:var(--yt)"></span></h2><p class="sub" id="doneMsg">Creating your account…</p><button class="btn p" id="again" style="max-width:260px">Back to sign in</button></div></div>
+        <div class="step" data-step="6"><div class="fin"><div class="logo" data-logo></div><h2>Welcome to ABENWERK, <span id="wName" style="color:var(--yt)"></span></h2><p class="sub" id="doneMsg">Creating your account…</p><button class="btn p" id="again" style="max-width:260px">Back to sign in</button></div></div>
       </div>
 
-      <aside class="lpv" id="lpv"><div class="lpv-t">LIVE PREVIEW</div><div class="lpv-c" id="lpvc"></div><p>This is how your business will appear on ABENWORK.</p></aside>
+      <aside class="lpv" id="lpv"><div class="lpv-t">LIVE PREVIEW</div><div class="lpv-c" id="lpvc"></div><p>This is how your business will appear on ABENWERK.</p></aside>
       <div class="nav" id="nav"><button class="btn o" id="back">Back</button><button class="btn p" id="next">Continue →</button></div>
     </div></div>
 
@@ -633,7 +695,7 @@ h2{font-size:25px;letter-spacing:-.02em}
 
 <div class="shell">
   <aside class="dnav" id="dnav">
-    <div class="bd"><span id="lgo"></span><span class="lb">ABEN<b>WORK</b></span></div>
+    <div class="bd"><span id="lgo"></span><span class="lb">ABEN<b>WERK</b></span></div>
     <div id="navl"></div>
     <div class="sp"></div>
     <a id="pin"><span data-i="menu"></span><span class="lb">Pin panel</span></a>
@@ -670,7 +732,7 @@ h2{font-size:25px;letter-spacing:-.02em}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js"></script>
 <script>
 /* ===== SUPABASE CONFIG ===== */
-// ABENWORK client config. Only the PUBLISHABLE key belongs here; it is safe in the browser
+// ABENWERK client config. Only the PUBLISHABLE key belongs here; it is safe in the browser
 // because Row Level Security (see abenwork_schema_v1.sql) decides what each user can touch.
 // NEVER put the secret / service_role key in any file served to a browser.
 (function () {
@@ -726,14 +788,52 @@ function compressImage(file,max){
     im.onerror=()=>no(new Error('image'));im.src=u});
 }
 const blobToDataURL=b=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)});
-async function uploadBizPhoto(blob,uid){
-  const ext=blob.type==='image/png'?'png':blob.type==='image/jpeg'?'jpg':'webp',path=uid+'/photo-'+Date.now()+'.'+ext;
+async function uploadBizImage(blob,uid,kind){
+  const ext=blob.type==='image/png'?'png':blob.type==='image/jpeg'?'jpg':'webp',path=uid+'/'+kind+'-'+Date.now()+'.'+ext,col=kind==='banner'?'banner_url':'photo_url';
   const up=await sb.storage.from('business-media').upload(path,blob,{contentType:blob.type||'image/webp'});
   if(up.error)throw up.error;
   const url=sb.storage.from('business-media').getPublicUrl(path).data.publicUrl;
-  const r=await sb.from('businesses').update({photo_url:url}).eq('owner_id',uid);
+  const r=await sb.from('businesses').update({[col]:url}).eq('owner_id',uid);
   if(r.error)throw r.error;return url;
 }
+const uploadBizPhoto=(b,u)=>uploadBizImage(b,u,'photo');
+/* drag-and-zoom cropper: resolves a webp Blob cropped to `aspect` (w/h) at `outW` px wide, rejects with Error('cancel') */
+function cropImage(file,aspect,outW){
+  return new Promise((ok,no)=>{
+    const url=URL.createObjectURL(file),im=new Image();
+    im.onload=()=>{
+      const W=Math.min(innerWidth-70,560),H=Math.round(W/aspect),o=document.createElement('div');o.className='crp';
+      o.innerHTML='<div class="crp-b"><b>Drag to position · slide to zoom</b><canvas width="'+W+'" height="'+H+'"></canvas><input type="range" min="1" max="4" step="0.01" value="1" aria-label="Zoom"><div class="crp-a"><button type="button" data-x>Cancel</button><button type="button" class="ok" data-ok>Use this image</button></div></div>';
+      document.body.appendChild(o);
+      const cv=o.querySelector('canvas'),ctx=cv.getContext('2d'),rg=o.querySelector('input'),base=Math.max(W/im.width,H/im.height);
+      let z=1,px=0,py=0,d=null;
+      const draw=()=>{const w=im.width*base*z,h=im.height*base*z;px=Math.min((w-W)/2,Math.max(-(w-W)/2,px));py=Math.min((h-H)/2,Math.max(-(h-H)/2,py));ctx.clearRect(0,0,W,H);ctx.drawImage(im,(W-w)/2+px,(H-h)/2+py,w,h)};
+      draw();
+      cv.onpointerdown=e=>{d={x:e.clientX,y:e.clientY,px,py};cv.setPointerCapture(e.pointerId)};
+      cv.onpointermove=e=>{if(!d)return;px=d.px+e.clientX-d.x;py=d.py+e.clientY-d.y;draw()};
+      cv.onpointerup=()=>{d=null};
+      rg.oninput=()=>{z=+rg.value;draw()};
+      cv.onwheel=e=>{e.preventDefault();z=Math.min(4,Math.max(1,z-e.deltaY*.002));rg.value=z;draw()};
+      const done=()=>{o.remove();URL.revokeObjectURL(url)};
+      o.querySelector('[data-x]').onclick=()=>{done();no(new Error('cancel'))};
+      o.querySelector('[data-ok]').onclick=()=>{
+        const k=outW/W,oc=document.createElement('canvas');oc.width=outW;oc.height=Math.round(H*k);
+        const w=im.width*base*z*k,h=im.height*base*z*k;
+        oc.getContext('2d').drawImage(im,(oc.width-w)/2+px*k,(oc.height-h)/2+py*k,w,h);
+        oc.toBlob(b=>{done();b?ok(b):no(new Error('crop'))},'image/webp',.85);
+      };
+    };
+    im.onerror=()=>{URL.revokeObjectURL(url);no(new Error('image'))};im.src=url;
+  });
+}
+/* plans (prices in KSh / month) */
+const PLANS=[
+ {id:'Free',ic:'🎁',sub:'START FREE',price:0,tag:'Free while we build the platform.',feats:['Basic business profile','Directory listing','5 leads per month','5 new chats per month','Basic analytics']},
+ {id:'Essential',ic:'🌱',sub:'START SMART',price:2500,tag:'Get online. Get noticed. Start growing.',feats:['Social Media Management (3 platforms)','Basic Graphic Design (4 posts per month)','Google Business Profile Setup & Optimisation','Monthly Performance Report','Email & WhatsApp Support','Unlimited chats on ABENWERK']},
+ {id:'Premium',ic:'📈',sub:'BUILD & GROW',price:4500,pop:1,tag:'More visibility. More customers. More sales.',feats:['Social Media Management (4 platforms)','Advanced Graphic Design (8 posts per month)','Website Design (up to 5 pages)','Google Business Profile Management','Digital Marketing (Targeted Ads)','Monthly Performance Report','Priority Email & WhatsApp Support','Promoted listing & full analytics']},
+ {id:'Elite',ic:'👑',sub:'MAXIMUM IMPACT',price:8000,tag:'Scale faster. Stand out. Dominate.',feats:['Social Media Management (4 platforms)','Premium Graphic Design (12 posts per month + custom ads)','Website Design (up to 10 pages + blog)','Advanced Digital Marketing (Ads + SEO Support)','Branding & Logo Design','Content Creation (Photos & Videos)','Ongoing Strategy & Consultation','Dedicated Account Manager','Top placement & Verified badge']}
+];
+const plansHTML=(name,sel)=>PLANS.map(p=>'<label class="pl'+(p.pop?' pop':'')+'"><input type="radio" name="'+name+'" value="'+p.id+'"'+(p.id===sel?' checked':'')+'><div class="card">'+(p.pop?'<span class="mp">♛ MOST POPULAR</span>':'')+'<div class="ph2"><i>'+p.ic+'</i><div><h3>'+p.id+'</h3><small>'+p.sub+'</small></div></div><div class="pr">KSh '+p.price.toLocaleString()+'<small> / month</small></div><ul>'+p.feats.map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul><div class="tl">'+esc(p.tag)+'</div><span class="pick"></span></div></label>').join('');
 /* weekly hours editor: H = {hours:{mon:['08:00','17:00']|null,...}, closed_holidays:bool, closed_dates:['YYYY-MM-DD']} (edited in place) */
 function buildHours(el,H,onCh){
   const P={wk:HWK,all:Object.fromEntries(DAYS.map(d=>[d,['09:00','21:00']])),h24:H24},ch=()=>onCh&&onCh();
@@ -757,8 +857,8 @@ function buildHours(el,H,onCh){
 const LOGO='<svg viewBox="190 305 580 343" aria-hidden="true"><polygon class="bl" points="335,315 467,315 327,477 467,638 335,638 197,477"/><polygon class="br" points="493,315 625,315 763,477 625,638 493,638 633,477"/></svg>';
 document.querySelectorAll('[data-logo]').forEach(e=>e.innerHTML=LOGO);
 document.querySelectorAll('[data-wm]').forEach(e=>{
-  e.setAttribute('aria-label','ABENWORK');
-  e.innerHTML=[...'ABEN'].map((c,i)=>`<i class="a" style="--i:${i}">${c}</i>`).join('')+[...'WORK'].map((c,i)=>`<i class="w" style="--i:${i+4}">${c}</i>`).join('');
+  e.setAttribute('aria-label','ABENWERK');
+  e.innerHTML=[...'ABEN'].map((c,i)=>`<i class="a" style="--i:${i}">${c}</i>`).join('')+[...'WERK'].map((c,i)=>`<i class="w" style="--i:${i+4}">${c}</i>`).join('');
 });
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2600)};
@@ -777,7 +877,7 @@ const OFFERS=[
  {ic:'◎',t:'Get found',d:'Promoted profiles rank you in front of buyers searching your trade.'},
  {ic:'⚡',t:'Win leads',d:'Qualified leads — pay per lead or per campaign. No waste.'},
  {ic:'▤',t:'Command center',d:'Analytics, campaigns &amp; CRM in one powerful dashboard.'},
- {ic:'★',t:'Plans that scale',d:'Free · Growth $29 · Pro $79. Start free, upgrade when you win.'}
+ {ic:'★',t:'Plans that scale',d:'Free · Essential KSh 2,500 · Premium KSh 4,500 · Elite KSh 8,000. Start free, upgrade when you win.'}
 ];
 let oi=0;
 const ot=$('#offerTx'),oic=$('#offerIc'),opg=$('#offerPg');
@@ -831,11 +931,11 @@ $('#toSignup').addEventListener('click',()=>{
   logoWipe(()=>app.classList.add('signup'));
   setTimeout(()=>{const f=$('.step.on input');f&&f.focus({preventScroll:true})},2300);
 });
-const toLogin=()=>logoWipe(()=>{app.classList.remove('signup');if(cur===5)show(0)});
+const toLogin=()=>logoWipe(()=>{app.classList.remove('signup');if(cur===6)show(0)});
 $('#toLogin').addEventListener('click',toLogin);
 
 /* location finder (OpenStreetMap data via Photon), hours, photo, live preview */
-const LOC={},HRS={hours:JSON.parse(JSON.stringify(HWK)),closed_holidays:true,closed_dates:[]},PHOTO={};
+const LOC={},HRS={hours:JSON.parse(JSON.stringify(HWK)),closed_holidays:true,closed_dates:[]},PHOTO={},BANNER={};
 let bias=null,locT,LROWS=[];
 const phLine=p=>[p.street&&((p.housenumber?p.housenumber+' ':'')+p.street),p.district||p.locality,p.city||p.town,p.county||p.state].filter(Boolean).join(', ');
 const POI=['shop','amenity','tourism','office','leisure','craft','healthcare','building'];
@@ -876,35 +976,42 @@ $('#locpick').addEventListener('click',e=>{if(e.target.id==='locx'){Object.keys(
 buildHours($('#hz'),HRS,()=>updPreview());
 $('#drop').addEventListener('click',()=>$('#photo').click());
 $('#drop').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#photo').click()}});
-$('#photo').addEventListener('change',async e=>{
-  const f=e.target.files[0];if(!f)return;
-  if(!/^image\//.test(f.type))return toast('Please choose an image file');
-  if(f.size>15*1048576)return toast('That photo is over 15 MB — choose a smaller one');
-  try{const b=await compressImage(f);if(PHOTO.url)URL.revokeObjectURL(PHOTO.url);PHOTO.file=b;PHOTO.url=URL.createObjectURL(b);
-    $('#drop').style.backgroundImage="url('"+PHOTO.url+"')";$('#drop').classList.add('has');$('#dropt').textContent='Tap to change photo';$('#fPhoto').classList.remove('bad');updPreview()}
-  catch(x){toast('Could not read that photo')}
-});
+function pickImg(inp,store,aspect,outW,drop,txt,fld,label){
+  $('#'+inp).addEventListener('change',async e=>{
+    const f=e.target.files[0];e.target.value='';if(!f)return;
+    if(!/^image\//.test(f.type))return toast('Please choose an image file');
+    if(f.size>20*1048576)return toast('That image is over 20 MB — choose a smaller one');
+    try{const b=await cropImage(f,aspect,outW);if(store.url)URL.revokeObjectURL(store.url);store.file=b;store.url=URL.createObjectURL(b);
+      const d=$('#'+drop);d.style.backgroundImage="url('"+store.url+"')";d.classList.add('has');$('#'+txt).textContent=label;$('#'+fld).classList.remove('bad');updPreview()}
+    catch(x){if(x.message!=='cancel')toast('Could not read that image')}
+  });
+}
+pickImg('photo',PHOTO,1,600,'drop','dropt','fPhoto','Tap to change');
+pickImg('bphoto',BANNER,3,1500,'bdrop','bdropt','fBanner','Tap to change banner');
+$('#bdrop').addEventListener('click',()=>$('#bphoto').click());
+$('#bdrop').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#bphoto').click()}});
+$('#plans4').innerHTML=plansHTML('plan','Free');
 function updPreview(){
   const nm=($('[name=biz]').value||'Your business').trim(),ind=$('[name=ind]'),cl=ind.value?ind.options[ind.selectedIndex].text:'Category';
   const st=openStatus({hours:HRS.hours,closed_holidays:HRS.closed_holidays,closed_dates:HRS.closed_dates});
-  $('#lpvc').innerHTML='<div class="lpb"><span class="c">'+esc(cl)+'</span><span class="r">★ New</span></div><div class="lpa"'+(PHOTO.url?' style="background-image:url(\''+PHOTO.url+'\')"':'')+'>'+(PHOTO.url?'':esc(nm[0].toUpperCase()))+'</div><h4>'+esc(nm)+'</h4><p>'+esc(LOC.name?LOC.name+(LOC.city?' · '+LOC.city:''):'Location not set yet')+'</p><div class="os '+st.cls+'"><i></i>'+st.label+'</div>';
+  $('#lpvc').innerHTML='<div class="lpb"'+(BANNER.url?' style="background-image:url(\''+BANNER.url+'\');background-size:cover;background-position:center"':'')+'><span class="c">'+esc(cl)+'</span><span class="r">★ New</span></div><div class="lpa"'+(PHOTO.url?' style="background-image:url(\''+PHOTO.url+'\')"':'')+'>'+(PHOTO.url?'':esc(nm[0].toUpperCase()))+'</div><h4>'+esc(nm)+'</h4><p>'+esc(LOC.name?LOC.name+(LOC.city?' · '+LOC.city:''):'Location not set yet')+'</p><div class="os '+st.cls+'"><i></i>'+st.label+'</div>';
 }
 ['input','change'].forEach(ev=>document.addEventListener(ev,e=>{if(e.target.closest&&e.target.closest('#signup'))updPreview()}));
 const mq=matchMedia('(min-width:1180px)');
 function placePv(){(mq.matches?$('#signup .in'):$('#pvslot')).appendChild($('#lpv'))}
 mq.addEventListener('change',placePv);placePv();updPreview();
-const keepPhoto=email=>{if(PHOTO.file)blobToDataURL(PHOTO.file).then(d=>{try{localStorage.setItem('abw_pending:'+email.toLowerCase(),d)}catch(e){}})};
+const keepPhoto=email=>{[['abw_pending:',PHOTO],['abw_pendingb:',BANNER]].forEach(([k,o])=>{if(o.file)blobToDataURL(o.file).then(d=>{try{localStorage.setItem(k+email.toLowerCase(),d)}catch(e){}})})};
 
 /* wizard */
-const steps=$$('.step'),dots=$$('#dots span'),LAST=4,inEl=$('#signup .in');let cur=0;
+const steps=$$('.step'),dots=$$('#dots span'),LAST=5,inEl=$('#signup .in');let cur=0;
 function show(n){
   cur=n;steps.forEach((s,i)=>s.classList.toggle('on',i===n));
   dots.forEach((d,i)=>{d.classList.toggle('on',i===n);d.classList.toggle('done',i<n)});
-  $('#pbar').style.width=Math.min(n+1,5)/5*100+'%';
+  $('#pbar').style.width=Math.min(n+1,6)/6*100+'%';
   $('#back').style.display=n===0?'none':'';
   $('#next').textContent=n===LAST?'Create account ✓':'Continue →';
-  $('#nav').style.display=n===5?'none':'flex';
-  inEl.classList.toggle('wide',n===3);
+  $('#nav').style.display=n===6?'none':'flex';
+  inEl.classList.toggle('wide',n===4);
   $('.view#signup').scrollTo({top:0,behavior:'smooth'});
   if(n===LAST){$('#sAcc').textContent='@'+($('#su').value||'—');$('#sPlan').textContent=document.querySelector('[name=plan]:checked').value}
 }
@@ -914,7 +1021,8 @@ function validate(n){
     const i=f.querySelector('input,select,textarea');if(!i)return;
     const good=i.checkValidity();f.classList.toggle('bad',!good);if(!good)ok=false;
   });
-  if(n===2){const a=!!LOC.name,b=!!PHOTO.file;$('#fLoc').classList.toggle('bad',!a);$('#fPhoto').classList.toggle('bad',!b);if(!a||!b)ok=false}
+  if(n===2){const a=!!LOC.name;$('#fLoc').classList.toggle('bad',!a);if(!a)ok=false}
+  if(n===3){const a=!!PHOTO.file,b=!!BANNER.file;$('#fPhoto').classList.toggle('bad',!a);$('#fBanner').classList.toggle('bad',!b);if(!a||!b)ok=false}
   if(n===LAST){ok=$('#t1').checked&&$('#t2').checked;$('#tErr').style.display=ok?'none':'block'}
   if(!ok){const b=$('.step.on .bad');b&&b.scrollIntoView({block:'center',behavior:'smooth'})}
   return ok;
@@ -936,10 +1044,10 @@ async function submit(){
   const taken=r.data&&r.data.user&&r.data.user.identities&&r.data.user.identities.length===0;
   if(r.error||taken){toast(friendly(r.error?r.error.message:'already registered'));show(0);return}
   $('#wName').textContent=v('owner').split(' ')[0];
-  if(r.data.session){try{await uploadBizPhoto(PHOTO.file,r.data.session.user.id)}catch(e){console.error(e);keepPhoto(v('email'))}}else keepPhoto(v('email'));
-  show(5);$('#pbar').style.width='100%';dots.forEach(d=>d.classList.add('done'));
+  if(r.data.session){try{const u=r.data.session.user.id;await uploadBizImage(PHOTO.file,u,'photo');await uploadBizImage(BANNER.file,u,'banner')}catch(e){console.error(e);keepPhoto(v('email'))}}else keepPhoto(v('email'));
+  show(6);$('#pbar').style.width='100%';dots.forEach(d=>d.classList.add('done'));
   if(r.data.session){$('#doneMsg').textContent='Your account is ready. Taking you to your dashboard…';setTimeout(openDash,1600)}
-  else $('#doneMsg').textContent='Almost there — check '+v('email')+' for a confirmation link, then sign in. Your photo is saved on this device and uploads on your first sign-in here.';
+  else $('#doneMsg').textContent='Almost there — check '+v('email')+' for a confirmation link, then sign in. Your picture and banner are saved on this device and upload on your first sign-in here.';
 }
 $('#next').addEventListener('click',async()=>{
   if(!validate(cur))return;
@@ -992,10 +1100,16 @@ function go(k){
 $('#navl').addEventListener('click',e=>{const a=e.target.closest('a');if(a)go(a.dataset.v)});
 $('#pin').addEventListener('click',()=>$('#dnav').classList.toggle('pin'));
 $('#out').addEventListener('click',async()=>{try{await sb.auth.signOut()}catch(e){}history.replaceState(null,'',location.pathname+location.search);location.reload()});
-$('#up').addEventListener('click',()=>toast('Plans & checkout are coming soon'));
+function upgradeModal(){
+  const cur=planName(),v=document.createElement('div');v.className='vw on';
+  v.innerHTML='<div class="vh"><b>Choose your plan</b><span class="sp"></span><button class="vbtn" id="upx" aria-label="Close">✕</button></div><div class="vb"><div class="plans3" style="width:100%;max-width:1180px">'+plansHTML('upl',cur)+'</div><p class="dsub">Prices in Kenyan shillings, billed monthly. M-Pesa checkout is coming soon.</p><button class="sv" id="upc" style="padding:0 28px">Continue</button></div>';
+  $('#dash').appendChild(v);$('#upx').onclick=()=>v.remove();
+  $('#upc').onclick=()=>{const p=v.querySelector('[name=upl]:checked').value;toast(p===cur?'You are already on '+cur:p+' selected — M-Pesa checkout is coming soon')};
+}
+$('#up').addEventListener('click',upgradeModal);
 
 /* notifications */
-const NOTES=[['★','Aurelia Grand Hotel liked your profile','2 min ago'],['✉','Nimbus Labs sent you a message','1 h ago'],['⚡','New lead matched your category','3 h ago'],['✓','Welcome to ABENWORK — complete your profile','1 d ago']];
+const NOTES=[['★','Aurelia Grand Hotel liked your profile','2 min ago'],['✉','Nimbus Labs sent you a message','1 h ago'],['⚡','New lead matched your category','3 h ago'],['✓','Welcome to ABENWERK — complete your profile','1 d ago']];
 $('#dd').innerHTML=NOTES.map(n=>`<div><em>${n[0]}</em><span>${n[1]}<small>${n[2]}</small></span></div>`).join('');
 $('#bell').addEventListener('click',e=>{e.stopPropagation();$('#dd').classList.toggle('on');$('#bdot').style.display='none'});
 document.addEventListener('click',()=>$('#dd').classList.remove('on'));
@@ -1010,9 +1124,9 @@ const avStyle=b=>b.photo_url&&/^https:\/\//.test(b.photo_url)?` style="backgroun
 function cardHTML(b,n){
   const th=TH[b.banner_theme]||TH.amber,mine=b.owner_id===S.uid&&!!S.uid,ls=S.links.get(b.id);
   const cat=(S.cats.find(c=>c.slug===b.category)||{}).label||'Business';
-  return `<article class="card" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn"${bannerStyle(b)}>${MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
+  return `<article class="card" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn"${bannerStyle(b)}>${b.banner_url?'':MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
   <div class="cb"><div class="av"${avStyle(b)}>${b.photo_url?'':esc((b.name||'A')[0])}</div><h3>${esc(b.name)}${b.is_verified?'<span class="vf">✓</span>':''}</h3>
-  <p>${esc(b.tagline||b.description||'New on ABENWORK')}</p><small>${esc(b.place_name||b.city||'')}${mine?' · Your business':''}</small>${statusHTML(b)}
+  <p>${esc(b.tagline||b.description||'New on ABENWERK')}</p><small>${esc(b.place_name||b.city||'')}${mine?' · Your business':''}</small>${statusHTML(b)}
   <div class="act"><button class="hb ${S.liked.has(b.id)?'on':''}" data-id="${b.id}" aria-label="Like">${ic('heart')}<span>${b.like_count||0}</span></button>
   <button class="ms" data-id="${b.id}" ${mine?'disabled':''}>${ic('msg')}Message</button>
   <button class="ln" data-id="${b.id}" ${mine?'disabled':''} aria-label="Link">${ic('link')}${ls?(ls==='accepted'?'Linked':'Pending'):''}</button></div></div></article>`;
@@ -1022,7 +1136,7 @@ function renderChips(){
 }
 function renderGrid(){
   const l=S.biz.filter(b=>(S.cat==='all'||b.category===S.cat)&&(!S.open||openStatus(b).open)&&(!S.q||[b.name,b.tagline,b.city,b.category].join(' ').toLowerCase().includes(S.q)));
-  $('#hs').textContent=l.length+' business'+(l.length===1?'':'es')+' on ABENWORK';
+  $('#hs').textContent=l.length+' business'+(l.length===1?'':'es')+' on ABENWERK';
   $('#grid').innerHTML=l.length?l.map((b,i)=>cardHTML(b,Math.min(i,12))).join(''):'<div class="empty">No businesses match that filter yet.</div>';
 }
 $('#chips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-o'))S.open=!S.open;else S.cat=b.dataset.c;renderChips();renderGrid()});
@@ -1052,32 +1166,43 @@ const REPLIES=['Thanks for reaching out! Tell us a bit more about what you need.
 const now=()=>new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
 const conv=b=>{if(!CH.has(b.id))CH.set(b.id,{b,msgs:[],stage:0,unread:0,typing:false});return CH.get(b.id)};
 function seedChats(){
-  S.biz.filter(b=>!S.me||b.id!==S.me.id).slice(0,3).forEach((b,i)=>{
+  S.biz.filter(b=>b.is_bot&&(!S.me||b.id!==S.me.id)&&!CH.has(b.id)).slice(0,3).forEach((b,i)=>{
     const c=conv(b);
-    if(i===0){c.msgs=[{t:'in',x:'Hi! Thanks for connecting. How can we help your business?',at:'09:12'},{t:'out',x:'Hello! We need a team to build a delivery-tracking app.',at:'09:14'},{t:'in',x:'Great fit for us. Here is a starter quote:',at:'09:15'},{t:'quote',from:'in',price:'$4,200',d:'Web app · 5 weeks · 2 revisions',st:'open'}];c.stage=1}
-    else{c.msgs=[{t:'in',x:i===1?'Welcome to ABENWORK! Ask us anything about our services.':'Your listing looks great. Want to link up?',at:i===1?'Yesterday':'Mon'}];c.unread=1}
+    if(i===0){c.msgs=[{t:'in',x:'Hi! Thanks for connecting. How can we help your business?',at:'09:12'},{t:'out',x:'Hello! We need a team to build a delivery-tracking app.',at:'09:14'},{t:'in',x:'Great fit for us. Here is a starter quote:',at:'09:15'},{t:'quote',from:'in',price:'KSh 42,000',d:'Web app · 5 weeks · 2 revisions',st:'open'}];c.stage=1}
+    else{c.msgs=[{t:'in',x:i===1?'Welcome to ABENWERK! Ask us anything about our services.':'Your listing looks great. Want to link up?',at:i===1?'Yesterday':'Mon'}];c.unread=1}
   });badge();
 }
 function badge(){const n=[...CH.values()].reduce((a,c)=>a+c.unread,0),e=$('#mct');if(e){e.hidden=!n;e.textContent=n}}
 function renderList(){
-  const l=[...CH.values()];
+  const l=[...CH.values()].sort((a,b)=>lastTs(b)-lastTs(a));
   $('#ls').innerHTML=l.length?l.map(c=>{const th=TH[c.b.banner_theme]||TH.amber,last=c.msgs.filter(m=>m.t!=='sys').slice(-1)[0],pv=last?(last.t==='quote'?'Quote · '+last.price:last.t==='file'?'📎 '+last.name:last.x):'Say hello';
     return `<div class="cv ${curC===c.b.id?'on':''}" data-id="${c.b.id}"><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div class="tx"><b>${esc(c.b.name)}</b><span>${esc(pv)}</span></div>${c.unread?`<em class="un">${c.unread}</em>`:''}</div>`}).join(''):'<div class="none">No conversations yet. Tap Message on any business card.</div>';
 }
 $('#ls').addEventListener('click',e=>{const r=e.target.closest('.cv');if(r)selectChat(r.dataset.id)});
 function renderChatPage(){renderList();if(!curC&&CH.size&&window.innerWidth>820)selectChat([...CH.keys()][0])}
-function openChat(b){if(!b)return;conv(b);go('msg');selectChat(b.id)}
+async function openChat(b){
+  if(!b)return;
+  if(!b.is_bot&&S.me&&b.owner_id&&!String(b.id).startsWith('demo-')){
+    let c=CH.get(b.id);
+    if(!c||!c.cid){
+      const r=await sb.rpc('start_conversation',{other:b.id});
+      if(r.error){toast(/chat_limit/.test(r.error.message)?'Free plan: 5 new chats a month — link up or upgrade for more':'Could not start the chat');return}
+      c=conv(b);c.db=true;c.cid=r.data;
+    }
+  }else conv(b);
+  go('msg');selectChat(b.id);
+}
 function selectChat(id){
-  curC=id;const c=CH.get(id);c.unread=0;badge();renderList();
+  curC=id;const c=CH.get(id);c.unread=0;badge();if(c.db){hookChat(c);markRead(c)}renderList();
   const th=TH[c.b.banner_theme]||TH.amber;$('#chat').classList.add('open');
-  $('#th').innerHTML=`<div class="hd"><button class="bk" id="bk">${ic('back')}</button><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div><b>${esc(c.b.name)}${c.b.is_verified?' <span class="vf">✓</span>':''}</b><small>● Online · replies within the hour</small></div><div class="stg" id="stg"></div><button class="qs" id="sq">${ic('doc')}Send quote</button></div>
+  $('#th').innerHTML=`<div class="hd"><button class="bk" id="bk">${ic('back')}</button><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div><b>${esc(c.b.name)}${c.b.is_verified?' <span class="vf">✓</span>':''}</b><small id="pst">${c.db?(c.online?'● Online':'○ Offline'):'● Online · replies within the hour'}</small></div><div class="stg" id="stg"></div><button class="qs" id="sq">${ic('doc')}Send quote</button></div>
   <div class="ml" id="ml"></div>
   <div class="cp"><button id="at" aria-label="Attach">${ic('clip')}</button><input id="ci" placeholder="Write a message…" autocomplete="off"><button class="sd" id="sd" aria-label="Send">${ic('send')}</button></div>`;
   $('#bk').onclick=()=>{$('#chat').classList.remove('open');curC=null;renderList()};
   $('#at').onclick=attachMenu;
-  $('#sd').onclick=sendMsg;$('#ci').onkeydown=e=>{if(e.key==='Enter')sendMsg()};
-  $('#sq').onclick=()=>{c.msgs.push({t:'quote',from:'out',price:'$1,500',d:'Custom offer · valid 7 days',st:'sent'});c.stage=Math.max(c.stage,1);paintMsgs()};
-  $('#ml').onclick=e=>{const fv=e.target.closest('[data-f]');if(fv)return viewFile(c.msgs[+fv.dataset.f]);const b=e.target.closest('[data-q]');if(!b)return;const m=c.msgs[+b.dataset.q];const yes=b.dataset.a==='yes';m.st=yes?'accepted':'declined';
+  $('#sd').onclick=sendMsg;$('#ci').oninput=()=>typingPing(c);$('#ci').onkeydown=e=>{if(e.key==='Enter')sendMsg()};
+  $('#sq').onclick=()=>quoteForm(c);
+  $('#ml').onclick=e=>{const fv=e.target.closest('[data-f]');if(fv)return viewFile(c.msgs[+fv.dataset.f]);const b=e.target.closest('[data-q]');if(!b)return;const m=c.msgs[+b.dataset.q];const yes=b.dataset.a==='yes';if(c.db)return sb.rpc('respond_quote',{msg:m.id,accept:yes}).then(r=>{if(r.error)toast('Could not update the quote')});m.st=yes?'accepted':'declined';
     c.msgs.push({t:'sys',x:yes?'Quote accepted — deal confirmed':'Quote declined'});if(yes)c.stage=3;else c.stage=Math.max(c.stage,2);paintMsgs()};
   paintMsgs();if(window.innerWidth>820)$('#ci').focus();
 }
@@ -1085,7 +1210,7 @@ function mHTML(m,i){
   if(m.t==='file')return fileHTML(m,i);
   if(m.t==='sys')return `<div class="sys">${esc(m.x)}</div>`;
   if(m.t==='quote'){const out=m.from==='out';return `<div class="q ${out?'out':''}"><div class="qh">QUOTE · ${esc(m.st.toUpperCase())}</div><div class="qb"><div class="pr">${esc(m.price)}</div><small>${esc(m.d)}</small></div>${m.st==='open'&&!out?`<div class="qa"><button data-q="${i}" data-a="no">Decline</button><button class="ac" data-q="${i}" data-a="yes">Accept</button></div>`:''}</div>`}
-  return `<div class="m ${m.t}">${linkify(esc(m.x))}<time>${esc(m.at||'')}</time></div>`;
+  return `<div class="m ${m.t}">${linkify(esc(m.x))}<time>${esc(m.at||'')}${tick(m)}</time></div>`;
 }
 function paintMsgs(){
   const c=CH.get(curC);if(!c||!$('#ml'))return;
@@ -1095,14 +1220,116 @@ function paintMsgs(){
 }
 function sendMsg(){
   const c=CH.get(curC),i=$('#ci'),x=i.value.trim();if(!c||!x)return;
+  if(c.db){i.value='';return sendDb(c,{kind:'text',body:x})}
   c.msgs.push({t:'out',x,at:now()});i.value='';paintMsgs();
   c.typing=true;paintMsgs();
   setTimeout(()=>{
     c.typing=false;
-    if(/price|quote|cost|how much/i.test(x)){c.msgs.push({t:'in',x:'Happy to help. Here is our proposal:',at:now()},{t:'quote',from:'in',price:'$'+((2+Math.floor(Math.random()*8))*600).toLocaleString(),d:'Standard package · 4 weeks',st:'open'});c.stage=Math.max(c.stage,1)}
+    if(/price|quote|cost|how much/i.test(x)){c.msgs.push({t:'in',x:'Happy to help. Here is our proposal:',at:now()},{t:'quote',from:'in',price:'KSh '+((2+Math.floor(Math.random()*8))*6000).toLocaleString(),d:'Standard package · 4 weeks',st:'open'});c.stage=Math.max(c.stage,1)}
     else c.msgs.push({t:'in',x:REPLIES[Math.floor(Math.random()*REPLIES.length)],at:now()});
     if(curC===c.b.id)paintMsgs();else{c.unread++;badge();renderList()}
   },1200+Math.random()*900);
+}
+
+/* ---------- live messaging (Supabase Realtime) ---------- */
+const lastTs=c=>(c.msgs.length&&c.msgs[c.msgs.length-1].ts)||0;
+const tick=m=>{if(m.t!=='out'||!m.id)return'';const c=CH.get(curC);return c&&c.readTs>=m.ts?' ✓✓':' ✓'};
+const getBuf=async m=>m.file?m.file.arrayBuffer():(await fetch(m.url)).arrayBuffer(),getTxt=async m=>m.file?m.file.text():(await fetch(m.url)).text();
+const findC=cid=>[...CH.values()].find(c=>c.cid===cid);
+const mapMsg=r=>{
+  const out=r.sender_business===(S.me&&S.me.id),ts=new Date(r.created_at).getTime(),at=new Date(ts).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),p=r.payload||{};
+  if(r.kind==='sys')return{t:'sys',x:r.body,id:r.id,ts};
+  if(r.kind==='quote')return{t:'quote',from:out?'out':'in',price:p.price,d:p.desc,st:p.status,id:r.id,ts};
+  if(r.kind==='file')return{t:'file',from:out?'out':'in',kind:p.kind,name:p.name,size:p.size,ext:(p.name||'').split('.').pop().toUpperCase().slice(0,4),path:p.path,url:null,id:r.id,ts,at};
+  return{t:out?'out':'in',x:r.body,id:r.id,ts,at};
+};
+async function signFiles(list){
+  const need=list.filter(m=>m.t==='file'&&m.path&&!m.url);if(!need.length)return;
+  const r=await sb.storage.from('chat-files').createSignedUrls(need.map(m=>m.path),3600);
+  (r.data||[]).forEach((x,i)=>{if(x.signedUrl)need[i].url=x.signedUrl});
+}
+function addMsg(c,row){
+  if(c.msgs.some(m=>m.id===row.id))return null;
+  const m=mapMsg(row);c.msgs.push(m);if(curC===c.b.id)paintMsgs();else renderList();return m;
+}
+async function loadChats(){
+  const cv=await sb.from('conversations').select('*');if(cv.error||!cv.data||!cv.data.length)return;
+  const ms=await sb.from('messages').select('*').in('conversation_id',cv.data.map(x=>x.id)).order('id',{ascending:true}).limit(1000),me=S.me.id;
+  for(const x of cv.data){
+    const oid=x.business_a===me?x.business_b:x.business_a,other=S.biz.find(b=>b.id===oid);if(!other)continue;
+    const c=conv(other),mr=x.business_a===me?x.a_read_at:x.b_read_at,orr=x.business_a===me?x.b_read_at:x.a_read_at,mrt=mr?new Date(mr).getTime():0;
+    c.db=true;c.cid=x.id;c.stage=x.stage||0;c.readTs=orr?new Date(orr).getTime():0;
+    c.msgs=(ms.data||[]).filter(m=>m.conversation_id===x.id).map(mapMsg);
+    c.unread=c.msgs.filter(m=>m.t!=='out'&&m.t!=='sys'&&m.ts>mrt).length;
+  }
+  await signFiles([...CH.values()].flatMap(c=>c.msgs));
+}
+function subscribeRT(){
+  sb.channel('abw-rt')
+   .on('postgres_changes',{event:'INSERT',schema:'public',table:'messages'},p=>onMsg(p.new))
+   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'messages'},p=>onMsgUpd(p.new))
+   .on('postgres_changes',{event:'INSERT',schema:'public',table:'conversations'},p=>onConvNew(p.new))
+   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'conversations'},p=>onConvUpd(p.new))
+   .subscribe();
+}
+function onMsg(r){
+  const c=findC(r.conversation_id);if(!c)return;
+  const m=addMsg(c,r);if(!m)return;
+  signFiles([m]).then(()=>{if(curC===c.b.id)paintMsgs()});
+  if(r.sender_business!==S.me.id){
+    if(curC===c.b.id&&$('#v-msg').classList.contains('on'))markRead(c);
+    else{c.unread++;badge();renderList();toast('New message from '+c.b.name);$('#bdot').style.display=''}
+  }
+}
+function onMsgUpd(r){
+  const c=findC(r.conversation_id);if(!c)return;const i=c.msgs.findIndex(x=>x.id===r.id);if(i<0)return;
+  const n=mapMsg(r);n.file=c.msgs[i].file;n.url=c.msgs[i].url;c.msgs[i]=n;if(curC===c.b.id)paintMsgs();
+}
+function onConvUpd(x){
+  const c=findC(x.id);if(!c)return;c.stage=x.stage||0;
+  const rt=x.business_a===S.me.id?x.b_read_at:x.a_read_at;c.readTs=rt?new Date(rt).getTime():0;
+  if(curC===c.b.id)paintMsgs();
+}
+async function onConvNew(x){
+  const me=S.me.id;if(x.business_a!==me&&x.business_b!==me)return;if(findC(x.id))return;
+  const oid=x.business_a===me?x.business_b:x.business_a;let other=S.biz.find(b=>b.id===oid);
+  if(!other){const r=await sb.from('businesses').select('*').eq('id',oid).maybeSingle();other=r.data;if(!other)return;S.biz.push(other)}
+  const c=conv(other);c.db=true;c.cid=x.id;renderList();
+}
+function hookChat(c){
+  if(c.ch)return;
+  c.ch=sb.channel('c:'+c.cid,{config:{presence:{key:S.me.id}}})
+   .on('broadcast',{event:'typing'},()=>{c.typing=true;if(curC===c.b.id)paintMsgs();clearTimeout(c.tt);c.tt=setTimeout(()=>{c.typing=false;if(curC===c.b.id)paintMsgs()},2800)})
+   .on('presence',{event:'sync'},()=>{c.online=!!c.ch.presenceState()[c.b.id];const e=$('#pst');if(curC===c.b.id&&e)e.textContent=c.online?'● Online':'○ Offline'})
+   .subscribe(s=>{if(s==='SUBSCRIBED')c.ch.track({on:1})});
+}
+const typingPing=c=>{if(!c.db||!c.ch||Date.now()-(c.tp||0)<1800)return;c.tp=Date.now();c.ch.send({type:'broadcast',event:'typing',payload:{}})};
+const markRead=c=>{if(c.db)sb.rpc('mark_read',{conv:c.cid})};
+async function sendDb(c,row){
+  const r=await sb.from('messages').insert({conversation_id:c.cid,sender_business:S.me.id,...row}).select().single();
+  if(r.error)return toast('Message not sent — check your connection');
+  addMsg(c,r.data);
+}
+async function sendFileDb(c,file,kind){
+  const path=c.cid+'/'+Date.now()+'-'+file.name.replace(/[^\w.\-]+/g,'_');toast('Sending '+file.name+'…');
+  const up=await sb.storage.from('chat-files').upload(path,file,{contentType:file.type||'application/octet-stream'});
+  if(up.error)return toast('Upload failed');
+  const r=await sb.from('messages').insert({conversation_id:c.cid,sender_business:S.me.id,kind:'file',body:file.name,payload:{path,name:file.name,size:file.size,kind}}).select().single();
+  if(r.error)return toast('Could not send the file');
+  const m=addMsg(c,r.data)||c.msgs.find(x=>x.id===r.data.id);if(m){m.file=file;m.url=URL.createObjectURL(file)}
+  paintMsgs();
+}
+function quoteForm(c){
+  const old=$('#am');if(old){old.remove();return}
+  const m=document.createElement('div');m.id='am';m.className='am';const st='width:100%;background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:14px';
+  m.innerHTML='<div class="lbl" style="padding:4px 6px 0">Send a quote</div><input id="qa" type="number" min="1" placeholder="Amount (KSh)" style="'+st+'"><input id="qd" placeholder="What is included?" maxlength="80" style="'+st+';margin-top:4px"><button class="sv" id="qs" style="margin-top:6px;height:38px">Send quote</button>';
+  $('.cp').appendChild(m);$('#qa').focus();
+  $('#qs').onclick=()=>{
+    const a=+$('#qa').value;if(!a)return toast('Enter an amount');
+    const price='KSh '+a.toLocaleString(),d=$('#qd').value.trim()||'Custom offer · valid 7 days';m.remove();
+    if(c.db)sendDb(c,{kind:'quote',body:price,payload:{price,desc:d,status:'open'}});
+    else{c.msgs.push({t:'quote',from:'out',price,d,st:'sent'});c.stage=Math.max(c.stage,1);paintMsgs()}
+  };
 }
 
 /* ---------- chat attachments + document viewer ---------- */
@@ -1117,6 +1344,7 @@ function fileHTML(m,i){
 function pushFile(c,file){
   if(file.size>25*1048576)return toast(file.name+' is over 25 MB');
   const kind=file.type.startsWith('image/')?'image':file.type.startsWith('video/')?'video':'doc';
+  if(c.db)return sendFileDb(c,file,kind);
   c.msgs.push({t:'file',from:'out',kind,name:file.name,size:file.size,ext:(file.name.split('.').pop()||'').toUpperCase().slice(0,4),file,url:URL.createObjectURL(file),at:now()});
   paintMsgs();
   clearTimeout(c.ack);c.typing=true;paintMsgs();
@@ -1134,7 +1362,7 @@ function attachMenu(){
     else if(k==='doc')pick('.pdf,.doc,.docx,.xls,.xlsx,.csv,.ppt,.pptx,.txt');
     else if(k==='text'){m.innerHTML='<textarea id="tx" placeholder="Paste or type text…"></textarea><button data-k="sendtx" class="sv" style="margin-top:6px;height:38px">Send snippet</button>';$('#tx').focus()}
     else if(k==='sendtx'){const v=$('#tx').value.trim();if(v){pushFile(c,new File([v],'snippet.txt',{type:'text/plain'}))}m.remove()}
-    else if(k==='loc'){m.remove();if(!navigator.geolocation)return toast('Location is not available');navigator.geolocation.getCurrentPosition(p=>{c.msgs.push({t:'out',x:'📍 My location: https://www.google.com/maps?q='+p.coords.latitude.toFixed(5)+','+p.coords.longitude.toFixed(5),at:now()});paintMsgs()},()=>toast('Location permission denied'))}};
+    else if(k==='loc'){m.remove();if(!navigator.geolocation)return toast('Location is not available');navigator.geolocation.getCurrentPosition(p=>{const tx='📍 My location: https://www.google.com/maps?q='+p.coords.latitude.toFixed(5)+','+p.coords.longitude.toFixed(5);if(c.db)sendDb(c,{kind:'text',body:tx});else{c.msgs.push({t:'out',x:tx,at:now()});paintMsgs()}},()=>toast('Location permission denied'))}};
 }
 async function viewFile(m){
   let v=$('#vw');
@@ -1149,33 +1377,41 @@ async function viewFile(m){
       const pdf=await pdfjsLib.getDocument({url:m.url}).promise;vb.innerHTML='';const w=Math.min(vb.clientWidth-32,900);
       for(let p=1;p<=pdf.numPages;p++){const pg=await pdf.getPage(p),v0=pg.getViewport({scale:1}),vp=pg.getViewport({scale:w/v0.width*(devicePixelRatio>1?1.5:1)}),cv=document.createElement('canvas');cv.width=vp.width;cv.height=vp.height;cv.style.width=w+'px';vb.appendChild(cv);await pg.render({canvasContext:cv.getContext('2d'),viewport:vp}).promise}
     }else if(ext==='docx'){
-      await Promise.all([loadJS(LIBS.mam),loadJS(LIBS.dp)]);const r=await mammoth.convertToHtml({arrayBuffer:await m.file.arrayBuffer()});
+      await Promise.all([loadJS(LIBS.mam),loadJS(LIBS.dp)]);const r=await mammoth.convertToHtml({arrayBuffer:await getBuf(m)});
       vb.innerHTML='<div class="vdoc">'+DOMPurify.sanitize(r.value)+'</div>';
     }else if(['xlsx','xls','csv'].includes(ext)){
-      await loadJS(LIBS.xl);const wb=XLSX.read(await m.file.arrayBuffer(),{type:'array',sheetRows:300});
+      await loadJS(LIBS.xl);const wb=XLSX.read(await getBuf(m),{type:'array',sheetRows:300});
       const draw=n=>{const rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[n]],{header:1,defval:''});vb.querySelector('.vsh').innerHTML='<table>'+rows.slice(0,300).map(r=>'<tr>'+r.slice(0,30).map(c=>'<td>'+esc(c)+'</td>').join('')+'</tr>').join('')+'</table>'};
       vb.innerHTML='<div class="vtabs">'+wb.SheetNames.map((s,i)=>`<button data-s="${i}">${esc(s)}</button>`).join('')+'</div><div class="vsh"></div>';draw(0);
       vb.querySelector('.vtabs').onclick=e=>{const b=e.target.closest('button');if(b)draw(+b.dataset.s)};
-    }else if(ext==='txt')vb.innerHTML='<pre class="vtxt">'+esc(await m.file.text())+'</pre>';
+    }else if(ext==='txt')vb.innerHTML='<pre class="vtxt">'+esc(await getTxt(m))+'</pre>';
     else vb.innerHTML='<div class="vl">No in-app preview for .'+esc(ext)+' files yet.<br>Use Download to open it on your device.</div>';
   }catch(err){console.error(err);vb.innerHTML='<div class="vl">Could not open this file here.<br>Use Download to open it on your device.</div>'}
 }
 
 /* ---------- required business photo (fallback gate) ---------- */
 async function photoCheck(){
-  const b=S.me;if(!b||b.photo_url||b.is_bot)return;
-  const k='abw_pending:'+(S.email||'').toLowerCase(),d=localStorage.getItem(k);
-  if(d){try{b.photo_url=await uploadBizPhoto(await (await fetch(d)).blob(),S.uid);localStorage.removeItem(k);renderGrid();toast('Business photo uploaded');return}catch(e){console.error(e)}}
+  const b=S.me;if(!b||b.is_bot)return;
+  const em=(S.email||'').toLowerCase();
+  for(const [col,key,kind] of [['photo_url','abw_pending:','photo'],['banner_url','abw_pendingb:','banner']]){
+    const d=!b[col]&&localStorage.getItem(key+em);
+    if(d){try{b[col]=await uploadBizImage(await (await fetch(d)).blob(),S.uid,kind);localStorage.removeItem(key+em)}catch(e){console.error(e)}}
+  }
+  renderGrid();
+  if(b.photo_url&&b.banner_url)return;
   const g=document.createElement('div');g.className='gate';
-  g.innerHTML='<div><h2>One last step</h2><p class="dsub" style="margin:8px 0 18px">Add a photo of your business. It appears on your profile and is required to use ABENWORK.</p><div class="ph"><span>No photo selected</span></div><input type="file" id="gfile" accept="image/*" hidden><button class="sv" id="gbtn" style="margin-top:16px;width:100%">Choose photo</button></div>';
-  $('#dash').appendChild(g);$('#gbtn').onclick=()=>$('#gfile').click();
-  $('#gfile').onchange=async e=>{const f=e.target.files[0];if(!f||!/^image\//.test(f.type))return toast('Please choose an image');
-    $('#gbtn').disabled=true;$('#gbtn').textContent='Uploading…';
-    try{b.photo_url=await uploadBizPhoto(await compressImage(f),S.uid);g.remove();renderGrid();toast('Photo added — welcome!')}
-    catch(x){console.error(x);toast('Upload failed — try again');$('#gbtn').disabled=false;$('#gbtn').textContent='Choose photo'}};
+  g.innerHTML='<div><h2>One last step</h2><p class="dsub" style="margin:8px 0 18px">Add your profile picture and banner. Both are required to use ABENWERK.</p><button class="sv gb" data-k="photo" style="width:100%"></button><button class="sv gb" data-k="banner" style="width:100%;margin-top:10px"></button><input type="file" id="gfile" accept="image/*" hidden></div>';
+  $('#dash').appendChild(g);
+  const lab=()=>{g.querySelector('[data-k=photo]').textContent=b.photo_url?'✓ Profile picture added':'Add profile picture';g.querySelector('[data-k=banner]').textContent=b.banner_url?'✓ Banner added':'Add banner';if(b.photo_url&&b.banner_url){g.remove();renderGrid();toast('All set — welcome!')}};
+  lab();let kind='photo';
+  g.onclick=e=>{const x=e.target.closest('[data-k]');if(x){kind=x.dataset.k;$('#gfile').click()}};
+  $('#gfile').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;
+    try{const blob=await cropImage(f,kind==='photo'?1:3,kind==='photo'?600:1500);b[kind==='photo'?'photo_url':'banner_url']=await uploadBizImage(blob,S.uid,kind);lab()}
+    catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed — try again')}}};
 }
 
 /* ---------- profile ---------- */
+const bnHTML=b=>b.banner_url&&/^https:\/\//.test(b.banner_url)?`<img src="${esc(b.banner_url)}" alt="">`:'<span>No banner yet</span>';
 const phHTML=b=>b.photo_url&&/^https:\/\//.test(b.photo_url)?`<img src="${esc(b.photo_url)}" alt="">`:'<span>No photo yet</span>';
 function renderProfile(){
   const b=S.me,el=$('#v-profile');
@@ -1185,7 +1421,8 @@ function renderProfile(){
   const maps=b.lat!=null?`<a href="https://www.google.com/maps?q=${b.lat},${b.lng}" target="_blank" rel="noopener" style="color:var(--yt)">Open in Maps ↗</a>`:'';
   el.innerHTML=`<h1>My profile</h1><p class="dsub">@${esc(S.prof&&S.prof.username||'')} · ${planName()} plan</p>
   <div class="pf"><div><div id="pcard">${cardHTML(b,0)}</div>
-  <div class="pn"><h3>Storefront photo</h3><div class="ph" id="ph">${phHTML(b)}</div><input type="file" id="pphoto" accept="image/*" hidden><button class="sv" id="pbtn" style="margin-top:12px">Change photo</button></div>
+  <div class="pn"><h3>Profile picture</h3><div class="ph" id="ph">${phHTML(b)}</div><input type="file" id="pphoto" accept="image/*" hidden><button class="sv" id="pbtn" style="margin-top:12px">Change picture</button></div>
+  <div class="pn"><h3>Banner</h3><div class="bph" id="bph">${bnHTML(b)}</div><input type="file" id="pbanner" accept="image/*" hidden><button class="sv" id="bbtn" style="margin-top:12px">Change banner</button></div>
   <div class="pn"><h3>Location</h3><p class="dsub">${esc(b.place_name||'Not set')}${b.address?' · '+esc(b.address):''}</p><p style="margin-top:8px;font-size:13px">${maps}</p></div></div>
   <div class="pn">
   <div class="f"><label>Tagline</label><input id="pt" value="${esc(b.tagline)}" maxlength="80" placeholder="One line that sells you"></div>
@@ -1194,15 +1431,17 @@ function renderProfile(){
   <div class="f"><label>About</label><textarea id="pd">${esc(b.description)}</textarea></div>
   <div class="fz"><div class="lbl">Opening hours</div><div class="hz" id="pz"></div></div>
   <label class="chk"><input type="checkbox" id="ptc" ${b.temp_closed?'checked':''}> <span>Temporarily closed (overrides your hours)</span></label>
-  <div class="f"><label>Banner colours</label><div class="th-dots">${Object.entries(TH).map(([k,v])=>`<button data-th="${k}" class="${b.banner_theme===k?'on':''}" style="background:linear-gradient(135deg,${v[0]},${v[1]})" aria-label="${k}"></button>`).join('')}</div></div>
+  
   <button class="sv" id="sv">Save changes</button></div></div>`;
   buildHours($('#pz'),HP,()=>{});
-  $('.th-dots').onclick=e=>{const t=e.target.closest('button');if(!t)return;b.banner_theme=t.dataset.th;$$('.th-dots button').forEach(x=>x.classList.toggle('on',x===t));$('#pcard').innerHTML=cardHTML(b,0)};
+  $('#bbtn').onclick=()=>$('#pbanner').click();
+  $('#pbanner').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
+    try{b.banner_url=await uploadBizImage(await cropImage(f,3,1500),S.uid,'banner');$('#bph').innerHTML=bnHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Banner updated')}catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed')}}};
   $('#pbtn').onclick=()=>$('#pphoto').click();
-  $('#pphoto').onchange=async e=>{const f=e.target.files[0];if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
-    try{b.photo_url=await uploadBizPhoto(await compressImage(f),S.uid);$('#ph').innerHTML=phHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Photo updated')}catch(x){console.error(x);toast('Upload failed')}};
+  $('#pphoto').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
+    try{b.photo_url=await uploadBizImage(await cropImage(f,1,600),S.uid,'photo');$('#ph').innerHTML=phHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Picture updated')}catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed')}}};
   $('#sv').onclick=async()=>{
-    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),banner_theme:b.banner_theme,hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked};
+    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked};
     const r=await sb.from('businesses').update(patch).eq('id',b.id);
     if(r.error)return toast('Could not save: '+r.error.message);
     Object.assign(b,patch);renderGrid();$('#pcard').innerHTML=cardHTML(b,0);toast('Profile saved');
@@ -1210,13 +1449,31 @@ function renderProfile(){
 }
 
 /* ---------- statistics (sample data; likes & links are live) ---------- */
-function renderStats(){
-  const v=[42,68,55,91,120,98,143],mx=Math.max(...v),d=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+function renderStats(range){
+  range=range||S.range||7;S.range=range;
+  let seed=range*97+(S.uid?S.uid.charCodeAt(0):7);const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+  const n=range===7?7:range===30?15:18,v=[];let cur=40+rnd()*30;
+  for(let i=0;i<n;i++){cur=Math.max(12,cur+(rnd()-.42)*18);v.push(Math.round(cur*(range/7)**.6))}
+  const tot=v.reduce((a,b)=>a+b,0),mx=Math.max(...v)*1.15,W=640,H=190,px=i=>20+i*(W-40)/(n-1),py=y=>H-24-(y/mx)*(H-44);
+  const d=v.map((y,i)=>(i?'L':'M')+px(i).toFixed(1)+' '+py(y).toFixed(1)).join(' ');
+  const line=`<svg viewBox="0 0 ${W} ${H}" class="lc"><defs><linearGradient id="lgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD400" stop-opacity=".35"/><stop offset="1" stop-color="#FFD400" stop-opacity="0"/></linearGradient></defs>${[0,1,2,3].map(i=>`<line x1="20" x2="${W-20}" y1="${24+i*(H-48)/3}" y2="${24+i*(H-48)/3}" stroke="var(--line)"/>`).join('')}<path d="${d} L${px(n-1).toFixed(1)} ${H-24} L20 ${H-24}Z" fill="url(#lgr)" class="ar"/><path d="${d}" class="ln" pathLength="1"/>${v.map((y,i)=>`<circle cx="${px(i).toFixed(1)}" cy="${py(y).toFixed(1)}" r="3.5" class="dt2" style="animation-delay:${(.9+i*.04).toFixed(2)}s"/>`).join('')}</svg>`;
+  const mix=a=>{const j=a.map(x=>x*(.85+rnd()*.3)),t=j.reduce((p,q)=>p+q,0),r=j.map(x=>Math.round(x/t*100));r[0]+=100-r.reduce((p,q)=>p+q,0);return r};
+  const mk=(names,base)=>{const p=mix(base);return names.map((nm,i)=>[nm,p[i]])};
+  const COL=['#FFD400','#ff5a1f','#3b82f6','#a78bfa','#3ddc97'];
+  const donut=(title,data)=>{
+    const R=52,C=2*Math.PI*R;let off=0;const top=data.reduce((a,b)=>b[1]>a[1]?b:a);
+    const seg=data.map((x,i)=>{const len=x[1]/100*C,s=`<circle r="${R}" cx="70" cy="70" fill="none" stroke="${COL[i]}" stroke-width="18" style="stroke-dasharray:0 ${C.toFixed(2)}" data-len="${Math.max(len-2,0).toFixed(2)}" data-c="${C.toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 70 70)"/>`;off+=len;return s}).join('');
+    return `<div class="pn"><h3>${title}</h3><svg viewBox="0 0 140 140" class="dsvg"><circle r="${R}" cx="70" cy="70" fill="none" stroke="var(--bg3)" stroke-width="18"/>${seg}<text x="70" y="70" text-anchor="middle" class="dtx">${top[1]}%</text><text x="70" y="86" text-anchor="middle" class="dts">${esc(top[0])}</text></svg><ul class="dl">${data.map((x,i)=>`<li><i style="background:${COL[i]}"></i>${esc(x[0])}<b>${x[1]}%</b></li>`).join('')}</ul></div>`;
+  };
   const fun=[['Profile views',100],['Profile clicks',58],['Messages',31],['Quotes sent',14],['Deals won',6]];
   $('#v-stats').innerHTML=`<h1>Statistics</h1><p class="dsub">Sample analytics until tracking is switched on. Likes and links are live.</p>
-  <div class="kp"><div><small>Profile views · 7 days</small><b>${v.reduce((a,b)=>a+b)}</b><em>▲ 18%</em></div><div><small>Leads</small><b>37</b><em>▲ 9%</em></div><div><small>Likes</small><b>${S.me?S.me.like_count||0:0}</b><em>live</em></div><div><small>Links</small><b>${S.links.size}</b><em>live</em></div></div>
-  <div class="pn"><h3>Weekly views</h3><div class="bars">${v.map((x,i)=>`<i style="--h:${x/mx*100}%;--n:${i}"><u>${x}</u></i>`).join('')}</div><div class="lbs">${d.map(x=>`<span>${x}</span>`).join('')}</div></div>
+  <div class="rg">${[7,30,90].map(r=>`<button data-r="${r}" class="${r===range?'on':''}">${r} days</button>`).join('')}</div>
+  <div class="kp"><div><small>Profile views · ${range} days</small><b>${tot.toLocaleString()}</b><em>▲ ${8+Math.round(rnd()*14)}%</em></div><div><small>Leads</small><b>${Math.round(tot/6)}</b><em>▲ ${4+Math.round(rnd()*9)}%</em></div><div><small>Likes</small><b>${S.me?S.me.like_count||0:0}</b><em>live</em></div><div><small>Links</small><b>${S.links.size}</b><em>live</em></div></div>
+  <div class="pn"><h3>Profile views</h3>${line}</div>
+  <div class="dg">${donut('Where visitors come from',mk(['Search','Direct','Chat','Links','Social'],[34,24,16,14,12]))}${donut('Audience by county',mk(['Nairobi','Mombasa','Kisumu','Nakuru','Other'],[46,16,10,10,18]))}${donut('Lead status',mk(['New','In talks','Won','Lost'],[38,30,20,12]))}${donut('Devices',mk(['Mobile','Desktop','Tablet'],[72,24,4]))}</div>
   <div class="pn"><h3>Lead funnel</h3>${fun.map(([l,p],i)=>`<div class="fn"><span>${l}</span><div><i style="--w:${p}%;--n:${i}"></i></div><b>${p}%</b></div>`).join('')}</div>`;
+  $('.rg').onclick=e=>{const b=e.target.closest('button');if(b)renderStats(+b.dataset.r)};
+  setTimeout(()=>$$('.dsvg circle[data-len]').forEach((c,i)=>{c.style.transitionDelay=(i%5)*.07+'s';c.style.strokeDasharray=c.dataset.len+' '+c.dataset.c}),60);
 }
 
 /* ---------- reels & news (placeholders) ---------- */
@@ -1226,7 +1483,7 @@ function renderReels(){
   <div class="rl">${R.map((r,i)=>`<div style="--c1:${TH[r[1]][0]};--c2:${TH[r[1]][1]};--n:${i}"><span class="pp">${ic('play')}</span><b>${esc(r[0])}</b><small>${r[2]} views</small></div>`).join('')}</div>`;
 }
 function renderNews(){
-  const N=[['Platform','ABENWORK launches pay-per-lead for verified businesses','2 h ago','amber'],['Trends','Why short video is the new business card','5 h ago','violet'],['Logistics','Cross-border freight costs drop for a third month','1 d ago','blue'],['Funding','Five fintech startups to watch this quarter','2 d ago','green']];
+  const N=[['Platform','ABENWERK launches pay-per-lead for verified businesses','2 h ago','amber'],['Trends','Why short video is the new business card','5 h ago','violet'],['Logistics','Cross-border freight costs drop for a third month','1 d ago','blue'],['Funding','Five fintech startups to watch this quarter','2 d ago','green']];
   $('#v-news').innerHTML=`<h1>BIZ news</h1><p class="dsub">What is moving the business world today.</p><div class="nw">${N.map((n,i)=>`<div style="--c1:${TH[n[3]][0]};--n:${i}"><small>${n[0]}</small><b>${n[1]}</b><span>${n[2]}</span></div>`).join('')}</div>`;
 }
 
@@ -1254,6 +1511,7 @@ function renderNews(){
   if(!S.cats.length)S.cats=DEFCATS;
   const nm=(S.prof&&S.prof.owner_name)||'Guest';
   $('#mename').textContent=nm;$('#meplan').textContent=planName()+' plan';$('#meav').textContent=nm[0].toUpperCase();
+  if(S.me&&!demo){try{await loadChats();subscribeRT()}catch(e){console.error(e)}}
   renderChips();renderGrid();seedChats();photoCheck();
   go(location.hash.slice(1)||'home');
   setTimeout(()=>$('#boot').classList.add('off'),700);
