@@ -563,12 +563,116 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .lc .dt2{fill:var(--bg);stroke:var(--y);stroke-width:2;opacity:0;animation:fi .4s forwards}
 @keyframes dash{to{stroke-dashoffset:0}}
 #dash .gb{display:block}
+
+#dash .hd small.off{color:var(--mut)}
+#dash .cv .av{position:relative}
+#dash .on-dot{position:absolute;right:-3px;bottom:-3px;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2px solid var(--bg2)}
+#dash .tk{font-weight:700;margin-left:5px;letter-spacing:-.18em;opacity:.55}
+#dash .tk.seen{color:#1a5fd1;opacity:1}
+/* ===== v5: notice, public page, requests, ABEN AI ===== */
+.pubmode #intro,.pubmode #notice,.pubmode #app{display:none!important}
+#notice{position:fixed;inset:0;z-index:45;background:#000;color:#fff;display:grid;place-items:center;text-align:center;padding:24px;cursor:pointer;overflow:hidden;transition:opacity .9s ease,transform .9s cubic-bezier(.7,0,.2,1),filter .9s}
+#notice::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 45% at 50% 50%,rgba(255,212,0,.14),transparent 70%),radial-gradient(35% 35% at 80% 90%,rgba(255,90,31,.12),transparent 70%)}
+#notice::after{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(60% 60% at 50% 50%,#000,transparent);-webkit-mask-image:radial-gradient(60% 60% at 50% 50%,#000,transparent)}
+#notice.out{opacity:0;transform:scale(1.04);filter:blur(8px);pointer-events:none}
+#notice .nt{position:relative;z-index:1;max-width:760px}
+#notice .nt>*{opacity:0;transform:translateY(18px)}
+#notice.go .nt>*{animation:nIn .9s cubic-bezier(.2,.9,.2,1) both;animation-delay:calc(var(--d)*.3s + .1s)}
+@keyframes nIn{to{opacity:1;transform:none}}
+@keyframes nLine{from{opacity:1;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+@keyframes nTrack{from{opacity:0;letter-spacing:.7em;transform:none}to{opacity:1;letter-spacing:.2em;transform:none}}
+#notice .n-eye{display:block;font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:var(--y)}
+#notice .n-k{margin-top:34px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#8a8a8a}
+#notice .n-big{font-size:clamp(38px,9vw,84px);font-weight:700;letter-spacing:-.03em;line-height:1.02;margin-top:10px}
+#notice .n-big em{font-style:normal;color:var(--y)}
+#notice .n-line{display:block;width:84px;height:2px;background:var(--y);margin:30px auto 0}
+#notice .n-studio{font-size:clamp(22px,4.6vw,40px);font-weight:700;letter-spacing:.2em;margin-top:12px;text-transform:uppercase}
+#notice .n-skip{margin-top:46px;display:block;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase}
+#notice.go .n-line{animation-name:nLine;transform-origin:center}
+#notice.go .n-studio{animation-name:nTrack}
+
+#pub{display:none;position:fixed;inset:0;z-index:55;overflow-y:auto;background:var(--bg);color:var(--fg);padding-bottom:env(safe-area-inset-bottom,0px);-webkit-overflow-scrolling:touch}
+.pubmode #pub{display:block}
+#pub .pbar{display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto;padding:14px 18px}
+#pub .pbr{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;font-weight:700;letter-spacing:.05em}
+#pub .pbr b{color:var(--yt)}
+#pub .pw{max-width:900px;margin:0 auto;padding:0 18px 60px}
+#pub .pbn{height:clamp(130px,26vw,240px);border-radius:22px;background:linear-gradient(135deg,var(--c1),var(--c2)) center/cover}
+#pub .phd{display:flex;gap:18px;align-items:flex-end;margin:-44px 18px 0;position:relative}
+#pub .pav{width:96px;height:96px;border-radius:26px;border:5px solid var(--bg);background:linear-gradient(135deg,var(--c1),var(--c2)) center/cover;display:grid;place-items:center;font-size:38px;font-weight:700;color:#000;flex:none}
+#pub h1{font-size:clamp(24px,4vw,34px);letter-spacing:-.02em;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#pub .vf{background:var(--y);color:#000;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px}
+#pub .ptg{color:var(--mut);margin:14px 4px 0;font-size:16px;line-height:1.5}
+#pub .pact{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 6px}
+#pub .pbt{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 20px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;transition:.2s}
+#pub .pbt:hover{border-color:var(--y);color:var(--yt)}
+#pub .pbt.p{background:var(--y);color:#000;border-color:var(--y)}
+#pub .pbt.p:hover{color:#000;box-shadow:0 10px 26px -8px var(--y)}
+#pub .pg2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:20px}
+#pub .pcd{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:20px}
+#pub .pcd h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+#pub .pcd p{line-height:1.6;white-space:pre-wrap}
+#pub table{width:100%;border-collapse:collapse;font-size:14px}
+#pub td{padding:8px 0;border-bottom:1px solid var(--line)}
+#pub td:last-child{text-align:right;color:var(--mut)}
+#pub tr.tdy td{color:var(--fg);font-weight:700}
+#pub .pqr{display:none;margin-top:14px;text-align:center}
+#pub .pqr.on{display:block}
+#pub .pqr img{width:200px;height:200px;border-radius:14px;background:#fff}
+#pub .pjn{margin-top:28px;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;background:linear-gradient(160deg,color-mix(in srgb,var(--y) 12%,var(--bg2)),var(--bg2) 60%)}
+#pub .pjn h3{font-size:20px;margin-bottom:6px}
+#pub .pjn p{color:var(--mut);margin-bottom:14px;font-size:14px}
+#pub .p404{text-align:center;padding:90px 10px}
+#pub .p404 h1{justify-content:center}
+#pub .p404 p{color:var(--mut);margin:10px 0 22px}
+@media (max-width:720px){#pub .pg2{grid-template-columns:1fr}#pub .pav{width:80px;height:80px;font-size:30px}}
+
+#dash .f select{width:100%;background:var(--bg3);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:14px;color:var(--fg)}
+#dash .f select:focus{border-color:var(--y)}
+#dash .rqs{display:grid;gap:14px;margin-top:6px;max-width:900px}
+#dash .rq{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:18px;animation:up .4s both;animation-delay:calc(var(--n)*50ms);transition:border .2s}
+#dash .rq:hover{border-color:var(--y)}
+#dash .rq.cl{opacity:.55}
+#dash .rqh{display:flex;align-items:center;gap:12px}
+#dash .rqh .av{width:40px;height:40px;border-radius:12px;font-size:16px}
+#dash .rqh small{display:block;color:var(--mut);font-size:12px}
+#dash .rqh em{margin-left:auto;font-style:normal;font-size:11px;font-weight:700;background:#ffd40022;color:var(--yt);border:1px solid #ffd40055;border-radius:99px;padding:3px 10px}
+#dash .rq h3{font-size:17px;margin:12px 0 4px}
+#dash .rq p{color:var(--mut);font-size:14px;line-height:1.5;white-space:pre-wrap}
+#dash .rqm{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+#dash .rqm span{font-size:12px;padding:4px 10px;border-radius:99px;background:var(--bg3);color:var(--mut)}
+#dash .rqf{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+#dash .rqf small{color:var(--mut)}
+#dash .rqf button{height:38px;padding:0 16px;border-radius:11px;border:1px solid var(--line);font-weight:700;font-size:13px}
+#dash .rqf .pr2{background:var(--y);color:#000;border-color:var(--y)}
+#dash #v-ai.on{height:100%;min-height:480px}
+#dash .aic{display:flex;flex-direction:column;height:100%;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--bg2)}
+#dash .aih{display:flex;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
+#dash .aiav{width:42px;height:42px;border-radius:13px;background:var(--y);display:grid;place-items:center;flex:none}
+#dash .aiav svg{width:26px}
+#dash .aih small{display:block;color:var(--ok);font-size:12px}
+#dash .ais{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+#dash .ais button{padding:8px 14px;border-radius:99px;border:1px solid var(--line);background:var(--bg3);font-size:12.5px;color:var(--mut);transition:.2s}
+#dash .ais button:hover{border-color:var(--y);color:var(--fg)}
+#dash .ml .m.ai{max-width:86%}
+#dash .m.err{background:#ff5d5d22;color:var(--err)}
 </style>
+<script>if(new URLSearchParams(location.search).get('b'))document.documentElement.classList.add('pubmode')</script>
 </head>
 <body>
 
 <div id="intro"><div class="lockup" id="introLock"><div class="logo" data-logo></div><span class="wm" data-wm></span></div><div class="bar"></div></div>
 
+<div id="notice" role="dialog" aria-label="Credits"><div class="nt">
+<span class="n-eye" style="--d:0">Crafted with care</span>
+<p class="n-k" style="--d:1">Made by</p>
+<h2 class="n-big" style="--d:2">Adrian <em>Bright</em></h2>
+<span class="n-line" style="--d:4"></span>
+<p class="n-k" style="--d:5">In partnership with</p>
+<h3 class="n-studio" style="--d:6">XCLONE STUDIOS</h3>
+<small class="n-skip" style="--d:8">Tap anywhere to continue</small>
+</div></div>
+<div id="pub"></div>
 <div class="app" id="app">
   <!-- LEFT -->
   <section class="hero" id="hero">
@@ -658,7 +762,7 @@ h2{font-size:25px;letter-spacing:-.02em}
         <div class="step" data-step="4">
           <h2>Pick your plan</h2><p class="sub">Start free and upgrade whenever you are ready.</p>
           <div class="plans3" id="plans4"></div>
-          <p class="plnote">Prices in Kenyan shillings, billed monthly. Paid plans activate after checkout (M-Pesa coming soon) — you start on Free.</p>
+          <p class="plnote">Prices in Kenyan shillings, billed monthly. Paid plans activate after checkout (Paystack coming soon) — you start on Free.</p>
         </div>
         <!-- STEP 6 -->
         <div class="step" data-step="5">
@@ -718,6 +822,8 @@ h2{font-size:25px;letter-spacing:-.02em}
       <section class="dview" id="v-stats"></section>
       <section class="dview" id="v-reels"></section>
       <section class="dview" id="v-news"></section>
+      <section class="dview" id="v-req"></section>
+      <section class="dview" id="v-ai"></section>
       <section class="dview" id="v-msg"><div class="chat" id="chat">
         <div class="cl"><h3>Messages</h3><div class="sr"><span data-i="search"></span>Search chats</div><div class="ls" id="ls"></div></div>
         <div class="th" id="th"><div class="none">Select a conversation to start chatting.</div></div>
@@ -736,8 +842,8 @@ h2{font-size:25px;letter-spacing:-.02em}
 // because Row Level Security (see abenwork_schema_v1.sql) decides what each user can touch.
 // NEVER put the secret / service_role key in any file served to a browser.
 (function () {
-  var SUPABASE_URL = 'https://kcltkwvifjicnhtthitr.supabase.co';
-  var SUPABASE_KEY = 'sb_publishable_c6Jq8gvoU4sgzbMoqvLPXg_DXmedodv';
+  var SUPABASE_URL = 'https://asdnvoiegsbccswcnfwz.supabase.co';
+  var SUPABASE_KEY = 'sb_publishable_FREUsyXtDkEZmHldLEwU1w_SRkaapFB';
   window.sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
     auth: { persistSession: true, autoRefreshToken: true }
   });
@@ -828,8 +934,8 @@ function cropImage(file,aspect,outW){
 }
 /* plans (prices in KSh / month) */
 const PLANS=[
- {id:'Free',ic:'🎁',sub:'START FREE',price:0,tag:'Free while we build the platform.',feats:['Basic business profile','Directory listing','5 leads per month','5 new chats per month','Basic analytics']},
- {id:'Essential',ic:'🌱',sub:'START SMART',price:2500,tag:'Get online. Get noticed. Start growing.',feats:['Social Media Management (3 platforms)','Basic Graphic Design (4 posts per month)','Google Business Profile Setup & Optimisation','Monthly Performance Report','Email & WhatsApp Support','Unlimited chats on ABENWERK']},
+ {id:'Free',ic:'🎁',sub:'START FREE',price:0,tag:'Free while we build the platform.',feats:['Basic business profile','Directory listing','5 leads per month','Unlimited chats','Basic analytics']},
+ {id:'Essential',ic:'🌱',sub:'START SMART',price:2500,tag:'Get online. Get noticed. Start growing.',feats:['Social Media Management (3 platforms)','Basic Graphic Design (4 posts per month)','Google Business Profile Setup & Optimisation','Monthly Performance Report','Email & WhatsApp Support','Standard analytics']},
  {id:'Premium',ic:'📈',sub:'BUILD & GROW',price:4500,pop:1,tag:'More visibility. More customers. More sales.',feats:['Social Media Management (4 platforms)','Advanced Graphic Design (8 posts per month)','Website Design (up to 5 pages)','Google Business Profile Management','Digital Marketing (Targeted Ads)','Monthly Performance Report','Priority Email & WhatsApp Support','Promoted listing & full analytics']},
  {id:'Elite',ic:'👑',sub:'MAXIMUM IMPACT',price:8000,tag:'Scale faster. Stand out. Dominate.',feats:['Social Media Management (4 platforms)','Premium Graphic Design (12 posts per month + custom ads)','Website Design (up to 10 pages + blog)','Advanced Digital Marketing (Ads + SEO Support)','Branding & Logo Design','Content Creation (Photos & Videos)','Ongoing Strategy & Consultation','Dedicated Account Manager','Top placement & Verified badge']}
 ];
@@ -854,6 +960,18 @@ function buildHours(el,H,onCh){
 }
 </script>
 <script>
+/* ===== v5 shared: public page helpers + analytics ===== */
+const PUBSLUG=(new URLSearchParams(location.search).get('b')||'').toLowerCase().replace(/[^a-z0-9-]/g,'');
+const BASE=location.href.split(/[?#]/)[0];
+const pubUrl=(b,s)=>b&&b.slug?BASE+'?b='+encodeURIComponent(b.slug)+(s?'&s='+s:''):'';
+const nameLink=b=>b.slug?'<a href="'+esc(pubUrl(b,'directory'))+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">'+esc(b.name)+'</a>':esc(b.name);
+const DEVICE=()=>innerWidth<700?'mobile':innerWidth<1100?'tablet':'desktop';
+function track(id,kind,src){
+  if(!id||String(id).startsWith('demo-'))return;
+  const k='abw_t:'+id+kind+(src||'');
+  try{const t=+sessionStorage.getItem(k)||0;if(Date.now()-t<18e5)return;sessionStorage.setItem(k,Date.now())}catch(e){}
+  Promise.resolve(sb.rpc('track_event',{b:id,k:kind,src:src||null,dev:DEVICE()})).catch(()=>{});
+}
 const LOGO='<svg viewBox="190 305 580 343" aria-hidden="true"><polygon class="bl" points="335,315 467,315 327,477 467,638 335,638 197,477"/><polygon class="br" points="493,315 625,315 763,477 625,638 493,638 633,477"/></svg>';
 document.querySelectorAll('[data-logo]').forEach(e=>e.innerHTML=LOGO);
 document.querySelectorAll('[data-wm]').forEach(e=>{
@@ -868,6 +986,9 @@ const lock=$('#introLock');
 setTimeout(()=>lock.classList.add('open'),1500);
 setTimeout(()=>$('#intro').classList.add('done'),3400);
 setTimeout(()=>$('#intro').style.display='none',4700);
+setTimeout(()=>$('#notice').classList.add('go'),3500);
+const nt=$('#notice'),endNotice=()=>{if(nt.classList.contains('out'))return;nt.classList.add('out');setTimeout(()=>nt.remove(),1000)};
+nt.addEventListener('click',endNotice);setTimeout(endNotice,7800);
 
 /* parallax on hero */
 $('#hero').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect();const h=$('#hero');h.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5).toFixed(2));h.style.setProperty('--my',((e.clientY-r.top)/r.height-.5).toFixed(2))});
@@ -914,7 +1035,7 @@ async function login(){
 }
 $('#signin').addEventListener('click',login);
 ['lu','lp'].forEach(i=>$('#'+i).addEventListener('keydown',e=>{if(e.key==='Enter')login()}));
-sb.auth.getSession().then(r=>{if(r.data.session)setTimeout(openDash,3700)});
+sb.auth.getSession().then(r=>{if(!PUBSLUG&&r.data.session)setTimeout(openDash,3700)});
 
 /* logo transition between login and sign up */
 const app=$('#app'),wipe=$('#wipe');let busy=false;
@@ -1068,13 +1189,45 @@ $('#sp').addEventListener('input',e=>{
   const m=$('#meter');m.style.width=s*25+'%';m.style.background=['#ff5d5d','#ff5d5d','#ff5a1f','#FFD400','#3ddc97'][s];
 });
 $('#again').addEventListener('click',toLogin);
+/* ===== public business page (?b=slug) ===== */
+async function loadPub(){
+  const el=$('#pub'),PT={amber:['#FFD400','#ff5a1f'],violet:['#8b5cf6','#ec4899'],blue:['#3b82f6','#06b6d4'],green:['#22c55e','#a3e635'],rose:['#f43f5e','#f59e0b'],cyan:['#06b6d4','#8b5cf6']};
+  const bar='<div class="pbar"><a class="pbr" href="'+BASE+'"><div class="logo" style="width:34px;color:var(--fg)">'+LOGO+'</div><span>ABEN<b>WERK</b></span></a><a class="pbt" href="'+BASE+'">Sign in</a></div>';
+  el.innerHTML=bar+'<div class="pw"><p class="ptg">Loading…</p></div>';
+  const [r,s]=await Promise.all([sb.rpc('public_business',{s:PUBSLUG}),sb.auth.getSession()]);
+  const b=r.data,signed=!!(s.data&&s.data.session);
+  if(r.error||!b){el.innerHTML=bar+'<div class="pw"><div class="p404"><h1>Page not found</h1><p>This business page does not exist, or its address has changed.</p><a class="pbt p" href="'+BASE+'">Go to ABENWERK</a></div></div>';return}
+  document.title=b.name+' · ABENWERK';
+  let md=document.querySelector('meta[name=description]');if(!md){md=document.createElement('meta');md.name='description';document.head.appendChild(md)}
+  md.content=(b.tagline||b.description||'Business on ABENWERK').slice(0,155);
+  const th=PT[b.banner_theme]||PT.amber,H=b.hours||{},n=nairobiNow(),hasH=Object.keys(H).length>0;
+  const rows=DAYS.map((d,i)=>{const v=H[d];return'<tr class="'+(d===n.dow?'tdy':'')+'"><td>'+DN[i]+'</td><td>'+(v?(v[0]==='00:00'&&v[1]==='24:00'?'Open 24 hours':fmt12(tm(v[0]))+' – '+fmt12(tm(v[1]))):'Closed')+'</td></tr>'}).join('');
+  const web=/^https?:\/\//i.test(b.website||'')?b.website:'',maps=b.lat!=null&&b.lng!=null?'https://www.google.com/maps?q='+b.lat+','+b.lng:'';
+  const bg=u=>u&&/^https:\/\//.test(u)?";background-image:url('"+encodeURI(u).replace(/'/g,'%27')+"')":'';
+  const url=BASE+'?b='+b.slug,loc=[b.place_name,b.address||b.city,b.county].filter(Boolean).join(' · ');
+  const msg=b.mine?'<a class="pbt p" href="'+BASE+'#profile">Edit your page</a>':signed?'<a class="pbt p" href="'+BASE+'?m='+esc(b.id)+'">Message</a>':'<a class="pbt p" href="'+BASE+'">Sign in to message</a>';
+  el.innerHTML=bar+'<div class="pw"><div class="pbn" style="--c1:'+th[0]+';--c2:'+th[1]+bg(b.banner_url)+'"></div>'+
+   '<div class="phd"><div class="pav" style="--c1:'+th[0]+';--c2:'+th[1]+bg(b.photo_url)+'">'+(b.photo_url?'':esc((b.name||'A')[0]))+'</div><div style="padding-bottom:6px;min-width:0"><h1>'+esc(b.name)+(b.is_verified?'<span class="vf">✓</span>':'')+'</h1>'+statusHTML(b)+'</div></div>'+
+   (b.tagline?'<p class="ptg">'+esc(b.tagline)+'</p>':'')+
+   '<div class="pact">'+msg+(web?'<a class="pbt" data-k="website" href="'+esc(web)+'" target="_blank" rel="noopener nofollow">Website</a>':'')+(maps?'<a class="pbt" data-k="maps" href="'+esc(maps)+'" target="_blank" rel="noopener">Directions</a>':'')+'<button class="pbt" id="pcp">Copy link</button><a class="pbt" data-k="share" href="https://wa.me/?text='+encodeURIComponent('Find '+b.name+' on ABENWERK: '+url+'&s=wa')+'" target="_blank" rel="noopener">WhatsApp</a><button class="pbt" id="pqb">QR code</button></div>'+
+   '<div class="pqr" id="pqr"><img alt="QR code" width="200" height="200" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=8&data='+encodeURIComponent(url+'&s=qr')+'"><p class="ptg" style="margin-top:8px;font-size:13px">Scan to open this page</p></div>'+
+   '<div class="pg2"><div class="pcd"><h3>About</h3><p>'+esc(b.description||'This business has not added a description yet.')+'</p></div><div style="display:grid;gap:16px;align-content:start">'+(loc?'<div class="pcd"><h3>Location</h3><p>'+esc(loc)+'</p></div>':'')+(hasH?'<div class="pcd"><h3>Opening hours</h3><table>'+rows+'</table></div>':'')+'</div></div>'+
+   '<div class="pjn"><h3>Get your business found</h3><p>Create a free ABENWERK page, share it anywhere and receive customer requests.</p><a class="pbt p" href="'+BASE+'">Join ABENWERK free</a></div></div>';
+  $('#pcp').onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>toast('Link copied'),()=>toast(url))};
+  $('#pqb').onclick=()=>$('#pqr').classList.toggle('on');
+  el.addEventListener('click',e=>{const a=e.target.closest('[data-k]');if(a)track(b.id,'click',a.dataset.k);if(e.target.id==='pcp')track(b.id,'click','share')});
+  let src=new URLSearchParams(location.search).get('s');
+  if(!src){try{src=document.referrer&&new URL(document.referrer).host!==location.host?'web':'direct'}catch(x){src='direct'}}
+  track(b.id,'view',String(src).replace(/[^a-z]/g,'').slice(0,12)||'direct');
+}
+if(PUBSLUG)loadPub();
 show(0);
 </script>
 <script>
 /* ===== DASHBOARD ===== */
 function startDashboard(){
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const P={home:'M3 11l9-8 9 8M5 10v10h14V10',user:'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4 4-6 8-6s8 2 8 6',chart:'M4 20V10M10 20V4M16 20v-8M22 20H2',reel:'M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1zM10 9l5 3-5 3z',news:'M4 5h13v14H6a2 2 0 01-2-2zM17 9h3v8a2 2 0 01-2 2M8 9h5M8 13h5',msg:'M4 5h16v11H9l-5 4z',search:'M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-5-5',bell:'M6 16V11a6 6 0 1112 0v5l2 2H4zM10 21h4',heart:'M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z',link:'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1',send:'M4 12l16-8-6 16-3-7z',clip:'M20 11l-8 8a5 5 0 01-7-7l8-8a3.5 3.5 0 015 5l-8 8a2 2 0 01-3-3l7-7',back:'M15 5l-7 7 7 7',menu:'M4 7h16M4 12h16M4 17h16',out:'M9 4H5v16h4M16 8l4 4-4 4M20 12H9',play:'M8 5l11 7-11 7z',doc:'M6 3h8l4 4v14H6zM14 3v4h4M9 13h6M9 17h6'};
+const P={home:'M3 11l9-8 9 8M5 10v10h14V10',user:'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4 4-6 8-6s8 2 8 6',chart:'M4 20V10M10 20V4M16 20v-8M22 20H2',reel:'M5 4h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1zM10 9l5 3-5 3z',news:'M4 5h13v14H6a2 2 0 01-2-2zM17 9h3v8a2 2 0 01-2 2M8 9h5M8 13h5',msg:'M4 5h16v11H9l-5 4z',search:'M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-5-5',bell:'M6 16V11a6 6 0 1112 0v5l2 2H4zM10 21h4',heart:'M12 20s-8-5-8-11a4.5 4.5 0 018-2.5A4.5 4.5 0 0120 9c0 6-8 11-8 11z',link:'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1',send:'M4 12l16-8-6 16-3-7z',clip:'M20 11l-8 8a5 5 0 01-7-7l8-8a3.5 3.5 0 015 5l-8 8a2 2 0 01-3-3l7-7',back:'M15 5l-7 7 7 7',menu:'M4 7h16M4 12h16M4 17h16',out:'M9 4H5v16h4M16 8l4 4-4 4M20 12H9',play:'M8 5l11 7-11 7z',doc:'M6 3h8l4 4v14H6zM14 3v4h4M9 13h6M9 17h6',req:'M5 4h14v16H5zM9 9h6M9 13h6M9 17h3',spark:'M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z'};
 const ic=n=>`<svg class="i" viewBox="0 0 24 24"><path d="${P[n]}"/></svg>`;
 const MK='<svg class="mk" viewBox="190 305 580 343"><polygon points="335,315 467,315 327,477 467,638 335,638 197,477"/><polygon points="493,315 625,315 763,477 625,638 493,638 633,477"/></svg>';
 $('#lgo').innerHTML=MK.replace('class="mk"','');
@@ -1088,23 +1241,23 @@ const S={uid:null,me:null,prof:null,sub:null,biz:[],cats:[],liked:new Set(),link
 const planName=()=>{const p=(S.dsub&&S.dsub.plan_id)||(S.prof&&S.prof.requested_plan)||'free';return p[0].toUpperCase()+p.slice(1)};
 
 /* ---------- navigation ---------- */
-const NAV=[['home','Home','home'],['profile','My profile','user'],['stats','Statistics','chart'],['reels','BIZ reels','reel'],['news','BIZ news','news'],['msg','Messages','msg']];
+const NAV=[['home','Home','home'],['req','Requests','req'],['profile','My profile','user'],['stats','Statistics','chart'],['reels','BIZ reels','reel'],['news','BIZ news','news'],['msg','Messages','msg'],['ai','ABEN AI','spark']];
 $('#navl').innerHTML=NAV.map(([k,l,i])=>`<a data-v="${k}">${ic(i)}<span class="lb">${l}</span>${k==='msg'?'<em class="ct lb" id="mct" hidden></em>':''}</a>`).join('');
 function go(k){
   if(!NAV.some(n=>n[0]===k))k='home';
   $$('#navl a').forEach(a=>a.classList.toggle('on',a.dataset.v===k));
   $$('.dview').forEach(v=>v.classList.toggle('on',v.id==='v-'+k));
   history.replaceState(null,'','#'+k);
-  ({profile:renderProfile,stats:renderStats,reels:renderReels,news:renderNews,msg:renderChatPage})[k]?.();
+  ({profile:renderProfile,stats:renderStats,reels:renderReels,news:renderNews,msg:renderChatPage,req:renderReq,ai:renderAI})[k]?.();
 }
 $('#navl').addEventListener('click',e=>{const a=e.target.closest('a');if(a)go(a.dataset.v)});
 $('#pin').addEventListener('click',()=>$('#dnav').classList.toggle('pin'));
 $('#out').addEventListener('click',async()=>{try{await sb.auth.signOut()}catch(e){}history.replaceState(null,'',location.pathname+location.search);location.reload()});
 function upgradeModal(){
   const cur=planName(),v=document.createElement('div');v.className='vw on';
-  v.innerHTML='<div class="vh"><b>Choose your plan</b><span class="sp"></span><button class="vbtn" id="upx" aria-label="Close">✕</button></div><div class="vb"><div class="plans3" style="width:100%;max-width:1180px">'+plansHTML('upl',cur)+'</div><p class="dsub">Prices in Kenyan shillings, billed monthly. M-Pesa checkout is coming soon.</p><button class="sv" id="upc" style="padding:0 28px">Continue</button></div>';
+  v.innerHTML='<div class="vh"><b>Choose your plan</b><span class="sp"></span><button class="vbtn" id="upx" aria-label="Close">✕</button></div><div class="vb"><div class="plans3" style="width:100%;max-width:1180px">'+plansHTML('upl',cur)+'</div><p class="dsub">Prices in Kenyan shillings, billed monthly. Paystack checkout is coming soon.</p><button class="sv" id="upc" style="padding:0 28px">Continue</button></div>';
   $('#dash').appendChild(v);$('#upx').onclick=()=>v.remove();
-  $('#upc').onclick=()=>{const p=v.querySelector('[name=upl]:checked').value;toast(p===cur?'You are already on '+cur:p+' selected — M-Pesa checkout is coming soon')};
+  $('#upc').onclick=()=>{const p=v.querySelector('[name=upl]:checked').value;toast(p===cur?'You are already on '+cur:p+' selected — Paystack checkout is coming soon')};
 }
 $('#up').addEventListener('click',upgradeModal);
 
@@ -1125,7 +1278,7 @@ function cardHTML(b,n){
   const th=TH[b.banner_theme]||TH.amber,mine=b.owner_id===S.uid&&!!S.uid,ls=S.links.get(b.id);
   const cat=(S.cats.find(c=>c.slug===b.category)||{}).label||'Business';
   return `<article class="card" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn"${bannerStyle(b)}>${b.banner_url?'':MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
-  <div class="cb"><div class="av"${avStyle(b)}>${b.photo_url?'':esc((b.name||'A')[0])}</div><h3>${esc(b.name)}${b.is_verified?'<span class="vf">✓</span>':''}</h3>
+  <div class="cb"><div class="av"${avStyle(b)}>${b.photo_url?'':esc((b.name||'A')[0])}</div><h3>${nameLink(b)}${b.is_verified?'<span class="vf">✓</span>':''}</h3>
   <p>${esc(b.tagline||b.description||'New on ABENWERK')}</p><small>${esc(b.place_name||b.city||'')}${mine?' · Your business':''}</small>${statusHTML(b)}
   <div class="act"><button class="hb ${S.liked.has(b.id)?'on':''}" data-id="${b.id}" aria-label="Like">${ic('heart')}<span>${b.like_count||0}</span></button>
   <button class="ms" data-id="${b.id}" ${mine?'disabled':''}>${ic('msg')}Message</button>
@@ -1176,7 +1329,7 @@ function badge(){const n=[...CH.values()].reduce((a,c)=>a+c.unread,0),e=$('#mct'
 function renderList(){
   const l=[...CH.values()].sort((a,b)=>lastTs(b)-lastTs(a));
   $('#ls').innerHTML=l.length?l.map(c=>{const th=TH[c.b.banner_theme]||TH.amber,last=c.msgs.filter(m=>m.t!=='sys').slice(-1)[0],pv=last?(last.t==='quote'?'Quote · '+last.price:last.t==='file'?'📎 '+last.name:last.x):'Say hello';
-    return `<div class="cv ${curC===c.b.id?'on':''}" data-id="${c.b.id}"><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div class="tx"><b>${esc(c.b.name)}</b><span>${esc(pv)}</span></div>${c.unread?`<em class="un">${c.unread}</em>`:''}</div>`}).join(''):'<div class="none">No conversations yet. Tap Message on any business card.</div>';
+    return `<div class="cv ${curC===c.b.id?'on':''}" data-id="${c.b.id}"><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}${c.db&&S.online&&S.online.has(c.b.id)?'<i class="on-dot"></i>':''}</div><div class="tx"><b>${esc(c.b.name)}</b><span>${c.db&&c.typing?'<em style="font-style:normal;color:var(--ok);font-weight:700">typing…</em>':esc(pv)}</span></div>${c.unread?`<em class="un">${c.unread}</em>`:''}</div>`}).join(''):'<div class="none">No conversations yet. Tap Message on any business card.</div>';
 }
 $('#ls').addEventListener('click',e=>{const r=e.target.closest('.cv');if(r)selectChat(r.dataset.id)});
 function renderChatPage(){renderList();if(!curC&&CH.size&&window.innerWidth>820)selectChat([...CH.keys()][0])}
@@ -1186,23 +1339,23 @@ async function openChat(b){
     let c=CH.get(b.id);
     if(!c||!c.cid){
       const r=await sb.rpc('start_conversation',{other:b.id});
-      if(r.error){toast(/chat_limit/.test(r.error.message)?'Free plan: 5 new chats a month — link up or upgrade for more':'Could not start the chat');return}
-      c=conv(b);c.db=true;c.cid=r.data;
+      if(r.error){toast('Could not start the chat');return}
+      c=conv(b);c.db=true;c.cid=r.data;track(b.id,'chat','dashboard');
     }
   }else conv(b);
   go('msg');selectChat(b.id);
 }
 function selectChat(id){
-  curC=id;const c=CH.get(id);c.unread=0;badge();if(c.db){hookChat(c);markRead(c)}renderList();
+  curC=id;const c=CH.get(id);c.unread=0;badge();if(c.db)markRead(c);renderList();
   const th=TH[c.b.banner_theme]||TH.amber;$('#chat').classList.add('open');
-  $('#th').innerHTML=`<div class="hd"><button class="bk" id="bk">${ic('back')}</button><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div><b>${esc(c.b.name)}${c.b.is_verified?' <span class="vf">✓</span>':''}</b><small id="pst">${c.db?(c.online?'● Online':'○ Offline'):'● Online · replies within the hour'}</small></div><div class="stg" id="stg"></div><button class="qs" id="sq">${ic('doc')}Send quote</button></div>
+  $('#th').innerHTML=`<div class="hd"><button class="bk" id="bk">${ic('back')}</button><div class="av" style="--c1:${th[0]};--c2:${th[1]}">${esc(c.b.name[0])}</div><div><b>${esc(c.b.name)}${c.b.is_verified?' <span class="vf">✓</span>':''}</b><small id="pst" class="${c.db&&!(S.online&&S.online.has(c.b.id))?'off':''}">${c.db?(S.online&&S.online.has(c.b.id)?'● Online':'○ Offline'):'● Online · replies within the hour'}</small></div><div class="stg" id="stg"></div><button class="qs" id="sq">${ic('doc')}Send quote</button></div>
   <div class="ml" id="ml"></div>
   <div class="cp"><button id="at" aria-label="Attach">${ic('clip')}</button><input id="ci" placeholder="Write a message…" autocomplete="off"><button class="sd" id="sd" aria-label="Send">${ic('send')}</button></div>`;
   $('#bk').onclick=()=>{$('#chat').classList.remove('open');curC=null;renderList()};
   $('#at').onclick=attachMenu;
   $('#sd').onclick=sendMsg;$('#ci').oninput=()=>typingPing(c);$('#ci').onkeydown=e=>{if(e.key==='Enter')sendMsg()};
   $('#sq').onclick=()=>quoteForm(c);
-  $('#ml').onclick=e=>{const fv=e.target.closest('[data-f]');if(fv)return viewFile(c.msgs[+fv.dataset.f]);const b=e.target.closest('[data-q]');if(!b)return;const m=c.msgs[+b.dataset.q];const yes=b.dataset.a==='yes';if(c.db)return sb.rpc('respond_quote',{msg:m.id,accept:yes}).then(r=>{if(r.error)toast('Could not update the quote')});m.st=yes?'accepted':'declined';
+  $('#ml').onclick=e=>{const fv=e.target.closest('[data-f]');if(fv)return viewFile(c.msgs[+fv.dataset.f]);const b=e.target.closest('[data-q]');if(!b)return;const m=c.msgs[+b.dataset.q];const yes=b.dataset.a==='yes';if(c.db)return sb.rpc('respond_quote',{msg:m.id,accept:yes}).then(r=>{if(r.error)toast('Could not update the quote');else{pullConv(c);hint(c,{cid:c.cid,ev:'msg'})}});m.st=yes?'accepted':'declined';
     c.msgs.push({t:'sys',x:yes?'Quote accepted — deal confirmed':'Quote declined'});if(yes)c.stage=3;else c.stage=Math.max(c.stage,2);paintMsgs()};
   paintMsgs();if(window.innerWidth>820)$('#ci').focus();
 }
@@ -1231,9 +1384,9 @@ function sendMsg(){
   },1200+Math.random()*900);
 }
 
-/* ---------- live messaging (Supabase Realtime) ---------- */
+/* ---------- live messaging: database changes + direct pings + catch-up sync ---------- */
 const lastTs=c=>(c.msgs.length&&c.msgs[c.msgs.length-1].ts)||0;
-const tick=m=>{if(m.t!=='out'||!m.id)return'';const c=CH.get(curC);return c&&c.readTs>=m.ts?' ✓✓':' ✓'};
+const tick=m=>{if(m.t!=='out'||!m.id)return'';const c=CH.get(curC),seen=!!(c&&c.readTs>=m.ts);return`<span class="tk ${seen?'seen':''}">${seen?'✓✓':'✓'}</span>`};
 const getBuf=async m=>m.file?m.file.arrayBuffer():(await fetch(m.url)).arrayBuffer(),getTxt=async m=>m.file?m.file.text():(await fetch(m.url)).text();
 const findC=cid=>[...CH.values()].find(c=>c.cid===cid);
 const mapMsg=r=>{
@@ -1250,74 +1403,111 @@ async function signFiles(list){
 }
 function addMsg(c,row){
   if(c.msgs.some(m=>m.id===row.id))return null;
-  const m=mapMsg(row);c.msgs.push(m);if(curC===c.b.id)paintMsgs();else renderList();return m;
+  const m=mapMsg(row);c.msgs.push(m);c.msgs.sort((a,b)=>(a.ts||0)-(b.ts||0));c.typing=false;
+  if(curC===c.b.id&&$('#ml'))paintMsgs();else renderList();return m;
 }
-async function loadChats(){
-  const cv=await sb.from('conversations').select('*');if(cv.error||!cv.data||!cv.data.length)return;
-  const ms=await sb.from('messages').select('*').in('conversation_id',cv.data.map(x=>x.id)).order('id',{ascending:true}).limit(1000),me=S.me.id;
-  for(const x of cv.data){
-    const oid=x.business_a===me?x.business_b:x.business_a,other=S.biz.find(b=>b.id===oid);if(!other)continue;
-    const c=conv(other),mr=x.business_a===me?x.a_read_at:x.b_read_at,orr=x.business_a===me?x.b_read_at:x.a_read_at,mrt=mr?new Date(mr).getTime():0;
-    c.db=true;c.cid=x.id;c.stage=x.stage||0;c.readTs=orr?new Date(orr).getTime():0;
-    c.msgs=(ms.data||[]).filter(m=>m.conversation_id===x.id).map(mapMsg);
-    c.unread=c.msgs.filter(m=>m.t!=='out'&&m.t!=='sys'&&m.ts>mrt).length;
+/* one place decides what a new message means: show it, count it, or mark it read */
+function incoming(r){
+  const c=findC(r.conversation_id);if(!c)return null;
+  const m=addMsg(c,r);if(!m)return null;
+  if(m.t==='file')signFiles([m]).then(()=>{if(curC===c.b.id&&$('#ml'))paintMsgs()});
+  if(r.sender_business&&r.sender_business!==S.me.id){
+    const open=curC===c.b.id&&$('#v-msg').classList.contains('on');
+    if(open)markRead(c);
+    else if(m.ts>(c.mineRead||0)){c.unread++;badge();renderList();if(S.ready){toast('New message from '+c.b.name);$('#bdot').style.display=''}}
   }
-  await signFiles([...CH.values()].flatMap(c=>c.msgs));
-}
-function subscribeRT(){
-  sb.channel('abw-rt')
-   .on('postgres_changes',{event:'INSERT',schema:'public',table:'messages'},p=>onMsg(p.new))
-   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'messages'},p=>onMsgUpd(p.new))
-   .on('postgres_changes',{event:'INSERT',schema:'public',table:'conversations'},p=>onConvNew(p.new))
-   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'conversations'},p=>onConvUpd(p.new))
-   .subscribe();
-}
-function onMsg(r){
-  const c=findC(r.conversation_id);if(!c)return;
-  const m=addMsg(c,r);if(!m)return;
-  signFiles([m]).then(()=>{if(curC===c.b.id)paintMsgs()});
-  if(r.sender_business!==S.me.id){
-    if(curC===c.b.id&&$('#v-msg').classList.contains('on'))markRead(c);
-    else{c.unread++;badge();renderList();toast('New message from '+c.b.name);$('#bdot').style.display=''}
-  }
+  return m;
 }
 function onMsgUpd(r){
   const c=findC(r.conversation_id);if(!c)return;const i=c.msgs.findIndex(x=>x.id===r.id);if(i<0)return;
-  const n=mapMsg(r);n.file=c.msgs[i].file;n.url=c.msgs[i].url;c.msgs[i]=n;if(curC===c.b.id)paintMsgs();
+  const n=mapMsg(r);if(n.st===c.msgs[i].st)return;n.file=c.msgs[i].file;n.url=c.msgs[i].url;c.msgs[i]=n;if(curC===c.b.id&&$('#ml'))paintMsgs();
 }
-function onConvUpd(x){
-  const c=findC(x.id);if(!c)return;c.stage=x.stage||0;
-  const rt=x.business_a===S.me.id?x.b_read_at:x.a_read_at;c.readTs=rt?new Date(rt).getTime():0;
-  if(curC===c.b.id)paintMsgs();
+function applyConv(c,x){
+  const a=x.business_a===S.me.id,rt=a?x.b_read_at:x.a_read_at,mr=a?x.a_read_at:x.b_read_at,r=rt?new Date(rt).getTime():0;
+  const changed=r!==c.readTs||(x.stage||0)!==c.stage;
+  c.readTs=r;c.mineRead=mr?new Date(mr).getTime():0;c.stage=x.stage||0;
+  if(changed&&curC===c.b.id&&$('#ml'))paintMsgs();
 }
-async function onConvNew(x){
-  const me=S.me.id;if(x.business_a!==me&&x.business_b!==me)return;if(findC(x.id))return;
-  const oid=x.business_a===me?x.business_b:x.business_a;let other=S.biz.find(b=>b.id===oid);
-  if(!other){const r=await sb.from('businesses').select('*').eq('id',oid).maybeSingle();other=r.data;if(!other)return;S.biz.push(other)}
-  const c=conv(other);c.db=true;c.cid=x.id;renderList();
+async function refreshConv(c){const r=await sb.from('conversations').select('*').eq('id',c.cid).maybeSingle();if(r.data)applyConv(c,r.data)}
+async function pullConv(c){
+  const last=c.msgs.reduce((a,m)=>Math.max(a,m.id||0),0);
+  const r=await sb.from('messages').select('*').eq('conversation_id',c.cid).gt('id',Math.max(0,last-20)).order('id',{ascending:true});
+  (r.data||[]).forEach(row=>{if(!incoming(row)&&row.kind==='quote')onMsgUpd(row)});refreshConv(c);
 }
-function hookChat(c){
-  if(c.ch)return;
-  c.ch=sb.channel('c:'+c.cid,{config:{presence:{key:S.me.id}}})
-   .on('broadcast',{event:'typing'},()=>{c.typing=true;if(curC===c.b.id)paintMsgs();clearTimeout(c.tt);c.tt=setTimeout(()=>{c.typing=false;if(curC===c.b.id)paintMsgs()},2800)})
-   .on('presence',{event:'sync'},()=>{c.online=!!c.ch.presenceState()[c.b.id];const e=$('#pst');if(curC===c.b.id&&e)e.textContent=c.online?'● Online':'○ Offline'})
-   .subscribe(s=>{if(s==='SUBSCRIBED')c.ch.track({on:1})});
+/* catch-up: pulls new chats, new messages, read times and quote answers, so nothing is ever missed */
+async function syncChats(){
+  if(S.syncing||!S.me)return;S.syncing=true;
+  try{
+    const me=S.me.id,cv=await sb.from('conversations').select('*');
+    for(const x of cv.data||[]){
+      const oid=x.business_a===me?x.business_b:x.business_a;let other=S.biz.find(b=>b.id===oid);
+      if(!other){const r=await sb.from('businesses').select('*').eq('id',oid).maybeSingle();other=r.data;if(!other)continue;S.biz.push(other)}
+      let c=findC(x.id);if(!c){c=conv(other);c.db=true;c.cid=x.id}
+      applyConv(c,x);
+    }
+    const q=sb.from('messages').select('*').order('id',{ascending:true}).limit(1000),ms=await(S.lastMsg?q.gt('id',Math.max(0,S.lastMsg-50)):q),fresh=[];
+    for(const r of ms.data||[]){S.lastMsg=Math.max(S.lastMsg||0,r.id);const m=incoming(r);if(m)fresh.push(m);else if(r.kind==='quote')onMsgUpd(r)}
+    await signFiles(fresh);if(fresh.length&&curC&&$('#ml'))paintMsgs();
+    S.tk=(S.tk||0)+1;
+    if(S.tk%3===0){const qs=await sb.from('messages').select('*').eq('kind','quote').order('id',{ascending:false}).limit(30);(qs.data||[]).forEach(onMsgUpd)}
+    badge();renderList();
+  }catch(e){console.error('[abenwerk] sync',e)}finally{S.syncing=false}
 }
-const typingPing=c=>{if(!c.db||!c.ch||Date.now()-(c.tp||0)<1800)return;c.tp=Date.now();c.ch.send({type:'broadcast',event:'typing',payload:{}})};
-const markRead=c=>{if(c.db)sb.rpc('mark_read',{conv:c.cid})};
+async function loadChats(){await syncChats();S.ready=true}
+function subscribeRT(){
+  /* 1. database changes (instant when Realtime is healthy) */
+  sb.channel('abw-rt')
+   .on('postgres_changes',{event:'INSERT',schema:'public',table:'messages'},p=>{if(!incoming(p.new))syncChats()})
+   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'messages'},p=>onMsgUpd(p.new))
+   .on('postgres_changes',{event:'INSERT',schema:'public',table:'conversations'},()=>syncChats())
+   .on('postgres_changes',{event:'UPDATE',schema:'public',table:'conversations'},p=>{const c=findC(p.new.id);if(c)applyConv(c,p.new)})
+   .subscribe(st=>console.log('[abenwerk] realtime db:',st));
+  /* 2. personal inbox: the other side pings us directly (new message, typing, read) */
+  S.inbox=sb.channel('inbox:'+S.me.id).on('broadcast',{event:'hint'},m=>onHint(m.payload)).subscribe(st=>console.log('[abenwerk] inbox:',st));
+  /* 3. who is online */
+  S.online=new Set();
+  S.pres=sb.channel('abw-presence',{config:{presence:{key:S.me.id}}})
+   .on('presence',{event:'sync'},()=>{S.online=new Set(Object.keys(S.pres.presenceState()));paintPresence()})
+   .subscribe(st=>{if(st==='SUBSCRIBED')S.pres.track({on:1})});
+  /* 4. safety net */
+  setInterval(()=>{if(!document.hidden)syncChats()},6000);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)syncChats()});
+}
+function paintPresence(){
+  const c=curC&&CH.get(curC),e=$('#pst');
+  if(c&&c.db&&e){const on=S.online.has(c.b.id);e.textContent=on?'● Online':'○ Offline';e.classList.toggle('off',!on)}
+  renderList();
+}
+function hint(c,payload){
+  if(!c.db)return;
+  if(!c.out){c.out=sb.channel('inbox:'+c.b.id);c.out.subscribe()}
+  try{c.out.send({type:'broadcast',event:'hint',payload})}catch(e){console.error(e)}
+}
+function onHint(p){
+  if(!p||!p.cid)return;const c=findC(p.cid);
+  if(p.ev==='msg')return c?pullConv(c):syncChats();
+  if(!c)return;
+  if(p.ev==='read')return refreshConv(c);
+  if(p.ev==='typing'){
+    c.typing=true;if(curC===c.b.id&&$('#ml'))paintMsgs();else renderList();
+    clearTimeout(c.tt);c.tt=setTimeout(()=>{c.typing=false;if(curC===c.b.id&&$('#ml'))paintMsgs();else renderList()},2800);
+  }
+}
+const typingPing=c=>{if(!c.db||Date.now()-(c.tp||0)<1800)return;c.tp=Date.now();hint(c,{cid:c.cid,ev:'typing'})};
+const markRead=c=>{if(c.db)sb.rpc('mark_read',{conv:c.cid}).then(r=>{if(!r.error)hint(c,{cid:c.cid,ev:'read'})})};
 async function sendDb(c,row){
   const r=await sb.from('messages').insert({conversation_id:c.cid,sender_business:S.me.id,...row}).select().single();
-  if(r.error)return toast('Message not sent — check your connection');
-  addMsg(c,r.data);
+  if(r.error){console.error(r.error);return toast('Message not sent — check your connection')}
+  addMsg(c,r.data);hint(c,{cid:c.cid,ev:'msg'});
 }
 async function sendFileDb(c,file,kind){
   const path=c.cid+'/'+Date.now()+'-'+file.name.replace(/[^\w.\-]+/g,'_');toast('Sending '+file.name+'…');
   const up=await sb.storage.from('chat-files').upload(path,file,{contentType:file.type||'application/octet-stream'});
-  if(up.error)return toast('Upload failed');
+  if(up.error){console.error(up.error);return toast('Upload failed')}
   const r=await sb.from('messages').insert({conversation_id:c.cid,sender_business:S.me.id,kind:'file',body:file.name,payload:{path,name:file.name,size:file.size,kind}}).select().single();
-  if(r.error)return toast('Could not send the file');
+  if(r.error){console.error(r.error);return toast('Could not send the file')}
   const m=addMsg(c,r.data)||c.msgs.find(x=>x.id===r.data.id);if(m){m.file=file;m.url=URL.createObjectURL(file)}
-  paintMsgs();
+  paintMsgs();hint(c,{cid:c.cid,ev:'msg'});
 }
 function quoteForm(c){
   const old=$('#am');if(old){old.remove();return}
@@ -1423,7 +1613,7 @@ function renderProfile(){
   <div class="pf"><div><div id="pcard">${cardHTML(b,0)}</div>
   <div class="pn"><h3>Profile picture</h3><div class="ph" id="ph">${phHTML(b)}</div><input type="file" id="pphoto" accept="image/*" hidden><button class="sv" id="pbtn" style="margin-top:12px">Change picture</button></div>
   <div class="pn"><h3>Banner</h3><div class="bph" id="bph">${bnHTML(b)}</div><input type="file" id="pbanner" accept="image/*" hidden><button class="sv" id="bbtn" style="margin-top:12px">Change banner</button></div>
-  <div class="pn"><h3>Location</h3><p class="dsub">${esc(b.place_name||'Not set')}${b.address?' · '+esc(b.address):''}</p><p style="margin-top:8px;font-size:13px">${maps}</p></div></div>
+  <div class="pn"><h3>Public page</h3><p class="dsub" id="pubu" style="word-break:break-all;margin-top:6px">${esc(pubUrl(b))||'Run the v2 SQL to enable your public page'}</p><div class="rg" style="flex-wrap:wrap"><button id="pcopy">Copy link</button><button id="pwa">WhatsApp</button><button id="pqr">QR code</button><button id="popen">Open</button></div><div class="f" style="margin:16px 0 0"><label>Page address</label><input id="pslug" value="${esc(b.slug||'')}" maxlength="40" placeholder="your-business"></div></div><div class="pn"><h3>Location</h3><p class="dsub">${esc(b.place_name||'Not set')}${b.address?' · '+esc(b.address):''}</p><p style="margin-top:8px;font-size:13px">${maps}</p></div></div>
   <div class="pn">
   <div class="f"><label>Tagline</label><input id="pt" value="${esc(b.tagline)}" maxlength="80" placeholder="One line that sells you"></div>
   <div class="f"><label>City &amp; country</label><input id="pc" value="${esc(b.city)}"></div>
@@ -1434,6 +1624,11 @@ function renderProfile(){
   
   <button class="sv" id="sv">Save changes</button></div></div>`;
   buildHours($('#pz'),HP,()=>{});
+  const needSlug=()=>b.slug?true:(toast('Run the v2 SQL to enable public pages'),false);
+  $('#pcopy').onclick=()=>{if(needSlug())navigator.clipboard.writeText(pubUrl(b)).then(()=>toast('Link copied'),()=>toast(pubUrl(b)))};
+  $('#pwa').onclick=()=>{if(needSlug())window.open('https://wa.me/?text='+encodeURIComponent('Find '+b.name+' on ABENWERK: '+pubUrl(b,'wa')),'_blank','noopener')};
+  $('#pqr').onclick=()=>{if(needSlug())qrSheet(b)};
+  $('#popen').onclick=()=>{if(needSlug())window.open(pubUrl(b),'_blank','noopener')};
   $('#bbtn').onclick=()=>$('#pbanner').click();
   $('#pbanner').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
     try{b.banner_url=await uploadBizImage(await cropImage(f,3,1500),S.uid,'banner');$('#bph').innerHTML=bnHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Banner updated')}catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed')}}};
@@ -1441,45 +1636,51 @@ function renderProfile(){
   $('#pphoto').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
     try{b.photo_url=await uploadBizImage(await cropImage(f,1,600),S.uid,'photo');$('#ph').innerHTML=phHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Picture updated')}catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed')}}};
   $('#sv').onclick=async()=>{
-    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked};
+    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked};const sl=($('#pslug').value||'').trim().toLowerCase();if(sl&&sl!==b.slug){if(!/^[a-z0-9][a-z0-9-]{2,39}$/.test(sl))return toast('Page address: 3-40 letters, numbers or dashes');patch.slug=sl}
     const r=await sb.from('businesses').update(patch).eq('id',b.id);
-    if(r.error)return toast('Could not save: '+r.error.message);
-    Object.assign(b,patch);renderGrid();$('#pcard').innerHTML=cardHTML(b,0);toast('Profile saved');
+    if(r.error)return toast(r.error.code==='23505'?'That page address is taken':'Could not save: '+r.error.message);
+    Object.assign(b,patch);renderGrid();$('#pcard').innerHTML=cardHTML(b,0);$('#pubu').textContent=pubUrl(b);toast('Profile saved');
   };
 }
 
-/* ---------- statistics (sample data; likes & links are live) ---------- */
-function renderStats(range){
-  range=range||S.range||7;S.range=range;
-  let seed=range*97+(S.uid?S.uid.charCodeAt(0):7);const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
-  const n=range===7?7:range===30?15:18,v=[];let cur=40+rnd()*30;
-  for(let i=0;i<n;i++){cur=Math.max(12,cur+(rnd()-.42)*18);v.push(Math.round(cur*(range/7)**.6))}
-  const tot=v.reduce((a,b)=>a+b,0),mx=Math.max(...v)*1.15,W=640,H=190,px=i=>20+i*(W-40)/(n-1),py=y=>H-24-(y/mx)*(H-44);
-  const d=v.map((y,i)=>(i?'L':'M')+px(i).toFixed(1)+' '+py(y).toFixed(1)).join(' ');
-  const line=`<svg viewBox="0 0 ${W} ${H}" class="lc"><defs><linearGradient id="lgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD400" stop-opacity=".35"/><stop offset="1" stop-color="#FFD400" stop-opacity="0"/></linearGradient></defs>${[0,1,2,3].map(i=>`<line x1="20" x2="${W-20}" y1="${24+i*(H-48)/3}" y2="${24+i*(H-48)/3}" stroke="var(--line)"/>`).join('')}<path d="${d} L${px(n-1).toFixed(1)} ${H-24} L20 ${H-24}Z" fill="url(#lgr)" class="ar"/><path d="${d}" class="ln" pathLength="1"/>${v.map((y,i)=>`<circle cx="${px(i).toFixed(1)}" cy="${py(y).toFixed(1)}" r="3.5" class="dt2" style="animation-delay:${(.9+i*.04).toFixed(2)}s"/>`).join('')}</svg>`;
-  const mix=a=>{const j=a.map(x=>x*(.85+rnd()*.3)),t=j.reduce((p,q)=>p+q,0),r=j.map(x=>Math.round(x/t*100));r[0]+=100-r.reduce((p,q)=>p+q,0);return r};
-  const mk=(names,base)=>{const p=mix(base);return names.map((nm,i)=>[nm,p[i]])};
+/* ---------- statistics (live from biz_events) ---------- */
+async function renderStats(range){
+  range=range||S.range||7;S.range=range;const el=$('#v-stats');
+  el.innerHTML='<h1>Statistics</h1><p class="dsub">Loading your numbers…</p>';
+  let d=null;
+  if(S.me&&!String(S.me.id).startsWith('demo-')){const r=await sb.rpc('my_stats',{days:range});if(r.error)console.error(r.error);else d=r.data}
+  if(!d||!d.daily){el.innerHTML='<h1>Statistics</h1><p class="dsub">Statistics are not switched on yet. Run the ABENWERK v2 SQL to enable them.</p>';return}
+  const t=d.totals||{},v=d.daily.map(x=>+x.views),n=v.length,views=+t.view||0,clicks=+t.click||0,chats=+t.chat||0,quotes=+d.quotes||0,prev=+d.prev_views||0;
+  const mx=Math.max(...v,1)*1.15,W=640,H=190,px=i=>20+i*(W-40)/Math.max(n-1,1),py=y=>H-24-(y/mx)*(H-44);
+  const pa=v.map((y,i)=>(i?'L':'M')+px(i).toFixed(1)+' '+py(y).toFixed(1)).join(' ');
+  const line=`<svg viewBox="0 0 ${W} ${H}" class="lc"><defs><linearGradient id="lgr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD400" stop-opacity=".35"/><stop offset="1" stop-color="#FFD400" stop-opacity="0"/></linearGradient></defs>${[0,1,2,3].map(i=>`<line x1="20" x2="${W-20}" y1="${24+i*(H-48)/3}" y2="${24+i*(H-48)/3}" stroke="var(--line)"/>`).join('')}<path d="${pa} L${px(n-1).toFixed(1)} ${H-24} L20 ${H-24}Z" fill="url(#lgr)" class="ar"/><path d="${pa}" class="ln" pathLength="1"/>${n<=31?v.map((y,i)=>`<circle cx="${px(i).toFixed(1)}" cy="${py(y).toFixed(1)}" r="3.5" class="dt2" style="animation-delay:${(.9+i*.04).toFixed(2)}s"/>`).join(''):''}<text x="20" y="${H-4}" class="dts">${esc(String(d.daily[0].day).slice(5))}</text><text x="${W-20}" y="${H-4}" text-anchor="end" class="dts">${esc(String(d.daily[n-1].day).slice(5))}</text></svg>`;
   const COL=['#FFD400','#ff5a1f','#3b82f6','#a78bfa','#3ddc97'];
+  const pct=(o,L)=>{const e=Object.entries(o||{}).sort((a,b)=>b[1]-a[1]).slice(0,5),s=e.reduce((a,x)=>a+x[1],0);if(!s)return null;const r=e.map(([k,c])=>[L[k]||k[0].toUpperCase()+k.slice(1),Math.round(c/s*100)]);r[0][1]+=100-r.reduce((a,x)=>a+x[1],0);return r};
   const donut=(title,data)=>{
+    if(!data)return `<div class="pn"><h3>${title}</h3><p class="dsub">No data yet</p></div>`;
     const R=52,C=2*Math.PI*R;let off=0;const top=data.reduce((a,b)=>b[1]>a[1]?b:a);
     const seg=data.map((x,i)=>{const len=x[1]/100*C,s=`<circle r="${R}" cx="70" cy="70" fill="none" stroke="${COL[i]}" stroke-width="18" style="stroke-dasharray:0 ${C.toFixed(2)}" data-len="${Math.max(len-2,0).toFixed(2)}" data-c="${C.toFixed(2)}" stroke-dashoffset="${(-off).toFixed(2)}" transform="rotate(-90 70 70)"/>`;off+=len;return s}).join('');
     return `<div class="pn"><h3>${title}</h3><svg viewBox="0 0 140 140" class="dsvg"><circle r="${R}" cx="70" cy="70" fill="none" stroke="var(--bg3)" stroke-width="18"/>${seg}<text x="70" y="70" text-anchor="middle" class="dtx">${top[1]}%</text><text x="70" y="86" text-anchor="middle" class="dts">${esc(top[0])}</text></svg><ul class="dl">${data.map((x,i)=>`<li><i style="background:${COL[i]}"></i>${esc(x[0])}<b>${x[1]}%</b></li>`).join('')}</ul></div>`;
   };
-  const fun=[['Profile views',100],['Profile clicks',58],['Messages',31],['Quotes sent',14],['Deals won',6]];
-  $('#v-stats').innerHTML=`<h1>Statistics</h1><p class="dsub">Sample analytics until tracking is switched on. Likes and links are live.</p>
+  const dl=prev>0?Math.round((views-prev)/prev*100):null;
+  const vem=dl===null?`<em>${views?'new':'no data yet'}</em>`:`<em style="color:${dl>=0?'var(--ok)':'var(--err)'}">${dl>=0?'▲':'▼'} ${Math.abs(dl)}% vs previous</em>`;
+  const SRC={direct:'Direct link',directory:'Directory',wa:'WhatsApp',qr:'QR code',web:'Other websites',share:'Shared link',other:'Other'};
+  const fun=[['Profile views',views],['Clicks',clicks],['Chats started',chats],['Quotes sent',quotes]];
+  el.innerHTML=`<h1>Statistics</h1><p class="dsub">Live numbers from your public page, profile clicks and chats.</p>
   <div class="rg">${[7,30,90].map(r=>`<button data-r="${r}" class="${r===range?'on':''}">${r} days</button>`).join('')}</div>
-  <div class="kp"><div><small>Profile views · ${range} days</small><b>${tot.toLocaleString()}</b><em>▲ ${8+Math.round(rnd()*14)}%</em></div><div><small>Leads</small><b>${Math.round(tot/6)}</b><em>▲ ${4+Math.round(rnd()*9)}%</em></div><div><small>Likes</small><b>${S.me?S.me.like_count||0:0}</b><em>live</em></div><div><small>Links</small><b>${S.links.size}</b><em>live</em></div></div>
+  <div class="kp"><div><small>Profile views · ${range} days</small><b>${views.toLocaleString()}</b>${vem}</div><div><small>Clicks</small><b>${clicks}</b><em>website, directions, shares</em></div><div><small>Chats started</small><b>${chats}</b><em>last ${range} days</em></div><div><small>Likes</small><b>${S.me.like_count||0}</b><em>live</em></div></div>
+  ${views===0?'<div class="pn"><h3>No views yet</h3><p class="dsub">Share your public page to start collecting views.</p><div class="rg"><button id="stcp">Copy my link</button></div></div>':''}
   <div class="pn"><h3>Profile views</h3>${line}</div>
-  <div class="dg">${donut('Where visitors come from',mk(['Search','Direct','Chat','Links','Social'],[34,24,16,14,12]))}${donut('Audience by county',mk(['Nairobi','Mombasa','Kisumu','Nakuru','Other'],[46,16,10,10,18]))}${donut('Lead status',mk(['New','In talks','Won','Lost'],[38,30,20,12]))}${donut('Devices',mk(['Mobile','Desktop','Tablet'],[72,24,4]))}</div>
-  <div class="pn"><h3>Lead funnel</h3>${fun.map(([l,p],i)=>`<div class="fn"><span>${l}</span><div><i style="--w:${p}%;--n:${i}"></i></div><b>${p}%</b></div>`).join('')}</div>`;
-  $('.rg').onclick=e=>{const b=e.target.closest('button');if(b)renderStats(+b.dataset.r)};
+  <div class="dg">${donut('Where visitors come from',pct(d.sources,SRC))}${donut('Devices',pct(d.devices,{}))}</div>
+  <div class="pn"><h3>Lead funnel</h3>${fun.map(([l,c],i)=>`<div class="fn"><span>${l}</span><div><i style="--w:${views?Math.min(100,Math.round(c/views*100)):0}%;--n:${i}"></i></div><b>${c}</b></div>`).join('')}</div>`;
+  el.querySelector('.rg').onclick=e=>{const b=e.target.closest('button');if(b)renderStats(+b.dataset.r)};
+  const cp=el.querySelector('#stcp');if(cp)cp.onclick=()=>{const u=pubUrl(S.me);u?navigator.clipboard.writeText(u).then(()=>toast('Link copied'),()=>toast(u)):toast('Run the v2 SQL first')};
   setTimeout(()=>$$('.dsvg circle[data-len]').forEach((c,i)=>{c.style.transitionDelay=(i%5)*.07+'s';c.style.strokeDasharray=c.dataset.len+' '+c.dataset.c}),60);
 }
-
 /* ---------- reels & news (placeholders) ---------- */
 function renderReels(){
   const R=[['Behind the scenes · Aurelia','amber','12.4k'],['3 tips to win B2B leads','violet','8.1k'],['Fleet tour: SwiftHaul','blue','5.7k'],['Harvest day','green','4.2k'],['Brand sprint in 60s','cyan','9.9k'],['Client story: Ledger & Oak','rose','3.3k']];
-  $('#v-reels').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h1>BIZ reels</h1><p class="dsub">Short videos that put your business in motion.</p></div><button class="sv" onclick="toast('Reel uploads unlock on the Growth plan')">Upload reel</button></div>
+  $('#v-reels').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h1>BIZ reels</h1><p class="dsub">Short videos that put your business in motion.</p></div><button class="sv" onclick="toast('Reel uploads are coming soon')">Upload reel</button></div>
   <div class="rl">${R.map((r,i)=>`<div style="--c1:${TH[r[1]][0]};--c2:${TH[r[1]][1]};--n:${i}"><span class="pp">${ic('play')}</span><b>${esc(r[0])}</b><small>${r[2]} views</small></div>`).join('')}</div>`;
 }
 function renderNews(){
@@ -1487,6 +1688,108 @@ function renderNews(){
   $('#v-news').innerHTML=`<h1>BIZ news</h1><p class="dsub">What is moving the business world today.</p><div class="nw">${N.map((n,i)=>`<div style="--c1:${TH[n[3]][0]};--n:${i}"><small>${n[0]}</small><b>${n[1]}</b><span>${n[2]}</span></div>`).join('')}</div>`;
 }
 
+/* ---------- helpers: sheet modal, QR ---------- */
+function sheet(t,h){const v=document.createElement('div');v.className='vw on';v.style.zIndex=75;v.innerHTML='<div class="vh"><b>'+esc(t)+'</b><span class="sp"></span><button class="vbtn" data-x aria-label="Close">✕</button></div><div class="vb"><div class="pn" style="width:100%;max-width:520px;margin:0">'+h+'</div></div>';$('#dash').appendChild(v);v.querySelector('[data-x]').onclick=()=>v.remove();return v}
+function qrSheet(b){const u=pubUrl(b,'qr'),q=n=>'https://api.qrserver.com/v1/create-qr-code/?size='+n+'x'+n+'&margin=10&data='+encodeURIComponent(u);sheet('QR code · '+b.name,'<div style="text-align:center"><img alt="QR code" width="260" height="260" style="border-radius:12px;background:#fff" src="'+q(400)+'"><p class="dsub" style="margin:12px 0">Print it on your shop window, menu or receipts. Scans open your public page.</p><a class="vbtn" target="_blank" rel="noopener" href="'+q(1000)+'">Open large image</a></div>')}
+
+/* ---------- buyer requests ---------- */
+const ago=t=>{const s=(Date.now()-new Date(t))/1000;return s<60?'just now':s<3600?Math.floor(s/60)+' min ago':s<86400?Math.floor(s/3600)+' h ago':Math.floor(s/86400)+' d ago'};
+async function loadReqs(){
+  const [a,b]=await Promise.all([sb.from('requests').select('*,request_responses(count)').order('created_at',{ascending:false}).limit(100),S.me?sb.from('request_responses').select('request_id').eq('responder_business',S.me.id):Promise.resolve({data:[]})]);
+  if(a.error){console.error(a.error);return null}
+  S.resp=new Set((b.data||[]).map(x=>x.request_id));return S.reqs=a.data;
+}
+function rqCard(r,i){
+  const o=S.biz.find(x=>x.id===r.owner_business)||{name:'A business'},th=TH[o.banner_theme]||TH.amber,mine=!!S.me&&r.owner_business===S.me.id,n=(r.request_responses&&r.request_responses[0]&&r.request_responses[0].count)||0,cat=(S.cats.find(c=>c.slug===r.category)||{}).label;
+  const act=r.status==='closed'?'<small>Closed</small>':mine?`<button data-a="close" data-id="${r.id}">Close request</button>`:S.resp.has(r.id)?'<button disabled>Quote sent ✓</button>':`<button class="pr2" data-a="resp" data-id="${r.id}">Send a quote</button>`;
+  return `<article class="rq ${r.status==='closed'?'cl':''}" style="--n:${Math.min(i,10)}"><div class="rqh"><div class="av"${o.photo_url?avStyle(o):` style="--c1:${th[0]};--c2:${th[1]}"`}>${o.photo_url?'':esc(o.name[0])}</div><div><b>${esc(o.name)}${mine?' · You':''}</b><small>${ago(r.created_at)}</small></div>${!mine&&r.status==='open'&&S.me&&r.category===S.me.category?'<em>Matches you</em>':''}</div><h3>${esc(r.title)}</h3><p>${esc(r.details)}</p><div class="rqm">${cat?`<span>${esc(cat)}</span>`:''}${r.budget?`<span>${esc(r.budget)}</span>`:''}${r.location?`<span>${esc(r.location)}</span>`:''}</div><div class="rqf"><small>${n} response${n===1?'':'s'}</small>${act}</div></article>`;
+}
+async function renderReq(tab){
+  tab=typeof tab==='string'?tab:(S.rtab||'all');S.rtab=tab;const el=$('#v-req');
+  if(!S.reqs){el.innerHTML='<h1>Buyer requests</h1><p class="dsub">Loading…</p>';if(!await loadReqs()){el.innerHTML='<h1>Buyer requests</h1><p class="dsub">The requests board is not switched on yet. Run the ABENWERK v2 SQL to enable it.</p>';return}}
+  const mine=r=>!!S.me&&r.owner_business===S.me.id,match=r=>!!S.me&&!mine(r)&&r.status==='open'&&r.category===S.me.category;
+  const l=S.reqs.filter(r=>tab==='mine'?mine(r):tab==='match'?match(r):true),T=[['all','All'],['match','For my category'],['mine','My requests']];
+  el.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h1>Buyer requests</h1><p class="dsub">Post what you need. Businesses reply with quotes in chat.</p></div><button class="sv" id="rqnew">+ Post a request</button></div><div class="dchips">'+T.map(x=>'<button data-t="'+x[0]+'" class="'+(tab===x[0]?'on':'')+'">'+x[1]+'</button>').join('')+'</div><div class="rqs">'+(l.length?l.map(rqCard).join(''):'<div class="empty">Nothing here yet.</div>')+'</div>';
+  el.onclick=async e=>{
+    const t=e.target.closest('[data-t]');if(t)return renderReq(t.dataset.t);
+    if(e.target.closest('#rqnew'))return postReq();
+    const b=e.target.closest('[data-a]');if(!b)return;const r=S.reqs.find(x=>x.id===b.dataset.id);if(!r)return;
+    if(b.dataset.a==='resp')respond(r);
+    else if(b.dataset.a==='close'){const u=await sb.from('requests').update({status:'closed'}).eq('id',r.id);if(u.error)return toast('Could not close it');r.status='closed';renderReq()}
+  };
+}
+function postReq(){
+  if(!S.me)return toast('Create a business profile first');
+  const v=sheet('Post a buyer request',`<div class="f"><label>What do you need?</label><input id="rt" maxlength="120" placeholder="e.g. 500 branded uniforms for our staff"></div><div class="f"><label>Category</label><select id="rc"><option value="">Any category</option>${S.cats.map(c=>`<option value="${esc(c.slug)}">${esc(c.label)}</option>`).join('')}</select></div><div class="f"><label>Budget (optional)</label><input id="rb" maxlength="40" placeholder="e.g. KSh 50,000 – 80,000"></div><div class="f"><label>Location</label><input id="rl" maxlength="60" value="${esc(S.me.city)}"></div><div class="f"><label>Details</label><textarea id="rd" maxlength="1500" placeholder="Quantity, deadline, anything suppliers should know…"></textarea></div><button class="sv" id="rs" style="width:100%">Post request</button>`);
+  const g=id=>v.querySelector('#'+id).value.trim();
+  v.querySelector('#rs').onclick=async()=>{
+    if(g('rt').length<5)return toast('Add a short title (5+ characters)');if(g('rd').length<10)return toast('Add a few details (10+ characters)');
+    const r=await sb.from('requests').insert({owner_business:S.me.id,title:g('rt'),details:g('rd'),category:g('rc')||null,budget:g('rb')||null,location:g('rl')||null});
+    if(r.error){console.error(r.error);return toast('Could not post your request')}
+    v.remove();await loadReqs();renderReq('mine');toast('Request posted');
+  };
+}
+function respond(r){
+  const o=S.biz.find(x=>x.id===r.owner_business);if(!S.me)return toast('Create a business profile first');if(!o)return toast('That business could not be found');
+  const v=sheet('Send a quote',`<p class="dsub" style="margin:0 0 14px">For “${esc(r.title)}” — this opens a chat with ${esc(o.name)}.</p><div class="f"><label>Your price (KSh)</label><input id="qp" type="number" min="1" placeholder="e.g. 45000"></div><div class="f"><label>What is included?</label><input id="qi" maxlength="80" placeholder="Scope, delivery time, terms…"></div><button class="sv" id="qgo" style="width:100%">Send quote</button>`);
+  v.querySelector('#qgo').onclick=async()=>{
+    const a=+v.querySelector('#qp').value;if(!(a>0))return toast('Enter your price');
+    const price='KSh '+a.toLocaleString(),desc=v.querySelector('#qi').value.trim()||'Custom offer · valid 7 days';
+    const ins=await sb.from('request_responses').insert({request_id:r.id,responder_business:S.me.id});
+    if(ins.error)return toast(ins.error.code==='23505'?'You already responded to this request':'Could not send your quote');
+    S.resp.add(r.id);const x=r.request_responses&&r.request_responses[0];if(x)x.count++;else r.request_responses=[{count:1}];v.remove();
+    await openChat(o);const c=CH.get(o.id);
+    if(c&&c.db){await sendDb(c,{kind:'text',body:'Hi! I am responding to your request: “'+r.title+'”'});await sendDb(c,{kind:'quote',body:price,payload:{price,desc,status:'open'}})}
+    toast('Quote sent');
+  };
+}
+
+/* ---------- ABEN AI (Groq, through the secret Supabase function "aben-ai") ---------- */
+const AIMARK='<svg viewBox="190 305 580 343"><polygon fill="#000" points="335,315 467,315 327,477 467,638 335,638 197,477"/><polygon fill="#000" points="493,315 625,315 763,477 625,638 493,638 633,477"/></svg>';
+const AIK=()=>'abw_ai:'+S.uid;
+const aiHist=()=>{try{return JSON.parse(localStorage.getItem(AIK())||'[]')}catch(e){return[]}};
+const aiSave=h=>{try{localStorage.setItem(AIK(),JSON.stringify(h.slice(-30)))}catch(e){}};
+const fmtAI=t=>esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/^[ \t]*[-*][ \t]+/gm,'• ').replace(/\n/g,'<br>');
+const AICHIPS=['Improve my tagline','How can I get more views?','Write a quote message for a customer','Explain my statistics','What should I post as a request?'];
+function paintAI(){
+  const ml=$('#aiml');if(!ml)return;const h=aiHist(),first=((S.prof&&S.prof.owner_name)||'').split(' ')[0];
+  ml.innerHTML=(h.length?'':`<div class="m in ai">Hello${first?' '+esc(first):''}. I am ABEN AI, your assistant on ABENWERK. I can see your business profile and statistics, and help you write, plan and improve. What would you like to work on?</div><div class="ais">${AICHIPS.map(c=>`<button data-p="${esc(c)}">${esc(c)}</button>`).join('')}</div>`)
+   +h.map(m=>`<div class="m ${m.role==='user'?'out':'in ai'}${m.err?' err':''}">${fmtAI(m.content)}</div>`).join('')+(S.aiBusy?'<div class="ty"><i></i><i></i><i></i></div>':'');
+  ml.scrollTop=ml.scrollHeight;
+}
+async function aiContext(){
+  const b=S.me,L=['Today: '+new Date().toLocaleDateString('en-GB',{timeZone:'Africa/Nairobi',dateStyle:'full'})];
+  if(S.prof&&S.prof.owner_name)L.push('Owner: '+S.prof.owner_name);
+  if(b)L.push('Business: '+b.name,'Category: '+((S.cats.find(c=>c.slug===b.category)||{}).label||b.category||'-'),'City: '+(b.city||'-'),'Tagline: '+(b.tagline||'(none)'),'About: '+(b.description||'(none)').slice(0,500),'Website: '+(b.website||'(none)'),'Verified: '+(b.is_verified?'yes':'no'),'Likes: '+(b.like_count||0),'Public page: '+(b.slug?pubUrl(b):'not set up'));
+  L.push('Plan: '+planName(),'Linked businesses: '+S.links.size,'Businesses on the platform: '+S.biz.length);
+  try{
+    if(b&&(!S.sAI||Date.now()-S.sAI.t>3e5)){const r=await sb.rpc('my_stats',{days:30});if(!r.error&&r.data)S.sAI={t:Date.now(),d:r.data}}
+    if(S.sAI){const t=S.sAI.d.totals||{};L.push('Last 30 days: '+(t.view||0)+' profile views, '+(t.click||0)+' clicks, '+(t.chat||0)+' chats started, '+(S.sAI.d.quotes||0)+' quotes sent')}
+  }catch(e){}
+  if(S.reqs)L.push('Open buyer requests on the board: '+S.reqs.filter(r=>r.status==='open').length);
+  return L.join('\n');
+}
+async function aiSend(text){
+  text=(text||'').trim();if(!text||S.aiBusy)return;
+  const h=aiHist();h.push({role:'user',content:text.slice(0,600)});aiSave(h);S.aiBusy=true;paintAI();
+  let reply='',err=false;
+  try{
+    const ctx=await aiContext();
+    const r=await sb.functions.invoke('aben-ai',{body:{messages:h.filter(m=>!m.err).slice(-12).map(m=>({role:m.role,content:m.content})),context:ctx}});
+    if(r.error||!r.data||!r.data.reply)throw r.error||new Error('empty reply');
+    reply=r.data.reply;
+  }catch(e){console.error('[aben-ai]',e);err=true;reply='I could not reach my servers just now. Please try again in a moment. If this keeps happening, the ABEN AI function may not be set up yet.'}
+  const h2=aiHist();h2.push({role:'assistant',content:reply,err});aiSave(h2);S.aiBusy=false;paintAI();
+}
+function renderAI(){
+  $('#v-ai').innerHTML=`<div class="aic"><div class="aih"><div class="aiav">${AIMARK}</div><div><b>ABEN AI</b><small>● Online · beta</small></div><button class="qs" id="aiclr" style="margin-left:auto">New chat</button></div><div class="ml" id="aiml"></div><div class="cp"><input id="aii" placeholder="Ask ABEN AI about your business…" maxlength="600" autocomplete="off"><button class="sd" id="aisd" aria-label="Send">${ic('send')}</button></div></div>`;
+  paintAI();
+  const send=()=>{const i=$('#aii'),v=i.value;i.value='';aiSend(v)};
+  $('#aisd').onclick=send;$('#aii').onkeydown=e=>{if(e.key==='Enter')send()};
+  $('#aiml').onclick=e=>{const b=e.target.closest('[data-p]');if(b)aiSend(b.dataset.p)};
+  $('#aiclr').onclick=()=>{aiSave([]);paintAI()};
+  if(innerWidth>820)$('#aii').focus();
+}
 /* ---------- boot ---------- */
 (async function(){
   let demo=false;
@@ -1514,6 +1817,7 @@ function renderNews(){
   if(S.me&&!demo){try{await loadChats();subscribeRT()}catch(e){console.error(e)}}
   renderChips();renderGrid();seedChats();photoCheck();
   go(location.hash.slice(1)||'home');
+  {const mp=new URLSearchParams(location.search).get('m');if(mp){history.replaceState(null,'',location.pathname+location.hash);const t=S.biz.find(x=>x.id===mp);if(t&&!(S.me&&t.id===S.me.id))openChat(t)}}
   setTimeout(()=>$('#boot').classList.add('off'),700);
   if(demo)toast('Demo mode — could not reach Supabase');
 })();
