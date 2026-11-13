@@ -656,6 +656,120 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .ais button:hover{border-color:var(--y);color:var(--fg)}
 #dash .ml .m.ai{max-width:86%}
 #dash .m.err{background:#ff5d5d22;color:var(--err)}
+/* ===== v6: website preview, shelf, Biz Feed, posting room ===== */
+.wp{display:flex;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--fg);background:var(--bg2);transition:.25s;max-width:560px}
+.wp:hover{border-color:var(--y);transform:translateY(-2px)}
+.wp .wi{width:140px;min-height:96px;flex:none;background:var(--bg3,var(--line)) center/cover}
+.wp .wt{padding:12px 14px;min-width:0;display:flex;flex-direction:column;gap:3px;justify-content:center;flex:1}
+.wp .wt small{color:var(--mut);font-size:11.5px;display:flex;align-items:center;gap:6px}
+.wp .wt small img{width:14px;height:14px;border-radius:3px}
+.wp .wt b{font-size:15px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wp .wt span{color:var(--mut);font-size:13px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wp.sk .wt i{display:block;height:12px;border-radius:6px;margin:5px 0}
+.wp.sk .wi,.wp.sk .wt i{background:linear-gradient(90deg,var(--line),var(--bg2),var(--line));background-size:200% 100%;animation:shm 1.2s infinite}
+@keyframes shm{to{background-position:-200% 0}}
+.wl{display:block;margin-top:4px;color:var(--yt);font-size:12px;text-decoration:none}
+.wl:hover{text-decoration:underline}
+.shf{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+.shf .sh{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--line);cursor:pointer;transition:.25s;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px}
+.shf .sh:hover{transform:translateY(-4px)}
+.shf .sh img,.shf .sh video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shf .sh::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,#000c)}
+.shf .sh b,.shf .sh small{position:relative;z-index:1;font-size:13px;line-height:1.25;text-shadow:0 1px 4px #0008}
+.shf .sh small{font-size:12px;opacity:.9}
+#feedbtn{background:var(--y)!important;color:#000;border-color:var(--y)!important}
+#dash .gh{height:44px;width:100%;border-radius:12px;border:1px solid var(--line);font-weight:700;background:var(--bg3)}
+#dash .gh:hover{border-color:var(--y)}
+#dash .body.feedmode{padding:0;overflow:hidden;position:relative}
+#dash #v-feed.on{position:absolute;inset:0;display:flex;flex-direction:column;animation:none}
+#dash .fdl{margin:auto;text-align:center;color:var(--mut);padding:30px;max-width:420px;line-height:1.5}
+#dash .ftb{display:flex;align-items:center;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none;flex:none;border-bottom:1px solid var(--line)}
+#dash .ftb button{padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--bg2);color:var(--mut);font-size:12.5px;white-space:nowrap;transition:.2s;display:flex;align-items:center;gap:6px}
+#dash .ftb button:hover{border-color:var(--y);color:var(--fg)}
+#dash .ftb button.on{background:var(--y);color:#000;border-color:var(--y);font-weight:700}
+#dash .ftb .fnew{margin-left:auto;background:var(--fg);color:var(--bg);border-color:var(--fg);font-weight:700}
+#dash .ftb .fnew svg{width:15px;height:15px}
+#dash .fds{flex:1;min-height:0;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none;overscroll-behavior:contain;display:flex;flex-direction:column}
+#dash .fds::-webkit-scrollbar{display:none}
+#dash .fdi{flex:none;height:100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;padding:10px 12px;box-sizing:border-box}
+#dash .fdm{position:relative;height:100%;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:linear-gradient(160deg,var(--c1),var(--c2));flex:none;user-select:none;-webkit-user-select:none}
+#dash .fdm.ls{aspect-ratio:16/9;height:auto;width:min(100%,860px)}
+#dash .fdm video,#dash .fdm img.mi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+#dash .fdm.ls video,#dash .fdm.ls img.mi{object-fit:contain}
+#dash .fdm::after{content:"";position:absolute;inset:auto 0 0 0;height:60%;background:linear-gradient(transparent,#000d);pointer-events:none}
+#dash .fdo{position:absolute;left:0;right:66px;bottom:0;padding:16px;z-index:2;color:#fff;display:flex;flex-direction:column;gap:9px}
+#dash .fdo .who{display:flex;align-items:center;gap:9px;font-weight:700;cursor:pointer;font-size:14px}
+#dash .fdo .who .av{width:36px;height:36px;border-radius:11px;font-size:15px;flex:none}
+#dash .fdo p{font-size:13.5px;line-height:1.4;max-height:4.3em;overflow:hidden;text-shadow:0 1px 6px #000a}
+#dash .adb{font-style:normal;font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:#fff3;border:1px solid #fff6;border-radius:6px;padding:2px 7px;backdrop-filter:blur(6px)}
+#dash .flb{align-self:flex-start;display:flex;align-items:center;gap:6px;background:var(--y);color:#000;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:700;animation:flp 1.6s infinite}
+#dash .flb svg{width:14px;height:14px;fill:#000;stroke:#000}
+@keyframes flp{50%{box-shadow:0 0 0 6px #ffd40033}}
+#dash .pri{display:flex;justify-content:space-between;align-items:baseline;gap:10px;background:#0008;border:1px solid #fff2;border-radius:12px;padding:9px 12px;backdrop-filter:blur(8px)}
+#dash .pri b{font-size:14px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#dash .pri span{color:var(--y);font-weight:700;font-size:13px;white-space:nowrap}
+#dash .ord{height:46px;border-radius:14px;background:var(--y);color:#000;font-weight:800;font-size:14px;transition:.2s}
+#dash .ord:active{transform:scale(.97)}
+#dash .fdr{position:absolute;right:8px;bottom:16px;z-index:3;display:flex;flex-direction:column;gap:12px;align-items:center}
+#dash .fdr button{display:flex;flex-direction:column;align-items:center;gap:3px;color:#fff;font-size:12px;font-weight:700;text-shadow:0 1px 6px #000}
+#dash .fdr button i{font-style:normal}
+#dash .fdr .ci{width:46px;height:46px;border-radius:50%;background:#0007;backdrop-filter:blur(6px);display:grid;place-items:center;transition:transform .2s}
+#dash .fdr button:active .ci{transform:scale(.88)}
+#dash .fdr svg{width:24px;height:24px}
+#dash .fdr .on svg{fill:currentColor}
+#dash .fdr .lk.on{color:#ff4d6d}
+#dash .fdr .sav.on{color:var(--y)}
+#dash .fdr .pp .ci{animation:pop .5s cubic-bezier(.2,.9,.3,1.4)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.5) rotate(-8deg)}100%{transform:scale(1)}}
+#dash .bh{position:absolute;top:45%;left:50%;font-size:110px;color:#ff4d6d;pointer-events:none;z-index:4;animation:burst .85s both;text-shadow:0 10px 40px #000a}
+@keyframes burst{0%{opacity:0;transform:translate(-50%,-50%) scale(.3)}25%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}100%{opacity:0;transform:translate(-50%,-100%) scale(1)}}
+#dash .cmt{border-bottom:1px solid var(--line);padding-bottom:10px}
+#dash .cmt small{color:var(--mut);margin-left:6px}
+#dash .cmt p{margin-top:3px;font-size:14px;line-height:1.45;white-space:pre-wrap}
+#dash .prm{max-width:1020px;margin:0 auto}
+#dash .plus{position:relative;width:min(230px,58vw);aspect-ratio:1;margin:5vh auto 34px;border-radius:50%;background:var(--y);color:#000;display:grid;place-items:center;transition:transform .35s cubic-bezier(.2,.9,.3,1.4);box-shadow:0 30px 80px -24px var(--y)}
+#dash .plus:hover{transform:scale(1.07) rotate(90deg)}
+#dash .plus svg{width:46%;height:46%;stroke-width:2.2}
+#dash .plus::before,#dash .plus::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--y);animation:ring 2.4s infinite;pointer-events:none}
+#dash .plus::after{animation-delay:1.2s}
+@keyframes ring{from{transform:scale(.95);opacity:.7}to{transform:scale(1.35);opacity:0}}
+#dash .ptiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:560px;margin:0 auto 24px}
+#dash .ptiles button{padding:22px 10px;border-radius:18px;border:1px solid var(--line);background:var(--bg2);font-weight:700;display:grid;gap:8px;justify-items:center;transition:.25s;animation:up .45s both;animation-delay:calc(var(--n)*80ms)}
+#dash .ptiles button:hover{border-color:var(--y);transform:translateY(-5px)}
+#dash .ptiles svg{width:30px;height:30px;color:var(--yt)}
+#dash .ptiles small{color:var(--mut);font-weight:400;font-size:12px}
+#dash .pcw{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:24px;align-items:start}
+#dash .pcw.ls{grid-template-columns:minmax(300px,500px) 1fr}
+#dash .pcw>div:first-child{position:sticky;top:0}
+#dash .pcw>div{min-width:0}
+#dash .pcw .dchips{flex-wrap:wrap;overflow:visible}
+@media (max-width:820px){#dash .pcw,#dash .pcw.ls{grid-template-columns:1fr}#dash .pcw>div:first-child{position:static}}
+#dash .pst{position:relative;border-radius:22px;overflow:hidden;background:#000;aspect-ratio:9/16;width:100%;max-width:340px;margin:0 auto;border:1px solid var(--line)}
+#dash .pst.ls{aspect-ratio:16/9;max-width:none}
+#dash .pst img,#dash .pst video{width:100%;height:100%;object-fit:contain;display:block}
+#dash .tb{position:absolute;transform:translate(-50%,-50%);width:80%;text-align:center;font-weight:700;line-height:1.25;white-space:pre-wrap;overflow-wrap:break-word;cursor:grab;touch-action:none;user-select:none;outline:1.5px dashed #fff9;outline-offset:3px;border-radius:4px}
+#dash .ch2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#dash .ch2 button{padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--bg3);text-align:left;transition:.2s}
+#dash .ch2 button.on{border-color:var(--y);background:color-mix(in srgb,var(--y) 12%,var(--bg3))}
+#dash .ch2 b{display:block;margin-bottom:2px}
+#dash .ch2 small{color:var(--mut);font-size:12px}
+#dash .sw{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#dash .sw i{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer;transition:.15s}
+#dash .sw i.on{border-color:var(--bg);box-shadow:0 0 0 2px var(--y)}
+#dash .sw label{font-size:12px;color:var(--mut);display:flex;align-items:center;gap:6px}
+#dash .sw input[type=color],#dash .f input[type=color]{width:36px;height:30px;padding:0;border:0;background:none;cursor:pointer}
+#dash .sw .gh{width:auto;height:32px;padding:0 12px;font-size:12px}
+#dash .r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#dash .f input[type=range]{width:100%;accent-color:var(--y)}
+#dash .pbad{color:var(--err)!important}
+#dash .pgood{color:var(--ok)!important}
+#dash .pt2{width:100%;border-collapse:collapse;font-size:13px}
+#dash .pt2 td,#dash .pt2 th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+#dash .pt2 th{color:var(--mut);font-weight:400;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+#dash .pt2 td:first-child,#dash .pt2 th:first-child{text-align:left}
+#dash .pt2 td:first-child{display:flex;align-items:center;gap:10px;white-space:normal;min-width:180px}
+#dash .pt2 img,#dash .pt2 video{width:38px;height:38px;border-radius:9px;object-fit:cover;background:var(--bg3);flex:none}
+#dash .pt2 tr.best td{color:var(--yt)}
 </style>
 <script>if(new URLSearchParams(location.search).get('b'))document.documentElement.classList.add('pubmode')</script>
 </head>
@@ -810,6 +924,7 @@ h2{font-size:25px;letter-spacing:-.02em}
   <main>
     <header class="top">
       <label class="dpill"><span data-i="search"></span><input id="q" placeholder="Search business profiles…" autocomplete="off"><kbd>/</kbd></label>
+      <button class="ib" id="feedbtn" aria-label="Biz Feed" title="Biz Feed"><span data-i="reel"></span></button>
       <div class="rel"><button class="ib" id="bell" aria-label="Notifications"><span data-i="bell"></span><i class="dot" id="bdot"></i></button><div class="dd" id="dd"></div></div>
       <button class="up" id="up">★ Upgrade</button>
     </header>
@@ -823,6 +938,8 @@ h2{font-size:25px;letter-spacing:-.02em}
       <section class="dview" id="v-reels"></section>
       <section class="dview" id="v-news"></section>
       <section class="dview" id="v-req"></section>
+      <section class="dview" id="v-feed"></section>
+      <section class="dview" id="v-post"></section>
       <section class="dview" id="v-ai"></section>
       <section class="dview" id="v-msg"><div class="chat" id="chat">
         <div class="cl"><h3>Messages</h3><div class="sr"><span data-i="search"></span>Search chats</div><div class="ls" id="ls"></div></div>
@@ -960,6 +1077,29 @@ function buildHours(el,H,onCh){
 }
 </script>
 <script>
+/* ===== v6 shared: website preview, shelf tiles ===== */
+const money=a=>'KSh '+Number(a&&a.price||0).toLocaleString()+' / '+esc(a&&a.unit||'item');
+const shelfTile=p=>{const a=p.ad||{};return '<div class="sh" data-id="'+esc(p.id)+'">'+(p.kind==='video'?'<video src="'+esc(p.media_url)+'#t=0.1" muted playsinline preload="metadata"></video>':'<img src="'+esc(p.media_url)+'" alt="" loading="lazy">')+'<b>'+esc(a.product||'Offer')+'</b><small>'+money(a)+'</small></div>'};
+const siteLink=b=>{if(!/^https?:\/\//i.test(b.website||''))return'';let h='';try{h=new URL(b.website).hostname.replace(/^www\./,'')}catch(e){return''}return'<a class="wl" href="'+esc(b.website)+'" target="_blank" rel="noopener nofollow">🔗 '+esc(h)+'</a>'};
+async function sitePreview(b,el){
+  if(!el)return;
+  if(!b||!b.slug||!/^https?:\/\//i.test(b.website||'')){el.innerHTML='';return}
+  const url=b.website;let host='';try{host=new URL(url).hostname.replace(/^www\./,'')}catch(e){el.innerHTML='';return}
+  const card=d=>{const im=d.image&&/^https:\/\//.test(d.image)?' style="background-image:url(\''+encodeURI(d.image).replace(/'/g,'%27')+'\')"':'';return'<a class="wp" href="'+esc(url)+'" target="_blank" rel="noopener nofollow" data-k="website"><div class="wi"'+im+'></div><div class="wt"><small>'+(d.icon&&/^https:\/\//.test(d.icon)?'<img src="'+esc(d.icon)+'" alt="">':'🌐')+esc(host)+' ↗</small><b>'+esc(d.title||host)+'</b>'+(d.description?'<span>'+esc(d.description)+'</span>':'')+'</div></a>'};
+  let d=null;try{const c=JSON.parse(localStorage.getItem('abw_sp:'+url)||'null');if(c&&Date.now()-c.t<864e5)d=c.d}catch(e){}
+  if(!d){
+    el.innerHTML='<div class="wp sk"><div class="wi"></div><div class="wt"><i></i><i style="width:70%"></i></div></div>';
+    try{const r=await sb.functions.invoke('site-preview',{body:{slug:b.slug}});if(r.error||!r.data||r.data.error)throw 0;d=r.data;try{localStorage.setItem('abw_sp:'+url,JSON.stringify({t:Date.now(),d}))}catch(e){}}catch(e){d={}}
+  }
+  el.innerHTML=card(d);
+}
+async function fillPub(b){
+  sitePreview(b,document.getElementById('pprev'));
+  const r=await sb.rpc('public_posts',{s:b.slug}),sh=document.getElementById('pshelf');if(!sh)return;
+  if(r.error||!r.data||!r.data.length){sh.remove();return}
+  sh.innerHTML='<div class="pcd"><h3>Products &amp; offers</h3><div class="shf">'+r.data.map(shelfTile).join('')+'</div></div>';
+  sh.onclick=e=>{if(e.target.closest('.sh')){track(b.id,'click','shelf');location.href=BASE+'#feed'}};
+}
 /* ===== v5 shared: public page helpers + analytics ===== */
 const PUBSLUG=(new URLSearchParams(location.search).get('b')||'').toLowerCase().replace(/[^a-z0-9-]/g,'');
 const BASE=location.href.split(/[?#]/)[0];
@@ -1212,9 +1352,11 @@ async function loadPub(){
    '<div class="pact">'+msg+(web?'<a class="pbt" data-k="website" href="'+esc(web)+'" target="_blank" rel="noopener nofollow">Website</a>':'')+(maps?'<a class="pbt" data-k="maps" href="'+esc(maps)+'" target="_blank" rel="noopener">Directions</a>':'')+'<button class="pbt" id="pcp">Copy link</button><a class="pbt" data-k="share" href="https://wa.me/?text='+encodeURIComponent('Find '+b.name+' on ABENWERK: '+url+'&s=wa')+'" target="_blank" rel="noopener">WhatsApp</a><button class="pbt" id="pqb">QR code</button></div>'+
    '<div class="pqr" id="pqr"><img alt="QR code" width="200" height="200" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=8&data='+encodeURIComponent(url+'&s=qr')+'"><p class="ptg" style="margin-top:8px;font-size:13px">Scan to open this page</p></div>'+
    '<div class="pg2"><div class="pcd"><h3>About</h3><p>'+esc(b.description||'This business has not added a description yet.')+'</p></div><div style="display:grid;gap:16px;align-content:start">'+(loc?'<div class="pcd"><h3>Location</h3><p>'+esc(loc)+'</p></div>':'')+(hasH?'<div class="pcd"><h3>Opening hours</h3><table>'+rows+'</table></div>':'')+'</div></div>'+
+   '<div id="pshelf" style="margin-top:16px"></div><div id="pprev" style="margin-top:16px"></div>'+
    '<div class="pjn"><h3>Get your business found</h3><p>Create a free ABENWERK page, share it anywhere and receive customer requests.</p><a class="pbt p" href="'+BASE+'">Join ABENWERK free</a></div></div>';
   $('#pcp').onclick=()=>{(navigator.clipboard?navigator.clipboard.writeText(url):Promise.reject()).then(()=>toast('Link copied'),()=>toast(url))};
   $('#pqb').onclick=()=>$('#pqr').classList.toggle('on');
+  fillPub(b);
   el.addEventListener('click',e=>{const a=e.target.closest('[data-k]');if(a)track(b.id,'click',a.dataset.k);if(e.target.id==='pcp')track(b.id,'click','share')});
   let src=new URLSearchParams(location.search).get('s');
   if(!src){try{src=document.referrer&&new URL(document.referrer).host!==location.host?'web':'direct'}catch(x){src='direct'}}
@@ -1241,14 +1383,15 @@ const S={uid:null,me:null,prof:null,sub:null,biz:[],cats:[],liked:new Set(),link
 const planName=()=>{const p=(S.dsub&&S.dsub.plan_id)||(S.prof&&S.prof.requested_plan)||'free';return p[0].toUpperCase()+p.slice(1)};
 
 /* ---------- navigation ---------- */
-const NAV=[['home','Home','home'],['req','Requests','req'],['profile','My profile','user'],['stats','Statistics','chart'],['reels','BIZ reels','reel'],['news','BIZ news','news'],['msg','Messages','msg'],['ai','ABEN AI','spark']];
+const NAV=[['home','Home','home'],['feed','Biz Feed','reel'],['req','Requests','req'],['profile','My profile','user'],['stats','Statistics','chart'],['news','BIZ news','news'],['msg','Messages','msg'],['ai','ABEN AI','spark']];
 $('#navl').innerHTML=NAV.map(([k,l,i])=>`<a data-v="${k}">${ic(i)}<span class="lb">${l}</span>${k==='msg'?'<em class="ct lb" id="mct" hidden></em>':''}</a>`).join('');
 function go(k){
-  if(!NAV.some(n=>n[0]===k))k='home';
+  if(k!=='post'&&!NAV.some(n=>n[0]===k))k='home';
   $$('#navl a').forEach(a=>a.classList.toggle('on',a.dataset.v===k));
   $$('.dview').forEach(v=>v.classList.toggle('on',v.id==='v-'+k));
   history.replaceState(null,'','#'+k);
-  ({profile:renderProfile,stats:renderStats,reels:renderReels,news:renderNews,msg:renderChatPage,req:renderReq,ai:renderAI})[k]?.();
+  $('#dash .body').classList.toggle('feedmode',k==='feed');if(k!=='feed')$$('#v-feed video').forEach(v=>v.pause());
+  ({profile:renderProfile,stats:renderStats,feed:renderFeed,post:renderPost,news:renderNews,msg:renderChatPage,req:renderReq,ai:renderAI})[k]?.();
 }
 $('#navl').addEventListener('click',e=>{const a=e.target.closest('a');if(a)go(a.dataset.v)});
 $('#pin').addEventListener('click',()=>$('#dnav').classList.toggle('pin'));
@@ -1279,7 +1422,7 @@ function cardHTML(b,n){
   const cat=(S.cats.find(c=>c.slug===b.category)||{}).label||'Business';
   return `<article class="card" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn"${bannerStyle(b)}>${b.banner_url?'':MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
   <div class="cb"><div class="av"${avStyle(b)}>${b.photo_url?'':esc((b.name||'A')[0])}</div><h3>${nameLink(b)}${b.is_verified?'<span class="vf">✓</span>':''}</h3>
-  <p>${esc(b.tagline||b.description||'New on ABENWERK')}</p><small>${esc(b.place_name||b.city||'')}${mine?' · Your business':''}</small>${statusHTML(b)}
+  <p>${esc(b.tagline||b.description||'New on ABENWERK')}</p><small>${esc(b.place_name||b.city||'')}${mine?' · Your business':''}</small>${siteLink(b)}${statusHTML(b)}
   <div class="act"><button class="hb ${S.liked.has(b.id)?'on':''}" data-id="${b.id}" aria-label="Like">${ic('heart')}<span>${b.like_count||0}</span></button>
   <button class="ms" data-id="${b.id}" ${mine?'disabled':''}>${ic('msg')}Message</button>
   <button class="ln" data-id="${b.id}" ${mine?'disabled':''} aria-label="Link">${ic('link')}${ls?(ls==='accepted'?'Linked':'Pending'):''}</button></div></div></article>`;
@@ -1613,17 +1756,21 @@ function renderProfile(){
   <div class="pf"><div><div id="pcard">${cardHTML(b,0)}</div>
   <div class="pn"><h3>Profile picture</h3><div class="ph" id="ph">${phHTML(b)}</div><input type="file" id="pphoto" accept="image/*" hidden><button class="sv" id="pbtn" style="margin-top:12px">Change picture</button></div>
   <div class="pn"><h3>Banner</h3><div class="bph" id="bph">${bnHTML(b)}</div><input type="file" id="pbanner" accept="image/*" hidden><button class="sv" id="bbtn" style="margin-top:12px">Change banner</button></div>
-  <div class="pn"><h3>Public page</h3><p class="dsub" id="pubu" style="word-break:break-all;margin-top:6px">${esc(pubUrl(b))||'Run the v2 SQL to enable your public page'}</p><div class="rg" style="flex-wrap:wrap"><button id="pcopy">Copy link</button><button id="pwa">WhatsApp</button><button id="pqr">QR code</button><button id="popen">Open</button></div><div class="f" style="margin:16px 0 0"><label>Page address</label><input id="pslug" value="${esc(b.slug||'')}" maxlength="40" placeholder="your-business"></div></div><div class="pn"><h3>Location</h3><p class="dsub">${esc(b.place_name||'Not set')}${b.address?' · '+esc(b.address):''}</p><p style="margin-top:8px;font-size:13px">${maps}</p></div></div>
+  <div class="pn"><h3>Product shelf</h3><div class="shf" id="shelf"><p class="dsub">Loading…</p></div></div><div class="pn"><h3>Public page</h3><p class="dsub" id="pubu" style="word-break:break-all;margin-top:6px">${esc(pubUrl(b))||'Run the v2 SQL to enable your public page'}</p><div class="rg" style="flex-wrap:wrap"><button id="pcopy">Copy link</button><button id="pwa">WhatsApp</button><button id="pqr">QR code</button><button id="popen">Open</button></div><div class="f" style="margin:16px 0 0"><label>Page address</label><input id="pslug" value="${esc(b.slug||'')}" maxlength="40" placeholder="your-business"></div></div><div class="pn"><h3>Location</h3><p class="dsub">${esc(b.place_name||'Not set')}${b.address?' · '+esc(b.address):''}</p><p style="margin-top:8px;font-size:13px">${maps}</p></div></div>
   <div class="pn">
-  <div class="f"><label>Tagline</label><input id="pt" value="${esc(b.tagline)}" maxlength="80" placeholder="One line that sells you"></div>
+  <div class="f"><label>Business name</label><input id="pbname" value="${esc(b.name)}" maxlength="60"></div>
+  <div class="f"><label>Category</label><select id="pcat">${S.cats.map(c=>`<option value="${esc(c.slug)}"${c.slug===b.category?' selected':''}>${esc(c.label)}</option>`).join('')}</select></div>
+  <div class="f"><label>Place / building (optional)</label><input id="ppl" value="${esc(b.place_name)}" maxlength="80" placeholder="e.g. Signature Mall, 2nd floor"></div>
+  <div class="f"><label>Username &amp; email (these cannot be changed)</label><input value="@${esc(S.prof&&S.prof.username||'')} · ${esc(S.email||'')}" disabled></div><div class="f"><label>Tagline</label><input id="pt" value="${esc(b.tagline)}" maxlength="80" placeholder="One line that sells you"></div>
   <div class="f"><label>City &amp; country</label><input id="pc" value="${esc(b.city)}"></div>
-  <div class="f"><label>Website</label><input id="pw" value="${esc(b.website)}" placeholder="https://"></div>
+  <div class="f"><label>Website</label><input id="pw" value="${esc(b.website)}" placeholder="https://yourwebsite.com"></div><div id="wprev" style="margin:-4px 0 16px"></div>
   <div class="f"><label>About</label><textarea id="pd">${esc(b.description)}</textarea></div>
   <div class="fz"><div class="lbl">Opening hours</div><div class="hz" id="pz"></div></div>
   <label class="chk"><input type="checkbox" id="ptc" ${b.temp_closed?'checked':''}> <span>Temporarily closed (overrides your hours)</span></label>
   
   <button class="sv" id="sv">Save changes</button></div></div>`;
   buildHours($('#pz'),HP,()=>{});
+  sitePreview(b,$('#wprev'));loadShelf(b,$('#shelf'));
   const needSlug=()=>b.slug?true:(toast('Run the v2 SQL to enable public pages'),false);
   $('#pcopy').onclick=()=>{if(needSlug())navigator.clipboard.writeText(pubUrl(b)).then(()=>toast('Link copied'),()=>toast(pubUrl(b)))};
   $('#pwa').onclick=()=>{if(needSlug())window.open('https://wa.me/?text='+encodeURIComponent('Find '+b.name+' on ABENWERK: '+pubUrl(b,'wa')),'_blank','noopener')};
@@ -1636,10 +1783,10 @@ function renderProfile(){
   $('#pphoto').onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f||!/^image\//.test(f.type))return;toast('Uploading…');
     try{b.photo_url=await uploadBizImage(await cropImage(f,1,600),S.uid,'photo');$('#ph').innerHTML=phHTML(b);$('#pcard').innerHTML=cardHTML(b,0);renderGrid();toast('Picture updated')}catch(x){if(x.message!=='cancel'){console.error(x);toast('Upload failed')}}};
   $('#sv').onclick=async()=>{
-    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked};const sl=($('#pslug').value||'').trim().toLowerCase();if(sl&&sl!==b.slug){if(!/^[a-z0-9][a-z0-9-]{2,39}$/.test(sl))return toast('Page address: 3-40 letters, numbers or dashes');patch.slug=sl}
+    const f=id=>$('#'+id).value.trim()||null,patch={tagline:f('pt'),city:f('pc'),website:f('pw'),description:f('pd'),hours:HP.hours,closed_holidays:HP.closed_holidays,closed_dates:HP.closed_dates,temp_closed:$('#ptc').checked,name:f('pbname'),category:$('#pcat').value||null,place_name:f('ppl')};if(!patch.name)return toast('Business name is required');if(patch.website&&!/^https?:\/\//i.test(patch.website))patch.website='https://'+patch.website;const sl=($('#pslug').value||'').trim().toLowerCase();if(sl&&sl!==b.slug){if(!/^[a-z0-9][a-z0-9-]{2,39}$/.test(sl))return toast('Page address: 3-40 letters, numbers or dashes');patch.slug=sl}
     const r=await sb.from('businesses').update(patch).eq('id',b.id);
     if(r.error)return toast(r.error.code==='23505'?'That page address is taken':'Could not save: '+r.error.message);
-    Object.assign(b,patch);renderGrid();$('#pcard').innerHTML=cardHTML(b,0);$('#pubu').textContent=pubUrl(b);toast('Profile saved');
+    Object.assign(b,patch);renderGrid();$('#pcard').innerHTML=cardHTML(b,0);$('#pubu').textContent=pubUrl(b);sitePreview(b,$('#wprev'));toast('Profile saved');
   };
 }
 
@@ -1673,6 +1820,7 @@ async function renderStats(range){
   <div class="pn"><h3>Profile views</h3>${line}</div>
   <div class="dg">${donut('Where visitors come from',pct(d.sources,SRC))}${donut('Devices',pct(d.devices,{}))}</div>
   <div class="pn"><h3>Lead funnel</h3>${fun.map(([l,c],i)=>`<div class="fn"><span>${l}</span><div><i style="--w:${views?Math.min(100,Math.round(c/views*100)):0}%;--n:${i}"></i></div><b>${c}</b></div>`).join('')}</div>`;
+  postStats(el);
   el.querySelector('.rg').onclick=e=>{const b=e.target.closest('button');if(b)renderStats(+b.dataset.r)};
   const cp=el.querySelector('#stcp');if(cp)cp.onclick=()=>{const u=pubUrl(S.me);u?navigator.clipboard.writeText(u).then(()=>toast('Link copied'),()=>toast(u)):toast('Run the v2 SQL first')};
   setTimeout(()=>$$('.dsvg circle[data-len]').forEach((c,i)=>{c.style.transitionDelay=(i%5)*.07+'s';c.style.strokeDasharray=c.dataset.len+' '+c.dataset.c}),60);
@@ -1790,6 +1938,274 @@ function renderAI(){
   $('#aiclr').onclick=()=>{aiSave([]);paintAI()};
   if(innerWidth>820)$('#aii').focus();
 }
+/* ===== v6: BIZ FEED + POSTING ROOM ===== */
+Object.assign(P,{plus:'M12 5v14M5 12h14',save:'M6 4h12v17l-6-4-6 4z',more:'M5 12h.01M12 12h.01M19 12h.01',bolt:'M13 3L5 14h6l-1 7 8-11h-6z',vol:'M4 9v6h4l5 4V5L8 9zM16.5 9a4 4 0 010 6',mute:'M4 9v6h4l5 4V5L8 9zM17 9l4 6M21 9l-4 6',img:'M4 5h16v14H4zM4 16l5-5 4 4 3-3 4 4M9 9h.01',txt:'M5 6h14M12 6v13M9 19h6'});
+$('#feedbtn').addEventListener('click',()=>go('feed'));
+const PLANV={Free:60,Essential:300,Premium:600,Elite:1200},BOOSTS={Free:1,Essential:3,Premium:8,Elite:20},MAXMB=49;
+const vlimit=()=>PLANV[planName()]||60,fdur=s=>s>=120?Math.round(s/60)+' min':s+' sec';
+const myPlace=()=>S.me?[S.me.city,S.me.county,S.me.place_name,S.me.address].filter(Boolean).join(' ').toLowerCase():'';
+const inRegion=p=>!p.regions||!p.regions.length||(S.me&&p.business_id===S.me.id)||p.regions.some(r=>myPlace().includes(String(r).toLowerCase()));
+const pscore=p=>{const h=(Date.now()-new Date(p.created_at))/36e5,e=p.likes*3+p.saves*4+p.comments*5+p.views*.2;return(p.plan_rank||1)*10+(p.boost_until&&new Date(p.boost_until)>Date.now()?40:0)+30*Math.exp(-h/48)+8*Math.log10(1+e)};
+const cdown=t=>{let s=Math.max(0,Math.floor((new Date(t)-Date.now())/1e3));if(!s)return'Ended';const d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),z=n=>String(n).padStart(2,'0');s%=60;return d?d+'d '+h+'h '+z(m)+'m':z(h)+':'+z(m)+':'+z(s)};
+const FTABS=[['foryou','For you'],['flash','⚡ Flash offers'],['linked','Linked'],['saved','Saved']];
+
+async function loadFeed(){
+  const [p,l,s]=await Promise.all([sb.from('posts').select('*').order('created_at',{ascending:false}).limit(120),sb.from('post_likes').select('post_id'),sb.from('post_saves').select('post_id')]);
+  if(p.error){console.error(p.error);return null}
+  S.pl=new Set((l.data||[]).map(x=>x.post_id));S.ps=new Set((s.data||[]).map(x=>x.post_id));S.pt=Date.now();return S.posts=p.data;
+}
+function feedList(tab){
+  const now=Date.now(),L=S.posts.filter(p=>p.status!=='hidden'||(S.me&&p.business_id===S.me.id));
+  if(tab==='flash')return L.filter(p=>p.is_ad&&p.flash_until&&new Date(p.flash_until)>now&&inRegion(p)).sort((a,b)=>new Date(a.flash_until)-new Date(b.flash_until));
+  if(tab==='saved')return L.filter(p=>S.ps.has(p.id));
+  if(tab==='linked')return L.filter(p=>(S.me&&p.business_id===S.me.id)||S.links.get(p.business_id)==='accepted').sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
+  return L.filter(inRegion).sort((a,b)=>pscore(b)-pscore(a));
+}
+function fItem(p){
+  const o=S.biz.find(x=>x.id===p.business_id)||{name:'Business'},th=TH[o.banner_theme]||TH.amber,mine=!!S.me&&p.business_id===S.me.id,a=p.ad||{},fl=p.is_ad&&p.flash_until&&new Date(p.flash_until)>Date.now();
+  const media=p.kind==='video'?`<video src="${esc(p.media_url)}" playsinline loop muted preload="metadata"></video>`:`<img class="mi" src="${esc(p.media_url)}" alt="" loading="lazy" draggable="false">`;
+  return `<section class="fdi" data-id="${esc(p.id)}"><div class="fdm ${p.orientation==='landscape'?'ls':''}" style="--c1:${th[0]};--c2:${th[1]}">${media}
+  <div class="fdo"><div class="who" data-a="prof"><div class="av"${avStyle(o)}>${o.photo_url?'':esc((o.name||'A')[0])}</div><span>${esc(o.name)}${o.is_verified?' ✓':''}</span>${p.is_ad?'<em class="adb">Ad</em>':''}</div>
+  ${fl?`<span class="flb">${ic('bolt')}<b data-end="${esc(p.flash_until)}">${cdown(p.flash_until)}</b></span>`:''}
+  ${p.caption?`<p>${esc(p.caption)}</p>`:''}
+  ${p.is_ad?`<div class="pri"><b>${esc(a.product||'')}</b><span>${money(a)}</span></div><button class="ord" data-a="ord">${mine?'Your ad · '+(p.orders||0)+' orders':'Place order / Get quote'}</button>`:''}</div>
+  <div class="fdr"><button class="lk ${S.pl.has(p.id)?'on':''}" data-a="like" aria-label="Like"><span class="ci">${ic('heart')}</span><i>${p.likes}</i></button><button data-a="cmt" aria-label="Comments"><span class="ci">${ic('msg')}</span><i>${p.comments}</i></button><button class="sav ${S.ps.has(p.id)?'on':''}" data-a="save" aria-label="Save"><span class="ci">${ic('save')}</span><i>${p.saves}</i></button>${p.kind==='video'?`<button data-a="mute" aria-label="Sound"><span class="ci">${ic(S.muted===false?'vol':'mute')}</span></button>`:''}<button data-a="more" aria-label="More"><span class="ci">${ic('more')}</span></button></div></div></section>`;
+}
+async function renderFeed(tab){
+  tab=typeof tab==='string'?tab:(S.ftab||'foryou');S.ftab=tab;const el=$('#v-feed');
+  if(S.posts&&Date.now()-S.pt>6e4)S.posts=null;
+  if(!S.posts){el.innerHTML='<div class="fdl">Loading feed…</div>';if(!await loadFeed()){el.innerHTML='<div class="fdl">The Biz Feed is not switched on yet. Run the ABENWERK v3 SQL to enable it.</div>';return}}
+  const L=feedList(tab),msg={saved:'Nothing saved yet. Tap the bookmark on any post.',flash:'No flash offers right now. Post an ad with a countdown!',linked:'No posts from linked businesses yet.'}[tab]||'No posts yet. Be the first!';
+  el.innerHTML=`<div class="ftb">${FTABS.map(t=>`<button data-t="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')}<button class="fnew" data-a="new">${ic('plus')} Post</button></div><div class="fds" id="fds">${L.length?L.map(fItem).join(''):`<div class="fdl">${msg}<br><br><button class="sv" data-a="new">+ Create a post</button></div>`}</div>`;
+  feedBind();
+  if(S.focusId){const t=el.querySelector('.fdi[data-id="'+S.focusId+'"]');S.focusId=null;if(t)t.scrollIntoView()}
+}
+function feedBind(){
+  const el=$('#v-feed');
+  el.onclick=async e=>{
+    const tb=e.target.closest('.ftb [data-t]');if(tb)return renderFeed(tb.dataset.t);
+    const a=e.target.closest('[data-a]');
+    if(!a){const fm=e.target.closest('.fdm');if(fm&&!e.target.closest('.fdo,.fdr'))tapMedia(fm);return}
+    const k=a.dataset.a;if(k==='new')return go('post');
+    const it=a.closest('.fdi'),p=it&&S.posts.find(x=>x.id===it.dataset.id);if(!p)return;
+    if(k==='like')return fLike(p);
+    if(k==='save')return fSave(p);
+    if(k==='cmt')return openComments(p);
+    if(k==='ord')return orderSheet(p);
+    if(k==='more')return moreSheet(p);
+    if(k==='prof'){const o=S.biz.find(x=>x.id===p.business_id);if(o&&o.slug)window.open(pubUrl(o,'feed'),'_blank','noopener');return}
+    if(k==='mute'){S.muted=S.muted===false;$$('#v-feed video').forEach(v=>v.muted=S.muted);$$('#v-feed [data-a=mute] .ci').forEach(c=>c.innerHTML=ic(S.muted?'mute':'vol'))}
+  };
+  if(S.fio)S.fio.disconnect();
+  S.fio=new IntersectionObserver(es=>es.forEach(en=>{
+    const it=en.target,v=it.querySelector('video');
+    if(en.isIntersecting&&en.intersectionRatio>=.6){if(v){v.muted=S.muted!==false;v.play().catch(()=>{})}clearTimeout(it._v);it._v=setTimeout(()=>countView(it.dataset.id),1200)}
+    else{clearTimeout(it._v);if(v)v.pause()}
+  }),{root:$('#fds'),threshold:[0,.6,1]});
+  $$('#fds .fdi').forEach(i=>S.fio.observe(i));
+  if(!S.ftk)S.ftk=setInterval(()=>{if($('#v-feed').classList.contains('on'))$$('#v-feed [data-end]').forEach(b=>b.textContent=cdown(b.dataset.end))},1000);
+}
+function tapMedia(fm){
+  const now=Date.now(),p=S.posts.find(x=>x.id===fm.closest('.fdi').dataset.id);
+  if(fm._lt&&now-fm._lt<320){fm._lt=0;if(p&&!S.pl.has(p.id))fLike(p);const h=document.createElement('span');h.className='bh';h.textContent='♥';fm.appendChild(h);setTimeout(()=>h.remove(),900);return}
+  fm._lt=now;const v=fm.querySelector('video');if(v)setTimeout(()=>{if(fm._lt===now){v.paused?v.play().catch(()=>{}):v.pause()}},330);
+}
+function countView(id){
+  const p=S.posts&&S.posts.find(x=>x.id===id);if(!p||(S.me&&p.business_id===S.me.id))return;
+  try{if(sessionStorage.getItem('abw_v:'+id))return;sessionStorage.setItem('abw_v:'+id,1)}catch(e){}
+  p.views++;Promise.resolve(sb.rpc('bump_post',{p:id,k:'view'})).catch(()=>{});
+}
+function syncItem(p,cls){
+  const it=document.querySelector('#v-feed .fdi[data-id="'+p.id+'"]');if(!it)return;
+  const lk=it.querySelector('.lk'),sv=it.querySelector('.sav'),cm=it.querySelector('[data-a=cmt] i');
+  lk.classList.toggle('on',S.pl.has(p.id));lk.querySelector('i').textContent=p.likes;
+  sv.classList.toggle('on',S.ps.has(p.id));sv.querySelector('i').textContent=p.saves;if(cm)cm.textContent=p.comments;
+  const b=cls==='lk'?lk:cls==='sav'?sv:null;if(b&&b.classList.contains('on')){b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp')}
+}
+async function fToggle(p,set,tbl,key,cls){
+  const on=set.has(p.id);if(on){set.delete(p.id);p[key]=Math.max(0,p[key]-1)}else{set.add(p.id);p[key]++}
+  syncItem(p,cls);
+  const r=on?await sb.from(tbl).delete().eq('post_id',p.id).eq('user_id',S.uid):await sb.from(tbl).insert({post_id:p.id,user_id:S.uid});
+  if(r.error&&r.error.code!=='23505'){console.error(r.error);toast('Could not update')}
+}
+const fLike=p=>fToggle(p,S.pl,'post_likes','likes','lk'),fSave=p=>fToggle(p,S.ps,'post_saves','saves','sav');
+async function openComments(p){
+  const v=sheet('Comments','<div id="cml" style="max-height:46vh;overflow-y:auto;display:grid;gap:12px;margin-bottom:14px"><p class="dsub">Loading…</p></div><div class="cp" style="padding:0;border:0"><input id="cmi" placeholder="Add a comment…" maxlength="300" autocomplete="off"><button class="sd" id="cms" aria-label="Send">'+ic('send')+'</button></div>');
+  const L=v.querySelector('#cml'),row=c=>'<div class="cmt"><b>'+esc((S.biz.find(x=>x.id===c.business_id)||{name:'Business'}).name)+'</b><small>'+ago(c.created_at)+'</small><p>'+esc(c.body)+'</p></div>';
+  const r=await sb.from('post_comments').select('*').eq('post_id',p.id).order('created_at',{ascending:true}).limit(100);
+  L.innerHTML=(r.data||[]).map(row).join('')||'<p class="dsub">No comments yet. Start the conversation.</p>';
+  const send=async()=>{
+    const i=v.querySelector('#cmi'),t=i.value.trim();if(!t)return;if(!S.me)return toast('Create a business profile first');
+    const ins=await sb.from('post_comments').insert({post_id:p.id,business_id:S.me.id,body:t}).select().single();
+    if(ins.error)return toast('Could not post your comment');
+    i.value='';p.comments++;if(L.querySelector('p.dsub'))L.innerHTML='';L.insertAdjacentHTML('beforeend',row(ins.data));L.scrollTop=L.scrollHeight;syncItem(p);
+  };
+  v.querySelector('#cms').onclick=send;v.querySelector('#cmi').onkeydown=e=>{if(e.key==='Enter')send()};
+}
+function orderSheet(p){
+  const o=S.biz.find(x=>x.id===p.business_id),a=p.ad||{};
+  if(!S.me)return toast('Create a business profile first');if(S.me.id===p.business_id)return toast('This is your own ad');if(!o)return toast('That business could not be found');
+  const ph=String(a.phone||'').replace(/[^\d+]/g,''),wa=ph.replace(/\D/g,'');let mode='order';
+  const v=sheet(a.product||'Order',`<p class="dsub" style="margin:0 0 4px"><b style="color:var(--fg)">${esc(o.name)}</b> · ${money(a)}</p><p class="dsub" style="margin:0 0 14px">${[a.nature,a.customer].filter(Boolean).map(esc).join(' · ')}</p>
+   <div class="dchips" style="padding:0;margin:0 0 12px"><button data-m="order" class="on">Place an order</button><button data-m="quote">Get a quote</button></div>
+   <div class="f"><label>Quantity</label><input id="oq" type="number" min="1" value="1"></div><div class="f"><label>Note (optional)</label><input id="on" maxlength="200" placeholder="Delivery place, deadline, questions…"></div>
+   <button class="sv" id="og" style="width:100%">Send order request</button>
+   ${ph?`<p class="dsub" style="margin:14px 0 0">Prefer to talk? <a style="color:var(--yt)" href="tel:${esc(ph)}">Call ${esc(a.phone)}</a>${wa.length>6?` · <a style="color:var(--yt)" target="_blank" rel="noopener" href="https://wa.me/${wa}">WhatsApp</a>`:''}</p>`:''}`);
+  v.querySelector('.dchips').onclick=e=>{const b=e.target.closest('[data-m]');if(!b)return;mode=b.dataset.m;v.querySelectorAll('[data-m]').forEach(x=>x.classList.toggle('on',x===b));v.querySelector('#og').textContent=mode==='order'?'Send order request':'Request a quote'};
+  v.querySelector('#og').onclick=async()=>{
+    const q=Math.max(1,parseInt(v.querySelector('#oq').value)||1),n=v.querySelector('#on').value.trim();
+    const body=(mode==='order'?'Hi! I would like to order '+q+' × '+a.product+' ('+money(a).replace(/&amp;/g,'&')+') from your ad.':'Hi! Could you send me a quote for '+a.product+'? Quantity: '+q+'.')+(n?'\n'+n:'');
+    v.remove();await openChat(o);const c=CH.get(o.id);
+    if(c&&c.db){await sendDb(c,{kind:'text',body});p.orders=(p.orders||0)+1;Promise.resolve(sb.rpc('bump_post',{p:p.id,k:'order'})).catch(()=>{})}
+    toast(mode==='order'?'Order request sent':'Quote request sent');
+  };
+}
+function moreSheet(p){
+  const mine=!!S.me&&p.business_id===S.me.id,o=S.biz.find(x=>x.id===p.business_id)||{},n=BOOSTS[planName()]||1;
+  const v=sheet('Post options',mine?`<p class="dsub" style="margin:0 0 14px">${p.views} views · ${p.likes} likes · ${p.saves} saves · ${p.comments} comments${p.is_ad?' · '+p.orders+' orders':''}</p><button class="sv" id="mb" style="width:100%">⚡ Boost for 24 hours</button><p class="dsub" style="margin:8px 0 18px">Your ${planName()} plan includes ${n} boost${n>1?'s':''} per month.${p.boost_until&&new Date(p.boost_until)>Date.now()?' This post is boosted right now.':''}</p><button class="gh" id="md" style="color:var(--err)">Delete post</button>`
+   :`${o.slug?'<button class="sv" id="mv" style="width:100%">Visit business page</button>':''}<div class="f" style="margin-top:18px"><label>Report this post</label><select id="mr"><option>Spam or scam</option><option>Misleading ad</option><option>Inappropriate content</option><option>Other</option></select></div><button class="gh" id="mrb">Send report</button>`);
+  const g=s=>v.querySelector(s);
+  if(mine){
+    g('#mb').onclick=async()=>{const r=await sb.rpc('boost_post',{p:p.id});if(r.error)return toast(r.error.message||'Could not boost');p.boost_until=(r.data&&r.data.until)||new Date(Date.now()+864e5).toISOString();v.remove();toast('Boosted for 24 hours'+(r.data&&r.data.left!=null?' · '+r.data.left+' left this month':''))};
+    g('#md').onclick=async()=>{if(!confirm('Delete this post? This cannot be undone.'))return;const r=await sb.from('posts').delete().eq('id',p.id);if(r.error)return toast('Could not delete');const path=(String(p.media_url).split('/feed-media/')[1]||'').split('?')[0];if(path)Promise.resolve(sb.storage.from('feed-media').remove([decodeURIComponent(path)])).catch(()=>{});S.posts=S.posts.filter(x=>x.id!==p.id);v.remove();renderFeed();toast('Post deleted')};
+  }else{
+    if(g('#mv'))g('#mv').onclick=()=>window.open(pubUrl(o,'feed'),'_blank','noopener');
+    g('#mrb').onclick=async()=>{const r=await sb.from('post_reports').insert({post_id:p.id,user_id:S.uid,reason:g('#mr').value});v.remove();toast(r.error&&r.error.code!=='23505'?'Could not send the report':'Thanks. We will review this post.')};
+  }
+}
+const openPost=id=>{S.focusId=id;S.ftab='foryou';go('feed')};
+
+/* ----- posting room ----- */
+const FONTS=[['Clean','system-ui,Segoe UI,Arial,sans-serif'],['Serif','Georgia,serif'],['Bold','Impact,Haettenschweiler,sans-serif'],['Mono','Courier New,monospace'],['Script','Brush Script MT,cursive'],['Round','Trebuchet MS,sans-serif']];
+const BGS=['#000000','#FFD400','#ff5a1f','#3b82f6','#22c55e','#8b5cf6','#f43f5e','#ffffff'],GRADS=[['#FFD400','#ff5a1f'],['#8b5cf6','#ec4899'],['#3b82f6','#06b6d4'],['#22c55e','#a3e635'],['#111111','#555555']];
+const UNITS=['piece','item','litre','kg','pack','set','hour','day','month','service','person','order'],NATURES=['Physical product','Food & drink','Service','Property / rental','Event / ticket','Digital product','Other'],CUSTOMERS=['Everyone','Consumers','Businesses (B2B)'],SUGG=['Kenya','Uganda','Tanzania','Rwanda','Nairobi','Mombasa','Kisumu','Nakuru'];
+const NEWPOST=()=>({type:null,file:null,url:null,dur:0,orient:'portrait',ad:false,global:true,regions:[],text:'',font:0,size:96,color:'#ffffff',bg:{t:'color',v:'#000000'},bgurl:null,bgimg:null,bx:.5,by:.5});
+const fileMeta=(f,t)=>new Promise((ok,no)=>{const u=URL.createObjectURL(f),m=document.createElement(t==='video'?'video':'img');m.preload='metadata';m.muted=true;m.onloadedmetadata=m.onload=()=>ok({u,w:m.videoWidth||m.naturalWidth,h:m.videoHeight||m.naturalHeight,dur:Math.round(m.duration||0)});m.onerror=()=>{URL.revokeObjectURL(u);no(new Error('bad file'))};m.src=u});
+function renderPost(){
+  const el=$('#v-post');S.pd=S.pd||NEWPOST();const d=S.pd;
+  if(!S.me){el.innerHTML='<h1>New post</h1><p class="dsub">Create a business profile first.</p>';return}
+  if(!d.type){
+    el.innerHTML=`<div class="prm" style="text-align:center"><h1>Create a post</h1><p class="dsub">Share a photo, a video or a bold text card with the Biz Feed.</p><button class="plus" id="plus" aria-label="Create a post">${ic('plus')}</button><div class="ptiles" id="ptiles" hidden>${[['image','img','Photo','JPG, PNG, WebP'],['video','play','Video','Up to '+fdur(vlimit())],['text','txt','Text card','Fonts & colours']].map((t,i)=>`<button data-ty="${t[0]}" style="--n:${i}">${ic(t[1])}${t[2]}<small>${t[3]}</small></button>`).join('')}</div><p class="dsub">${planName()} plan: videos up to ${fdur(vlimit())}, ${MAXMB} MB max per file.</p><input type="file" id="pfile" hidden></div>`;
+    $('#plus').onclick=()=>{$('#ptiles').hidden=false;$('#plus').style.transform='scale(.55)'};
+    $('#ptiles').onclick=async e=>{
+      const b=e.target.closest('[data-ty]');if(!b)return;const ty=b.dataset.ty;
+      if(ty==='text'){d.type='text';return renderPost()}
+      const fi=$('#pfile');fi.accept=ty+'/*';fi.onchange=async()=>{
+        const f=fi.files[0];if(!f)return;
+        if(ty==='video'&&f.size>MAXMB*1048576)return toast('That video is '+(f.size/1048576).toFixed(0)+' MB. The limit is '+MAXMB+' MB, so trim or compress it first.');
+        try{const m=await fileMeta(f,ty);Object.assign(d,{type:ty,file:f,url:m.u,dur:m.dur,orient:m.w>m.h?'landscape':'portrait'});renderPost()}catch(x){toast('Could not read that file')}
+      };fi.click();
+    };
+    return;
+  }
+  const L=d.orient==='landscape',T=d.type==='text';
+  el.innerHTML=`<div class="prm"><div style="display:flex;align-items:center;gap:12px;margin-bottom:18px"><button class="gh" id="pcancel" style="width:auto;padding:0 16px">← Start over</button><h1 style="margin:0">New ${T?'text card':d.type==='video'?'video':'photo'}</h1></div>
+  <div class="pcw ${L?'ls':''}"><div><div class="pst ${L?'ls':''}" id="pst">${T?'<div class="tb" id="tb"></div>':d.type==='video'?`<video src="${d.url}" controls playsinline muted></video>`:`<img src="${d.url}" alt="">`}</div></div>
+  <div>${T?`<div class="pn"><h3>Text card</h3><div class="dchips" id="tor" style="padding:0 0 12px;margin:0">${['portrait','landscape'].map(o=>`<button data-o="${o}" class="${d.orient===o?'on':''}">${o==='portrait'?'▯ Portrait':'▭ Landscape'}</button>`).join('')}</div>
+   <div class="f"><label>Your text</label><textarea id="ttx" maxlength="400" placeholder="Type something bold…">${esc(d.text)}</textarea></div>
+   <div class="f"><label>Font</label><div class="dchips" id="tfn" style="padding:0;margin:0">${FONTS.map((f,i)=>`<button data-fi="${i}" class="${d.font===i?'on':''}" style="font-family:${f[1]}">${f[0]}</button>`).join('')}</div></div>
+   <div class="r2"><div class="f"><label>Size</label><input type="range" id="tsz" min="40" max="220" value="${d.size}"></div><div class="f"><label>Text colour</label><input type="color" id="tcl" value="${d.color}"></div></div>
+   <div class="f"><label>Background</label><div class="sw" id="tbg">${BGS.map(c=>`<i data-c="${c}" style="background:${c}"></i>`).join('')}${GRADS.map((g,i)=>`<i data-g="${i}" style="background:linear-gradient(135deg,${g[0]},${g[1]})"></i>`).join('')}<label><input type="color" id="tbc" value="#222222"> custom</label><button class="gh" id="tbi" type="button">Upload image</button></div></div><input type="file" id="tbf" accept="image/*" hidden>
+   <p class="dsub" style="margin:0">Tip: drag the text on the preview to place it.</p></div>`
+   :d.type==='video'?`<div class="pn"><h3>Video</h3><p class="dsub" id="vinfo" style="margin:0"></p></div>`:''}
+  <div class="pn"><div class="f" style="margin:0"><label>Caption</label><textarea id="pcap" maxlength="500" placeholder="Say something about this post…"></textarea></div></div>
+  <div class="pn"><h3>Is it an ad or a normal post?</h3><div class="ch2" id="pad"><button data-ad="0" class="on"><b>Normal post</b><small>News, behind the scenes, tips</small></button><button data-ad="1"><b>Ad</b><small>Adds an Order / Get quote button</small></button></div>
+   <div id="adf" hidden style="margin-top:16px"><div class="f"><label>Product or service name *</label><input id="ap" maxlength="60" placeholder="e.g. Branded staff uniform"></div>
+   <div class="r2"><div class="f"><label>Nature</label><select id="an">${NATURES.map(x=>`<option>${esc(x)}</option>`).join('')}</select></div><div class="f"><label>Customer</label><select id="ac">${CUSTOMERS.map(x=>`<option>${esc(x)}</option>`).join('')}</select></div></div>
+   <div class="r2"><div class="f"><label>Price (KSh) *</label><input id="apr" type="number" min="1" placeholder="e.g. 850"></div><div class="f"><label>Per</label><select id="au">${UNITS.map(x=>`<option>${x}</option>`).join('')}</select></div></div>
+   <div class="r2"><div class="f"><label>Phone / WhatsApp *</label><input id="aph" type="tel" maxlength="20" placeholder="+254…"></div><div class="f"><label>Email (optional)</label><input id="aem" type="email" maxlength="80"></div></div>
+   <div class="f" style="margin:0"><label>Flash offer</label><select id="afl"><option value="0">Not a flash offer</option><option value="1">Ends in 1 hour</option><option value="6">Ends in 6 hours</option><option value="24">Ends in 24 hours</option><option value="72">Ends in 3 days</option><option value="168">Ends in 7 days</option></select></div></div></div>
+  <div class="pn"><h3>Who should see it?</h3><div class="ch2" id="pgl"><button data-gl="1" class="on"><b>🌍 Global</b><small>Everyone on ABENWERK</small></button><button data-gl="0"><b>📍 Targeted</b><small>Choose countries or places</small></button></div>
+   <div id="rgf" hidden style="margin-top:14px"><div class="f"><label>Add a country, city or area</label><input id="rgi" maxlength="40" placeholder="Type and press Enter"></div><div class="dchips" id="rgt" style="padding:0;margin:0 0 6px"></div><div class="dchips" id="rgs" style="padding:0;margin:0">${SUGG.map(s=>`<button data-s="${s}">+ ${s}</button>`).join('')}${S.me.city?`<button data-s="${esc(S.me.city)}">📍 My city</button>`:''}</div></div></div>
+  <button class="sv" id="ppub" style="width:100%;height:52px;font-size:16px">Publish to Biz Feed</button></div></div></div>`;
+  bindPost();
+}
+function applyText(){
+  const d=S.pd,st=$('#pst'),tb=$('#tb');if(!st||!tb||!d||d.type!=='text')return;
+  const L=d.orient==='landscape',sw=st.clientWidth;st.classList.toggle('ls',L);
+  st.style.background=d.bg.t==='img'?'#000 url('+d.bgurl+') center/cover':d.bg.t==='grad'?'linear-gradient(135deg,'+GRADS[d.bg.v][0]+','+GRADS[d.bg.v][1]+')':d.bg.v;
+  Object.assign(tb.style,{fontFamily:FONTS[d.font][1],fontSize:(d.size*sw/(L?1920:1080))+'px',color:d.color,left:d.bx*100+'%',top:d.by*100+'%'});
+  tb.textContent=d.text||'Your text here';
+}
+window.addEventListener('resize',applyText);
+function bindPost(){
+  const d=S.pd,el=$('#v-post'),g=s=>el.querySelector(s);
+  g('#pcancel').onclick=()=>{S.pd=null;renderPost()};
+  if(d.type==='text'){
+    applyText();const tb=g('#tb'),st=g('#pst');
+    tb.onpointerdown=e=>{e.preventDefault();tb.setPointerCapture(e.pointerId);const r=st.getBoundingClientRect(),ox=e.clientX-(r.left+d.bx*r.width),oy=e.clientY-(r.top+d.by*r.height);tb.onpointermove=m=>{d.bx=Math.min(.95,Math.max(.05,(m.clientX-ox-r.left)/r.width));d.by=Math.min(.95,Math.max(.05,(m.clientY-oy-r.top)/r.height));applyText()};tb.onpointerup=()=>{tb.onpointermove=null;tb.onpointerup=null}};
+    g('#tor').onclick=e=>{const b=e.target.closest('[data-o]');if(!b)return;d.orient=b.dataset.o;g('.pcw').classList.toggle('ls',d.orient==='landscape');g('#tor').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));requestAnimationFrame(applyText)};
+    g('#ttx').oninput=e=>{d.text=e.target.value;applyText()};
+    g('#tfn').onclick=e=>{const b=e.target.closest('[data-fi]');if(!b)return;d.font=+b.dataset.fi;g('#tfn').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));applyText()};
+    g('#tsz').oninput=e=>{d.size=+e.target.value;applyText()};g('#tcl').oninput=e=>{d.color=e.target.value;applyText()};
+    g('#tbg').onclick=e=>{const i=e.target.closest('i');if(!i)return;d.bg=i.dataset.g!=null?{t:'grad',v:+i.dataset.g}:{t:'color',v:i.dataset.c};g('#tbg').querySelectorAll('i').forEach(x=>x.classList.toggle('on',x===i));applyText()};
+    g('#tbc').oninput=e=>{d.bg={t:'color',v:e.target.value};g('#tbg').querySelectorAll('i').forEach(x=>x.classList.remove('on'));applyText()};
+    g('#tbi').onclick=()=>g('#tbf').click();
+    g('#tbf').onchange=e=>{const f=e.target.files[0];if(!f)return;d.bgurl=URL.createObjectURL(f);d.bgimg=new Image();d.bgimg.src=d.bgurl;d.bg={t:'img'};applyText()};
+  }
+  if(d.type==='video'){
+    const vi=g('#vinfo'),lim=vlimit(),over=d.dur>lim;
+    vi.innerHTML=fdur(d.dur)+' · '+(d.file.size/1048576).toFixed(1)+' MB · '+(over?'<b class="pbad">Too long for your '+planName()+' plan (max '+fdur(lim)+'). Trim it or upgrade.</b>':'<b class="pgood">Within your plan limit ✓</b>');
+  }
+  g('#pad').onclick=e=>{const b=e.target.closest('[data-ad]');if(!b)return;d.ad=b.dataset.ad==='1';g('#pad').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));g('#adf').hidden=!d.ad};
+  g('#pgl').onclick=e=>{const b=e.target.closest('[data-gl]');if(!b)return;d.global=b.dataset.gl==='1';g('#pgl').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));g('#rgf').hidden=d.global};
+  const tags=()=>{g('#rgt').innerHTML=d.regions.map((r,i)=>`<button data-x="${i}">${esc(r)} ✕</button>`).join('')},add=v=>{v=String(v).replace(/[^\p{L}\p{N} ,'-]/gu,'').trim();v.split(',').map(x=>x.trim()).filter(Boolean).forEach(x=>{if(d.regions.length<10&&!d.regions.some(r=>r.toLowerCase()===x.toLowerCase()))d.regions.push(x)});tags()};
+  g('#rgi').onkeydown=e=>{if(e.key==='Enter'||e.key===','){e.preventDefault();add(e.target.value);e.target.value=''}};
+  g('#rgt').onclick=e=>{const b=e.target.closest('[data-x]');if(b){d.regions.splice(+b.dataset.x,1);tags()}};
+  g('#rgs').onclick=e=>{const b=e.target.closest('[data-s]');if(b)add(b.dataset.s)};
+  g('#ppub').onclick=()=>publishPost(g);
+}
+async function renderTextBlob(){
+  const d=S.pd,L=d.orient==='landscape',W=L?1920:1080,H=L?1080:1920,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+  if(d.bg.t==='img'&&d.bgimg){await d.bgimg.decode().catch(()=>{});const s=Math.max(W/d.bgimg.naturalWidth,H/d.bgimg.naturalHeight),w=d.bgimg.naturalWidth*s,h=d.bgimg.naturalHeight*s;x.fillStyle='#000';x.fillRect(0,0,W,H);x.drawImage(d.bgimg,(W-w)/2,(H-h)/2,w,h)}
+  else if(d.bg.t==='grad'){const gr=x.createLinearGradient(0,0,W,H);gr.addColorStop(0,GRADS[d.bg.v][0]);gr.addColorStop(1,GRADS[d.bg.v][1]);x.fillStyle=gr;x.fillRect(0,0,W,H)}
+  else{x.fillStyle=d.bg.v;x.fillRect(0,0,W,H)}
+  const fs=d.size,bw=W*.8,lines=[];x.font='700 '+fs+'px '+FONTS[d.font][1];x.fillStyle=d.color;x.textAlign='center';x.textBaseline='middle';
+  d.text.split('\n').forEach(par=>{let ln='';par.split(' ').forEach(w=>{const t=ln?ln+' '+w:w;if(ln&&x.measureText(t).width>bw){lines.push(ln);ln=w}else ln=t});lines.push(ln)});
+  const lh=fs*1.25,top=d.by*H-lines.length*lh/2;lines.forEach((l,i)=>x.fillText(l,d.bx*W,top+lh*(i+.5)));
+  return new Promise(r=>c.toBlob(r,'image/jpeg',.9));
+}
+async function shrinkImage(f){
+  try{const b=await createImageBitmap(f),s=Math.min(1,1600/Math.max(b.width,b.height)),c=document.createElement('canvas');c.width=Math.round(b.width*s);c.height=Math.round(b.height*s);c.getContext('2d').drawImage(b,0,0,c.width,c.height);return await new Promise(r=>c.toBlob(r,'image/jpeg',.85))||f}catch(e){return f}
+}
+async function publishPost(g){
+  const d=S.pd,btn=g('#ppub'),v=id=>g(id).value.trim();
+  if(d.type==='text'&&!d.text.trim())return toast('Type some text first');
+  if(d.type==='video'&&d.dur>vlimit())return toast('Your '+planName()+' plan allows videos up to '+fdur(vlimit()));
+  let ad=null,flash=null;
+  if(d.ad){
+    const price=+v('#apr'),ph=v('#aph');
+    if(v('#ap').length<2)return toast('Add the product or service name');if(!(price>0))return toast('Add a price');if(ph.replace(/\D/g,'').length<7)return toast('Add a phone or WhatsApp number');
+    ad={product:v('#ap'),nature:g('#an').value,customer:g('#ac').value,price,unit:g('#au').value,phone:ph,email:v('#aem')||null};
+    const h=+g('#afl').value;if(h)flash=new Date(Date.now()+h*36e5).toISOString();
+  }
+  if(!d.global&&!d.regions.length)return toast('Add at least one place, or choose Global');
+  btn.disabled=true;btn.textContent='Publishing… keep this page open';
+  try{
+    const blob=d.type==='text'?await renderTextBlob():d.type==='image'?await shrinkImage(d.file):d.file,t=blob.type||'',ext=d.type==='video'?(/webm/.test(t)?'webm':/quicktime/.test(t)?'mov':'mp4'):/png/.test(t)?'png':/webp/.test(t)?'webp':/gif/.test(t)?'gif':'jpg',path=S.uid+'/'+Date.now()+'.'+ext;
+    const up=await sb.storage.from('feed-media').upload(path,blob,{contentType:t||undefined});if(up.error)throw up.error;
+    const r=await sb.from('posts').insert({business_id:S.me.id,kind:d.type,is_ad:d.ad,caption:v('#pcap')||null,media_url:sb.storage.from('feed-media').getPublicUrl(path).data.publicUrl,orientation:d.orient,duration_sec:d.type==='video'?d.dur:null,ad,regions:d.global?[]:d.regions,flash_until:flash});
+    if(r.error)throw r.error;
+    S.pd=null;S.posts=null;S.ftab='foryou';toast('Posted to the Biz Feed');go('feed');
+  }catch(e){console.error(e);btn.disabled=false;btn.textContent='Publish to Biz Feed';toast(e.message&&/plan allows|template/.test(e.message)?e.message:/size|exceed/i.test(e.message||'')?'File is too large (max '+MAXMB+' MB)':'Could not publish. Check the v3 SQL was run.')}
+}
+
+/* ----- shelf + post stats ----- */
+async function loadShelf(b,el){
+  if(!el)return;
+  const r=await sb.from('posts').select('id,kind,media_url,ad').eq('business_id',b.id).eq('is_ad',true).eq('status','live').order('created_at',{ascending:false}).limit(12);
+  if(r.error){el.innerHTML='<p class="dsub">Run the v3 SQL to enable the product shelf.</p>';return}
+  el.innerHTML=r.data.length?r.data.map(shelfTile).join(''):'<p class="dsub" style="grid-column:1/-1">Post an ad and it appears here as a product tile.</p>';
+  el.onclick=e=>{const t=e.target.closest('.sh');if(t)openPost(t.dataset.id)};
+}
+async function postStats(el){
+  if(!S.me)return;const tk=S.pst=(S.pst||0)+1;
+  const r=await sb.from('posts').select('id,kind,is_ad,caption,media_url,views,likes,saves,comments,orders,created_at,ad').eq('business_id',S.me.id).order('created_at',{ascending:false}).limit(20);
+  if(S.pst!==tk||r.error||!r.data||!r.data.length)return;
+  const best=r.data.reduce((a,p)=>(p.views+p.likes*3+p.orders*10>a.views+a.likes*3+a.orders*10?p:a),r.data[0]),tot=r.data.reduce((a,p)=>({v:a.v+p.views,o:a.o+p.orders}),{v:0,o:0});
+  el.insertAdjacentHTML('beforeend',`<div class="pn"><h3>Your posts</h3><p class="dsub" style="margin:0 0 12px">${tot.v.toLocaleString()} views and ${tot.o} orders across your latest ${r.data.length} posts. The highlighted row is your best performer.</p><div style="overflow-x:auto"><table class="pt2"><tr><th>Post</th><th>Views</th><th>Likes</th><th>Saves</th><th>Comments</th><th>Orders</th></tr>${r.data.map(p=>`<tr class="${p===best&&(p.views||p.orders)?'best':''}"><td>${p.kind==='video'?`<video src="${esc(p.media_url)}#t=0.1" muted preload="metadata"></video>`:`<img src="${esc(p.media_url)}" alt="">`}<span>${esc((p.ad&&p.ad.product)||p.caption||'Untitled').slice(0,48)}${p.is_ad?' · Ad':''}<br><small style="color:var(--mut)">${ago(p.created_at)}</small></span></td><td>${p.views}</td><td>${p.likes}</td><td>${p.saves}</td><td>${p.comments}</td><td>${p.is_ad?p.orders:'-'}</td></tr>`).join('')}</table></div></div>`);
+}
+
 /* ---------- boot ---------- */
 (async function(){
   let demo=false;
