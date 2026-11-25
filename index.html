@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ABENWERK — Get found. Get customers.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://asdnvoiegsbccswcnfwz.supabase.co" crossorigin><link rel="dns-prefetch" href="https://flagcdn.com"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050505;--bg2:#0e0e0e;--fg:#fff;--mut:#9a9a9a;--line:#262626;--y:#FFD400;--yt:#FFD400;--hot:#ff5a1f;--ok:#3ddc97;--err:#ff5d5d;--ink:#000;color-scheme:dark;
@@ -1078,6 +1078,83 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .aic1>i.sav{width:34px;height:34px;display:grid;place-items:center;font-style:normal;font-weight:700;flex:none}#dash .aic1 span{display:flex;flex-direction:column;min-width:0}#dash .aic1 b{font-size:13.5px}#dash .aic1 small{font-size:11.5px;color:var(--mut)}
 @media(max-width:700px){#sdd{left:10px;width:calc(100vw - 20px);top:60px}}
 
+/* ===== v10: blue+green brand, glass comments, spring motion, repost, credits ===== */
+:root{--g:#18E2A0;--grad:#FFD400;--spring:cubic-bezier(.34,1.56,.64,1);--smooth:cubic-bezier(.22,1,.36,1)}
+#dash{--gl:rgba(255,255,255,.08);--gl2:rgba(255,255,255,.15);-webkit-tap-highlight-color:transparent}
+@media (prefers-color-scheme:light){#dash{--gl:rgba(0,0,0,.05);--gl2:rgba(0,0,0,.1)}}
+#dash button,#dash a{touch-action:manipulation}
+#dash .ib,#dash .up,#dash .gc,#dash .sv,#dash .gh,#dash .ms,#dash .ln,#dash .hb,#dash .fol,#dash .dchips button,#dash .ftb button,#dash .tlt button,#dash .tca2 button,#dash .fdr .ci{transition:transform .4s var(--spring),box-shadow .3s,background-color .25s,color .2s,border-color .25s,opacity .2s}
+#dash .ib:active,#dash .up:active,#dash .gc:active,#dash .sv:active,#dash .gh:active,#dash .ms:active,#dash .ln:active,#dash .hb:active,#dash .fol:active,#dash .dchips button:active,#dash .tca2 button:active,#dash .ftb button:active,#dash .tlt button:active{transform:scale(.92)}
+#dash .ib:hover,#dash .sv:hover{transform:translateY(-2px) scale(1.04)}
+#dash .card{animation:up2 .6s var(--spring) backwards;animation-delay:calc(min(var(--n),10)*40ms);transition:transform .45s var(--spring),border .3s,box-shadow .3s}
+#dash .card:hover{transform:translateY(-8px) scale(1.012)}
+#dash .tc{animation:up2 .55s var(--spring) backwards;animation-delay:calc(min(var(--n),8)*45ms)}
+#dash .dview.on{animation:vin .5s var(--spring) backwards}
+#dash #v-feed.on{animation:fi .3s}
+#dash .vw.on{animation:vin .45s var(--spring) backwards}
+#dash .dd.on{animation:ddin .4s var(--spring)}
+#dash .dchips button.on,#dash .ftb button.on,#dash .tlt button.on{animation:chipb .45s var(--spring)}
+#dash .dnav a .i{transition:transform .4s var(--spring)}
+#dash .dnav a:hover .i{transform:scale(1.18) rotate(-5deg)}
+#dash .fdr .pp svg,#dash .tca2 .pp svg,#dash .act .pp svg{animation:hb .65s var(--spring)}
+#dash .rp.pp svg{animation:spin .7s var(--spring)!important}
+.toast{transition:transform .5s var(--spring),opacity .25s!important}
+@keyframes up2{from{opacity:0;transform:translateY(26px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes vin{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes ddin{from{opacity:0;transform:translateY(-8px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes chipb{0%{transform:scale(.86)}100%{transform:none}}
+@keyframes hb{0%{transform:scale(1)}30%{transform:scale(1.6) rotate(-9deg)}55%{transform:scale(.82) rotate(4deg)}78%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes coin{0%,86%,100%{transform:none}92%{transform:rotateY(180deg) scale(1.12)}}
+/* repost */
+#dash .fdr .rp.on,#dash .tca2 .rp.on{color:var(--g)}
+#dash .fdr .rp.on svg,#dash .tca2 .rp.on svg{fill:none}
+#dash .tca2 .rp:hover{color:var(--g)}
+/* credits button */
+#dash .gc{margin-left:auto;height:42px;padding:0 6px 0 14px;border-radius:99px;display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;border:1px solid var(--line);background:var(--bg2);color:var(--fg)}
+#dash .gc:hover{border-color:var(--g);box-shadow:0 10px 26px -10px var(--g);transform:translateY(-2px)}
+#dash .gc svg{width:20px;height:20px;fill:none;stroke:var(--g);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#dash .gc b{min-width:30px;height:30px;border-radius:99px;background:var(--grad);color:#000;display:grid;place-items:center;font-size:13px;padding:0 8px}
+#dash .up{margin-left:0!important}
+@media (max-width:820px){#dash .gc{padding:0 5px 0 11px}#dash .gc .gct{display:none}}
+/* glass sheet */
+.gls{position:fixed;inset:0;z-index:80;display:flex;align-items:flex-end;justify-content:center}
+.gls .glb{position:absolute;inset:0;background:rgba(0,0,0,.45);-webkit-backdrop-filter:blur(10px) saturate(1.3);backdrop-filter:blur(10px) saturate(1.3);animation:fi .25s}
+.gls .glp{position:relative;width:min(560px,100%);max-height:84vh;display:flex;flex-direction:column;border-radius:30px 30px 0 0;color:var(--fg);overflow:hidden;
+ background:linear-gradient(155deg,rgba(255,255,255,.17),rgba(255,255,255,.05) 62%),rgba(18,22,28,.55);border:1px solid rgba(255,255,255,.2);border-bottom:0;
+ -webkit-backdrop-filter:blur(34px) saturate(1.7);backdrop-filter:blur(34px) saturate(1.7);box-shadow:0 -20px 80px -24px rgba(255,212,0,.45),inset 0 1px 0 rgba(255,255,255,.35);animation:glin .55s var(--spring)}
+@media (min-width:821px){.gls{align-items:center}.gls .glp{border-radius:30px;border-bottom:1px solid rgba(255,255,255,.2);max-height:78vh}}
+@media (prefers-color-scheme:light){.gls .glp{background:linear-gradient(155deg,rgba(255,255,255,.88),rgba(255,255,255,.6));border-color:rgba(255,255,255,.9);box-shadow:0 -20px 80px -24px rgba(255,212,0,.35),inset 0 1px 0 #fff}.gls .glb{background:rgba(20,30,40,.3)}}
+@keyframes glin{from{transform:translateY(62%) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.gls.out .glb{opacity:0;transition:opacity .25s}
+.gls.out .glp{transform:translateY(42%);opacity:0;transition:transform .26s ease-in,opacity .26s}
+.glg{padding:10px 0 4px;display:grid;place-items:center;cursor:grab;touch-action:none}.glg i{width:44px;height:5px;border-radius:9px;background:var(--mut);opacity:.5}
+.glh{display:flex;align-items:center;gap:10px;padding:4px 20px 12px}.glh b{font-size:17px}.glc{color:var(--mut);font-size:12.5px;flex:1}
+.glx{width:34px;height:34px;border-radius:50%;background:var(--gl);display:grid;place-items:center;font-size:14px;transition:transform .35s var(--spring)}.glx:hover{transform:rotate(90deg) scale(1.1)}
+.glbd{display:flex;flex-direction:column;min-height:0;flex:1;padding:0 16px max(14px,env(safe-area-inset-bottom))}
+.cmgl{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:4px 2px 12px;min-height:120px;max-height:46vh;overscroll-behavior:contain}
+.cmr{display:flex;gap:10px;animation:up2 .5s var(--spring) backwards;animation-delay:calc(var(--i)*40ms)}
+.cmr .av{width:34px;height:34px;flex:none;font-size:14px}
+.cmb{background:var(--gl);border:1px solid var(--gl2);border-radius:5px 18px 18px 18px;padding:9px 14px;min-width:0;max-width:100%}
+.cmr.new .cmb{box-shadow:0 0 0 1px var(--g),0 8px 26px -12px var(--g)}
+.cmn{display:flex;align-items:center;gap:6px;flex-wrap:wrap}.cmn b{font-size:13.5px;cursor:pointer}.cmn small{color:var(--mut);font-size:11.5px}
+.cmn em{font-style:normal;font-size:10px;font-weight:700;padding:1px 7px;border-radius:99px;background:var(--grad);color:#000}
+.cmb p{margin:3px 0 0;font-size:14.5px;line-height:1.45;word-break:break-word;overflow-wrap:anywhere}.cmb .mn{color:var(--yt);font-weight:700}
+#dash .cma button{font-size:12px;color:var(--mut);font-weight:700;padding:2px 0;margin-top:2px;transition:color .2s,transform .3s var(--spring)}.cma button:hover{color:var(--yt);transform:translateX(3px)}
+.cmsk{display:grid;gap:10px}.cmsk i{height:58px;border-radius:18px;background:linear-gradient(90deg,var(--gl),var(--gl2),var(--gl));background-size:200% 100%;animation:shm 1.2s linear infinite}
+.cmq{display:flex;gap:8px;padding:2px 0 10px;overflow-x:auto}.cmq button{width:40px;height:40px;flex:none;border-radius:50%;background:var(--gl);border:1px solid var(--gl2);font-size:19px;transition:transform .35s var(--spring)}.cmq button:hover{transform:translateY(-4px) scale(1.18)}.cmq button:active{transform:scale(.85)}
+.cmf{display:flex;align-items:center;gap:8px;background:var(--gl);border:1px solid var(--gl2);border-radius:99px;padding:6px 6px 6px 8px}
+.cmf .av{width:32px;height:32px;flex:none;font-size:13px}
+.cmf input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--fg);font-size:16px;padding:8px 4px}
+.cms{width:38px;height:38px;border-radius:50%;background:var(--grad);color:#000;display:grid;place-items:center;flex:none;transition:transform .35s var(--spring),opacity .2s}.cms:disabled{opacity:.35;transform:scale(.85)}.cms:not(:disabled):hover{transform:scale(1.12) rotate(-8deg)}.cms svg{width:18px;height:18px}
+.cmempty{text-align:center;color:var(--mut);padding:26px 0;font-size:14px}
+/* credits sheet */
+.cdb{text-align:center;padding:6px 0 14px}.cdb b{display:block;font-size:54px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.cdb small{color:var(--mut)}
+.cdc{background:var(--gl);border:1px solid var(--gl2);border-radius:20px;padding:14px 16px;margin-bottom:10px}.cdc h4{margin:0 0 4px;font-size:15px;display:flex;align-items:center;gap:8px}.cdc p{margin:0 0 10px;color:var(--mut);font-size:13.5px;line-height:1.45}
+.cdc em{font-style:normal;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;border:1px solid var(--g);color:var(--g)}
+.cdl{display:flex;gap:8px}.cdl input{flex:1;min-width:0;background:var(--gl);border:1px solid var(--gl2);border-radius:12px;padding:10px 12px;color:var(--fg);font-size:13px}.cdl button,.cdc .sv{height:40px;padding:0 16px;border-radius:12px;background:var(--grad);color:#000;font-weight:700;font-size:13px}
+@media (prefers-reduced-motion:reduce){#dash *,.gls *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body.glo #cliB{display:none}
 </style>
 <script>if(new URLSearchParams(location.search).get('b'))document.documentElement.classList.add('pubmode')</script>
 </head>
@@ -1235,7 +1312,7 @@ h2{font-size:25px;letter-spacing:-.02em}
       <label class="dpill"><span data-i="search"></span><input id="q" placeholder="Search ABENWERK…" autocomplete="off"><kbd>/</kbd></label>
       <button class="ib" id="feedbtn" aria-label="Biz Feed" title="Biz Feed"><span data-i="reel"></span></button>
       <div class="rel"><button class="ib" id="bell" aria-label="Notifications"><span data-i="bell"></span><i class="dot" id="bdot"></i></button><div class="dd" id="dd"></div></div>
-      <button class="up" id="up">★ Upgrade</button>
+      <button class="gc" id="gc" aria-label="Gain credits"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v10M9.5 9.5h4a1.8 1.8 0 010 3.6h-3a1.8 1.8 0 000 3.6h4.5"/></svg><span class="gct">Gain credits</span><b id="gcn">0</b></button><button class="up" id="up">★ Upgrade</button>
     </header>
     <div class="body">
       <section class="dview on" id="v-home">
@@ -1390,7 +1467,7 @@ function buildHours(el,H,onCh){
 <script>
 /* ===== v6 shared: website preview, shelf tiles ===== */
 const money=a=>'KSh '+Number(a&&a.price||0).toLocaleString()+' / '+esc(a&&a.unit||'item');
-const shelfTile=p=>{const a=p.ad||{};return '<div class="sh" data-id="'+esc(p.id)+'">'+(p.kind==='video'?'<video src="'+esc(p.media_url)+'#t=0.1" muted playsinline preload="metadata"></video>':'<img src="'+esc(p.media_url)+'" alt="" loading="lazy">')+'<b>'+esc(a.product||'Offer')+'</b><small>'+money(a)+'</small></div>'};
+const shelfTile=p=>{const a=p.ad||{};return '<div class="sh" data-id="'+esc(p.id)+'">'+(p.kind==='video'?'<video src="'+esc(p.media_url)+'#t=0.1" muted playsinline preload="metadata"></video>':'<img src="'+esc(p.media_url)+'" alt="" loading="lazy" decoding="async">')+'<b>'+esc(a.product||'Offer')+'</b><small>'+money(a)+'</small></div>'};
 const siteLink=b=>{if(!/^https?:\/\//i.test(b.website||''))return'';let h='';try{h=new URL(b.website).hostname.replace(/^www\./,'')}catch(e){return''}return'<a class="wl" href="'+esc(b.website)+'" target="_blank" rel="noopener nofollow">🔗 '+esc(h)+'</a>'};
 async function sitePreview(b,el){
   if(!el)return;
@@ -1477,16 +1554,22 @@ async function login(){
   const id=$('#lu').value.trim(),pw=$('#lp').value;
   if(!id||!pw)return toast('Enter your email or username and password');
   const b=$('#signin');b.disabled=true;b.textContent='Signing in…';
-  let email=id;
-  if(!id.includes('@')){const r=await sb.rpc('email_for_username',{u:id});email=r.data||''}
-  const r=email?await sb.auth.signInWithPassword({email,password:pw}):{error:{message:'Invalid login credentials'}};
-  b.disabled=false;b.textContent='Sign in';
-  if(r.error)return toast(/confirm/i.test(r.error.message)?'Please confirm your email first':'Wrong email/username or password');
-  toast('Welcome back!');setTimeout(openDash,500);
+  const done=()=>{b.disabled=false;b.textContent='Sign in'},T=(p,ms)=>Promise.race([p,new Promise((_,no)=>setTimeout(()=>no(new Error('timeout')),ms))]);
+  try{
+    let email=id;
+    if(!id.includes('@')){const u=await T(sb.rpc('email_for_username',{u:id}),15000);if(u.error){done();return toast('Could not look up that username: '+String(u.error.message||'').slice(0,80))}email=u.data||''}
+    const r=email?await T(sb.auth.signInWithPassword({email,password:pw}),20000):{error:{message:'Invalid login credentials',nouser:1}};
+    done();
+    if(r.error){
+      const m=String(r.error.message||''),st=r.error.status;
+      return toast(r.error.nouser?'No account found for that username':/confirm/i.test(m)?'Please confirm your email first':/captcha/i.test(m)?'Sign-in is blocked by Supabase CAPTCHA protection. Turn CAPTCHA off in Supabase (Authentication > Attack Protection).':/rate|too many/i.test(m)||st===429?'Too many attempts. Wait a few minutes and try again.':/invalid login credentials/i.test(m)?'Wrong email/username or password':'Sign-in problem: '+m.slice(0,90))
+    }
+    toast('Welcome back!');setTimeout(openDash,500);
+  }catch(e){done();toast(/timeout/.test(String(e.message))?'The server is slow to answer. Please try again.':'Cannot reach the server. Check your internet and try again.')}
 }
 $('#signin').addEventListener('click',login);
 ['lu','lp'].forEach(i=>$('#'+i).addEventListener('keydown',e=>{if(e.key==='Enter')login()}));
-sb.auth.getSession().then(r=>{if(!PUBSLUG&&r.data.session)setTimeout(openDash,3700)});
+sb.auth.getSession().then(r=>{if(!PUBSLUG&&r.data.session)setTimeout(openDash,2000)});
 
 /* logo transition between login and sign up */
 const app=$('#app'),wipe=$('#wipe');let busy=false;
@@ -1682,7 +1765,7 @@ show(0);
 /* ===== v8 GLOBAL: roles, job-seeker sign-up, face check, dev console, approval gate ===== */
 const CCODES='KE UG TZ RW BI SS ET SO DJ ER SD CD ZM ZW MW MZ AO NA BW ZA LS SZ MG MU SC KM NG GH SN CI CM ML BF NE TD GN SL LR TG BJ GM GW CV MR GA CG GQ ST EG LY TN DZ MA US CA GB IE FR DE NL BE ES PT IT CH AT SE NO DK FI IS PL CZ SK HU RO BG GR HR SI RS BA ME MK AL XK MD UA BY RU LT LV EE LU MT CY TR GE AM AZ KZ UZ TM TJ KG MN CN JP KR IN PK BD LK NP BT MV AF IR IQ SY LB JO IL PS SA YE OM AE QA KW BH PH ID MY SG TH VN KH LA MM BN TL AU NZ PG FJ BR AR CL CO PE VE BO EC PY UY GY SR MX GT BZ HN SV NI CR PA CU JM HT DO TT BB BS'.split(' ');
 let _dn=null;const cname=c=>{try{_dn=_dn||new Intl.DisplayNames(['en'],{type:'region'});return _dn.of(c)||c}catch(e){return c}};
-const flag=(c,w)=>c?'<img class="flg" src="https://flagcdn.com/w40/'+String(c).toLowerCase()+'.png" width="'+(w||22)+'" alt="'+esc(c)+'" loading="lazy" onerror="this.style.display=\'none\'">':'';
+const flag=(c,w)=>c?'<img class="flg" src="https://flagcdn.com/w40/'+String(c).toLowerCase()+'.png" width="'+(w||22)+'" alt="'+esc(c)+'" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">':'';
 const jwa=(s)=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* ---------- face + photo quality ---------- */
@@ -2532,9 +2615,9 @@ const cdown=t=>{let s=Math.max(0,Math.floor((new Date(t)-Date.now())/1e3));if(!s
 const FTABS=[['foryou','For you'],['following','Following'],['flash','⚡ Flash offers'],['linked','Linked'],['saved','Saved']];
 
 async function loadFeed(){
-  const [p,l,s]=await Promise.all([sb.from('posts').select('*').order('created_at',{ascending:false}).limit(120),sb.from('post_likes').select('post_id'),sb.from('post_saves').select('post_id')]);
+  const [p,l,s,rp]=await Promise.all([sb.from('posts').select('*').order('created_at',{ascending:false}).limit(80),sb.from('post_likes').select('post_id'),sb.from('post_saves').select('post_id'),Promise.resolve(sb.from('post_reposts').select('post_id')).catch(()=>({data:[]}))]);
   if(p.error){console.error(p.error);return null}
-  S.pl=new Set((l.data||[]).map(x=>x.post_id));S.ps=new Set((s.data||[]).map(x=>x.post_id));S.pt=Date.now();return S.posts=p.data;
+  S.pl=new Set((l.data||[]).map(x=>x.post_id));S.ps=new Set((s.data||[]).map(x=>x.post_id));S.pr=new Set(((rp&&rp.data)||[]).map(x=>x.post_id));S.fseed=(Math.random()*2147483647)|0;S.pt=Date.now();return S.posts=p.data;
 }
 function feedList(tab){
   const now=Date.now(),L=S.posts.filter(p=>p.status!=='hidden'||(S.me&&p.business_id===S.me.id));
@@ -2542,17 +2625,17 @@ function feedList(tab){
   if(tab==='saved')return L.filter(p=>S.ps.has(p.id));
   if(tab==='following')return L.filter(p=>(S.me&&p.business_id===S.me.id)||S.fol.has(p.business_id)).sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
   if(tab==='linked')return L.filter(p=>(S.me&&p.business_id===S.me.id)||S.links.get(p.business_id)==='accepted').sort((a,b)=>new Date(b.created_at)-new Date(a.created_at));
-  return L.filter(inRegion).sort((a,b)=>pscore(b)-pscore(a));
+  return mixFeed(L.filter(inRegion));
 }
 function fItem(p){
   const o=S.biz.find(x=>x.id===p.business_id)||{name:'Business'},th=TH[o.banner_theme]||TH.amber,mine=!!S.me&&p.business_id===S.me.id,a=p.ad||{},fl=p.is_ad&&p.flash_until&&new Date(p.flash_until)>Date.now();
-  const media=p.kind==='video'?`<video src="${esc(p.media_url)}" playsinline loop muted preload="metadata"></video>`:`<img class="mi" src="${esc(p.media_url)}" alt="" loading="lazy" draggable="false">`;
+  const media=p.kind==='video'?`<video data-s="${esc(p.media_url)}" playsinline loop muted preload="none"></video>`:`<img class="mi" src="${esc(p.media_url)}" alt="" loading="lazy" decoding="async" draggable="false">`;
   return `<section class="fdi" data-id="${esc(p.id)}"><div class="fdm ${p.orientation==='landscape'?'ls':''}" style="--c1:${th[0]};--c2:${th[1]}">${media}
   <div class="fdo"><div class="who" data-a="prof"><div class="av"${avStyle(o)}>${o.photo_url?'':esc((o.name||'A')[0])}</div><span>${esc(o.name)}${o.is_verified?' ✓':''}</span>${p.is_ad?'<em class="adb">Ad</em>':''}</div>
   ${fl?`<span class="flb">${ic('bolt')}<b data-end="${esc(p.flash_until)}">${cdown(p.flash_until)}</b></span>`:''}
   ${p.caption?`<p>${esc(p.caption)}</p>`:''}
   ${p.is_ad?`<div class="pri"><b>${esc(a.product||'')}</b><span>${money(a)}</span></div><button class="ord" data-a="ord">${mine?'Your ad · '+(p.orders||0)+' orders':'Place order / Get quote'}</button>`:''}</div>
-  <div class="fdr"><button class="lk ${S.pl.has(p.id)?'on':''}" data-a="like" aria-label="Like"><span class="ci">${ic('heart')}</span><i>${p.likes}</i></button><button data-a="cmt" aria-label="Comments"><span class="ci">${ic('msg')}</span><i>${p.comments}</i></button><button class="sav ${S.ps.has(p.id)?'on':''}" data-a="save" aria-label="Save"><span class="ci">${ic('save')}</span><i>${p.saves}</i></button>${p.kind==='video'?`<button data-a="mute" aria-label="Sound"><span class="ci">${ic(S.muted===false?'vol':'mute')}</span></button>`:''}<button data-a="more" aria-label="More"><span class="ci">${ic('more')}</span></button></div></div></section>`;
+  <div class="fdr"><button class="lk ${S.pl.has(p.id)?'on':''}" data-a="like" aria-label="Like"><span class="ci">${ic('heart')}</span><i>${p.likes}</i></button><button data-a="cmt" aria-label="Comments"><span class="ci">${ic('msg')}</span><i>${p.comments}</i></button><button class="rp ${S.pr.has(p.id)?'on':''}" data-a="rp" aria-label="Repost"><span class="ci">${ic('rp')}</span><i>${p.reposts||0}</i></button><button class="sav ${S.ps.has(p.id)?'on':''}" data-a="save" aria-label="Save"><span class="ci">${ic('save')}</span><i>${p.saves}</i></button>${p.kind==='video'?`<button data-a="mute" aria-label="Sound"><span class="ci">${ic(S.muted===false?'vol':'mute')}</span></button>`:''}<button data-a="more" aria-label="More"><span class="ci">${ic('more')}</span></button></div></div></section>`;
 }
 async function renderImm(tab){
   tab=typeof tab==='string'?tab:(S.ftab||'foryou');S.ftab=tab;const el=$('#v-feed');el.classList.remove('tl');
@@ -2560,7 +2643,7 @@ async function renderImm(tab){
   if(!S.posts){el.innerHTML='<div class="fdl">Loading feed…</div>';if(!await loadFeed()){el.innerHTML='<div class="fdl">The Biz Feed is not switched on yet. Run the ABENWERK v3 SQL to enable it.</div>';return}}
   const L=feedList(tab).filter(p=>p.kind!=='note'),msg={following:'Follow businesses to fill this tab.',saved:'Nothing saved yet. Tap the bookmark on any post.',flash:'No flash offers right now. Post an ad with a countdown!',linked:'No posts from linked businesses yet.'}[tab]||'No posts yet. Be the first!';
   el.innerHTML=`<div class="ftb">${FTABS.map(t=>`<button data-t="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')}<button data-a="tl">← Timeline</button><button class="fnew" data-a="new">${ic('plus')} Post</button></div><div class="fds" id="fds">${L.length?L.map(fItem).join(''):`<div class="fdl">${msg}<br><br><button class="sv" data-a="new">+ Create a post</button></div>`}</div>`;
-  feedBind();
+  feedBind();lazyVid($('#fds'),$('#fds'));
   if(S.focusId){const t=el.querySelector('.fdi[data-id="'+S.focusId+'"]');S.focusId=null;if(t)t.scrollIntoView()}
 }
 function feedBind(){
@@ -2572,7 +2655,7 @@ function feedBind(){
     const k=a.dataset.a;if(k==='new')return go('post');if(k==='tl'){S.fmode='tl';return renderFeed()}
     const it=a.closest('.fdi'),p=it&&S.posts.find(x=>x.id===it.dataset.id);if(!p)return;
     if(k==='like')return fLike(p);
-    if(k==='save')return fSave(p);
+    if(k==='save')return fSave(p);if(k==='rp')return fRepost(p);
     if(k==='cmt')return openComments(p);
     if(k==='ord')return orderSheet(p);
     if(k==='more')return moreSheet(p);
@@ -2582,7 +2665,7 @@ function feedBind(){
   if(S.fio)S.fio.disconnect();
   S.fio=new IntersectionObserver(es=>es.forEach(en=>{
     const it=en.target,v=it.querySelector('video');
-    if(en.isIntersecting&&en.intersectionRatio>=.6){if(v){v.muted=S.muted!==false;v.play().catch(()=>{})}clearTimeout(it._v);it._v=setTimeout(()=>countView(it.dataset.id),1200)}
+    if(en.isIntersecting&&en.intersectionRatio>=.6){if(v){vsrc(v);v.muted=S.muted!==false;v.play().catch(()=>{})}clearTimeout(it._v);it._v=setTimeout(()=>countView(it.dataset.id),1200)}
     else{clearTimeout(it._v);if(v)v.pause()}
   }),{root:$('#fds'),threshold:[0,.6,1]});
   $$('#fds .fdi').forEach(i=>S.fio.observe(i));
@@ -2603,7 +2686,7 @@ function syncItem(p,cls){syncCard(p,cls);
   const lk=it.querySelector('.lk'),sv=it.querySelector('.sav'),cm=it.querySelector('[data-a=cmt] i');
   lk.classList.toggle('on',S.pl.has(p.id));lk.querySelector('i').textContent=p.likes;
   sv.classList.toggle('on',S.ps.has(p.id));sv.querySelector('i').textContent=p.saves;if(cm)cm.textContent=p.comments;
-  const b=cls==='lk'?lk:cls==='sav'?sv:null;if(b&&b.classList.contains('on')){b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp')}
+  const rp=it.querySelector('.rp');if(rp){rp.classList.toggle('on',S.pr.has(p.id));rp.querySelector('i').textContent=p.reposts||0}const b=cls==='lk'?lk:cls==='sav'?sv:cls==='rp'?rp:null;if(b&&b.classList.contains('on')){b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp')}
 }
 async function fToggle(p,set,tbl,key,cls){
   const on=set.has(p.id);if(on){set.delete(p.id);p[key]=Math.max(0,p[key]-1)}else{set.add(p.id);p[key]++}
@@ -2612,7 +2695,7 @@ async function fToggle(p,set,tbl,key,cls){
   if(r.error&&r.error.code!=='23505'){console.error(r.error);toast('Could not update')}
 }
 const fLike=p=>fToggle(p,S.pl,'post_likes','likes','lk'),fSave=p=>fToggle(p,S.ps,'post_saves','saves','sav');
-async function openComments(p){
+async function openCommentsOld(p){
   const v=sheet('Comments','<div id="cml" style="max-height:46vh;overflow-y:auto;display:grid;gap:12px;margin-bottom:14px"><p class="dsub">Loading…</p></div><div class="cp" style="padding:0;border:0"><input id="cmi" placeholder="Add a comment…" maxlength="300" autocomplete="off"><button class="sd" id="cms" aria-label="Send">'+ic('send')+'</button></div>');
   const L=v.querySelector('#cml'),row=c=>'<div class="cmt"><b data-biz="'+esc(c.business_id)+'">'+esc((S.biz.find(x=>x.id===c.business_id)||{name:'Business'}).name)+'</b><small>'+ago(c.created_at)+'</small><p>'+esc(c.body)+'</p></div>';
   const r=await sb.from('post_comments').select('*').eq('post_id',p.id).order('created_at',{ascending:true}).limit(100);
@@ -2645,7 +2728,7 @@ function orderSheet(p){
 }
 function moreSheet(p){
   const mine=!!S.me&&p.business_id===S.me.id,o=S.biz.find(x=>x.id===p.business_id)||{},n=BOOSTS[planName()]||1;
-  const v=sheet('Post options',mine?`<p class="dsub" style="margin:0 0 14px">${p.views} views · ${p.likes} likes · ${p.saves} saves · ${p.comments} comments${p.is_ad?' · '+p.orders+' orders':''}</p><button class="sv" id="mb" style="width:100%">⚡ Boost for 24 hours</button><p class="dsub" style="margin:8px 0 18px">Your ${planName()} plan includes ${n} boost${n>1?'s':''} per month.${p.boost_until&&new Date(p.boost_until)>Date.now()?' This post is boosted right now.':''}</p><button class="gh" id="md" style="color:var(--err)">Delete post</button>`
+  const v=sheet('Post options',mine?`<p class="dsub" style="margin:0 0 14px">${p.views} views · ${p.likes} likes · ${p.saves} saves · ${p.reposts||0} reposts · ${p.comments} comments${p.is_ad?' · '+p.orders+' orders':''}</p><button class="sv" id="mb" style="width:100%">⚡ Boost for 24 hours</button><p class="dsub" style="margin:8px 0 18px">Your ${planName()} plan includes ${n} boost${n>1?'s':''} per month.${p.boost_until&&new Date(p.boost_until)>Date.now()?' This post is boosted right now.':''}</p><button class="gh" id="md" style="color:var(--err)">Delete post</button>`
    :`${o.slug?'<button class="sv" id="mv" style="width:100%">Visit business page</button>':''}<div class="f" style="margin-top:18px"><label>Report this post</label><select id="mr"><option>Spam or scam</option><option>Misleading ad</option><option>Inappropriate content</option><option>Other</option></select></div><button class="gh" id="mrb">Send report</button>`);
   const g=s=>v.querySelector(s);
   if(mine){
@@ -2796,7 +2879,7 @@ const AV=(b,x)=>'<div class="av '+(x||'')+'" data-biz="'+esc(b.id||'')+'" style=
 const fnum=n=>{n=+n||0;return n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'M':n>=1e4?Math.round(n/1e3)+'K':n>=1e3?(n/1e3).toFixed(1).replace('.0','')+'K':String(n)};
 const buzz=()=>{try{navigator.vibrate&&navigator.vibrate(8)}catch(e){}};
 const MILES=[10,50,100,500,1000,5000,10000];
-S.fol=new Set();S.rx=new Map();S.nt=[];S.fmode='tl';
+S.fol=new Set();S.pr=new Set();S.credits=0;S.rx=new Map();S.nt=[];S.fmode='tl';
 
 /* ----- delegate: open profiles / follow from anywhere ----- */
 $('#dash').addEventListener('click',e=>{
@@ -2915,22 +2998,22 @@ function streak(){
 const brow=b=>'<div class="tb2">'+AV(b)+'<div data-biz="'+esc(b.id)+'"><b>'+esc(b.name)+(b.is_verified?' ✓':'')+'</b><small><span data-fc="'+esc(b.id)+'">'+fnum(b.follower_count)+'</span> followers</small></div>'+folBtn(b)+'</div>';
 function tCard(p,i){
   const o=S.biz.find(x=>x.id===p.business_id)||{name:'Business',id:''},mine=!!S.me&&p.business_id===S.me.id,a=p.ad||{},fl=p.is_ad&&p.flash_until&&new Date(p.flash_until)>Date.now(),ls=p.orientation==='landscape'?' ls':'';
-  const med=p.kind==='note'||!p.media_url?'':p.kind==='video'?`<div class="tmd${ls}" data-a="reel"><video src="${esc(p.media_url)}" muted playsinline loop preload="metadata"></video><span class="pl2">▶ Reels</span></div>`:`<div class="tmd${ls}" data-a="reel"><img src="${esc(p.media_url)}" alt="" loading="lazy"></div>`;
+  const med=p.kind==='note'||!p.media_url?'':p.kind==='video'?`<div class="tmd${ls}" data-a="reel"><video data-s="${esc(p.media_url)}" muted playsinline loop preload="none"></video><span class="pl2">▶ Reels</span></div>`:`<div class="tmd${ls}" data-a="reel"><img src="${esc(p.media_url)}" alt="" loading="lazy" decoding="async"></div>`;
   return `<article class="tc" data-id="${esc(p.id)}" style="--n:${Math.min(i||0,8)}">${AV(o)}<div class="tcm"><div class="tch"><b data-biz="${esc(o.id)}">${esc(o.name)}</b>${o.is_verified?'<span class="vf">✓</span>':''}${p.is_ad?'<em class="adb2">Ad</em>':''}<small>${o.slug?'@'+esc(o.slug)+' · ':''}${ago(p.created_at)}</small><button class="tmo" data-a="more" aria-label="More">${ic('more')}</button></div>
   ${p.caption?`<p class="tct">${hashHTML(p.caption)}</p>`:''}${med}
   ${p.is_ad?`<div class="tad"><div><b>${esc(a.product||'')}</b><small>${[a.nature,a.customer].filter(Boolean).map(esc).join(' · ')}</small></div><span>${money(a)}</span>${fl?`<span class="flb">${ic('bolt')}<b data-end="${esc(p.flash_until)}">${cdown(p.flash_until)}</b></span>`:''}<button class="ord2" data-a="ord">${mine?'Your ad · '+(p.orders||0)+' orders':'Place order / Get quote'}</button></div>`:''}
-  <div class="tca2"><button data-a="cmt" aria-label="Comments">${ic('msg')}<i>${p.comments||0}</i></button><button class="lk ${S.pl.has(p.id)?'on':''}" data-a="like" aria-label="Like">${ic('heart')}<i>${p.likes||0}</i></button><button class="sav ${S.ps.has(p.id)?'on':''}" data-a="save" aria-label="Save">${ic('save')}<i>${p.saves||0}</i></button><span class="tvw">${ic('chart')}<i>${fnum(p.views)}</i></span></div></div></article>`;
+  <div class="tca2"><button data-a="cmt" aria-label="Comments">${ic('msg')}<i>${p.comments||0}</i></button><button class="lk ${S.pl.has(p.id)?'on':''}" data-a="like" aria-label="Like">${ic('heart')}<i>${p.likes||0}</i></button><button class="rp ${S.pr.has(p.id)?'on':''}" data-a="rp" aria-label="Repost">${ic('rp')}<i>${p.reposts||0}</i></button><button class="sav ${S.ps.has(p.id)?'on':''}" data-a="save" aria-label="Save">${ic('save')}<i>${p.saves||0}</i></button><span class="tvw">${ic('chart')}<i>${fnum(p.views)}</i></span></div></div></article>`;
 }
 function syncCard(p,cls){
   const it=document.querySelector('.tc[data-id="'+p.id+'"]');if(!it)return;
   const lk=it.querySelector('.lk'),sv=it.querySelector('.sav'),cm=it.querySelector('[data-a=cmt] i');
   lk.classList.toggle('on',S.pl.has(p.id));lk.querySelector('i').textContent=p.likes;sv.classList.toggle('on',S.ps.has(p.id));sv.querySelector('i').textContent=p.saves;if(cm)cm.textContent=p.comments;
-  const b=cls==='lk'?lk:cls==='sav'?sv:null;if(b&&b.classList.contains('on')){b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp')}
+  const rp=it.querySelector('.rp');if(rp){rp.classList.toggle('on',S.pr.has(p.id));rp.querySelector('i').textContent=p.reposts||0}const b=cls==='lk'?lk:cls==='sav'?sv:cls==='rp'?rp:null;if(b&&b.classList.contains('on')){b.classList.remove('pp');void b.offsetWidth;b.classList.add('pp')}
 }
 function tlObs(root){
   if(S.tio)S.tio.disconnect();
   S.tio=new IntersectionObserver(es=>es.forEach(en=>{const it=en.target,v=it.querySelector('video');
-    if(en.isIntersecting&&en.intersectionRatio>=.6){if(v)v.play().catch(()=>{});clearTimeout(it._v);it._v=setTimeout(()=>countView(it.dataset.id),1200)}else{clearTimeout(it._v);if(v)v.pause()}}),{threshold:[0,.6,1]});
+    if(en.isIntersecting&&en.intersectionRatio>=.6){if(v){vsrc(v);v.play().catch(()=>{})}clearTimeout(it._v);it._v=setTimeout(()=>countView(it.dataset.id),1200)}else{clearTimeout(it._v);if(v)v.pause()}}),{threshold:[0,.6,1]});
   root.querySelectorAll('.tc').forEach(c=>S.tio.observe(c));
 }
 const TTABS=[['foryou','For you','home'],['following','Following','user'],['flash','Flash offers','bolt'],['saved','Saved','save'],['linked','Linked','link']];
@@ -2947,7 +3030,7 @@ async function renderFeed(tab){
   <main class="tl-c" id="tlc"><div class="tlm"><div class="dchips">${TTABS.map(t=>`<button data-tt="${t[0]}" class="${t[0]===tab?'on':''}">${t[1]}</button>`).join('')}<button data-a="reels">▶ Reels</button></div><div class="dchips">${tt.map(([t])=>`<button data-tag="${esc(t)}" class="${S.tag===t?'on':''}">#${esc(t)}</button>`).join('')}</div><div class="tst">${tb.map(b=>'<div>'+AV(b)+'<b data-biz="'+esc(b.id)+'">'+esc(b.name)+'</b>'+folBtn(b)+'</div>').join('')}</div></div>
    ${S.me?`<div class="tcomp">${AV(S.me)}<div class="tcb"><textarea id="tci" maxlength="500" rows="1" placeholder="What's happening in your business?"></textarea><div class="tcr"><div class="tca"><button data-c="img" title="Photo" aria-label="Photo">${ic('img')}</button><button data-c="vid" title="Video" aria-label="Video">${ic('play')}</button><button data-c="txt" title="Text card" aria-label="Text card">${ic('txt')}</button><button data-c="ad" title="Create an ad" aria-label="Ad">${ic('bolt')}</button></div><span class="tcc" id="tcc"></span><button class="sv" id="tcp" disabled>Post</button></div></div></div>`:''}
    <button class="tnew" id="tnew" hidden></button>${S.tag?`<div class="tcw">Showing <b style="color:var(--yt)">#${esc(S.tag)}</b><button data-tag="">Clear ✕</button></div>`:''}
-   <div id="tlist">${L.length?L.map(tCard).join(''):`<div class="fdl">${empty}</div>`}</div></main>
+   <div id="tlist">${L.length?L.slice(0,20).map(tCard).join(''):`<div class="fdl">${empty}</div>`}</div></main>
   <aside class="tl-r"><div>${bod?`<div class="tlb"><h4>⭐ Business of the day</h4>${brow(bod)}</div>`:''}<div class="tlb"><h4>Trending businesses</h4>${tb.map(brow).join('')||'<p class="dsub" style="margin:0">Nothing yet.</p>'}</div>${fl.length?`<div class="tlb"><h4>⚡ Ending soon</h4>${fl.map(p=>{const o=S.biz.find(x=>x.id===p.business_id)||{name:'Business'};return`<div class="htl"><button data-a="focus" data-pid="${esc(p.id)}"><b>${esc((p.ad&&p.ad.product)||o.name)}</b><small>${esc(o.name)} · <span data-end="${esc(p.flash_until)}">${cdown(p.flash_until)}</span></small></button></div>`}).join('')}</div>`:''}</div></aside>`;
   const ci=$('#tci');
   if(ci){
@@ -2956,7 +3039,7 @@ async function renderFeed(tab){
     $('#tcp').onclick=postNote;
   }
   el.onclick=tlClick;
-  const tlc=$('#tlc');tlObs(tlc);
+  const tlc=$('#tlc');tlObs(tlc);tlPage(L);
   if(!S.ftk)S.ftk=setInterval(()=>{if($('#v-feed').classList.contains('on'))$$('#v-feed [data-end]').forEach(b=>b.textContent=cdown(b.dataset.end))},1000);
   let ty=0;tlc.addEventListener('touchstart',e=>{ty=tlc.scrollTop===0?e.touches[0].clientY:-1},{passive:true});
   tlc.addEventListener('touchend',e=>{if(ty>=0&&e.changedTouches[0].clientY-ty>110){S.posts=null;buzz();renderFeed()}},{passive:true});
@@ -2990,7 +3073,7 @@ async function tlClick(e){
   if(k==='reels'){S.fmode='reels';return renderFeed()}
   if(k==='focus')return openPost(a.dataset.pid);
   const it=a.closest('.tc'),p=it&&S.posts.find(x=>x.id===it.dataset.id);if(!p)return;
-  if(k==='like')return fLike(p);if(k==='save')return fSave(p);if(k==='cmt')return openComments(p);if(k==='ord')return orderSheet(p);if(k==='more')return moreSheet(p);
+  if(k==='like')return fLike(p);if(k==='save')return fSave(p);if(k==='rp')return fRepost(p);if(k==='cmt')return openComments(p);if(k==='ord')return orderSheet(p);if(k==='more')return moreSheet(p);
   if(k==='reel')return openPost(p.id);
 }
 function subscribeFeed(){
@@ -3409,7 +3492,7 @@ function sPick(k,v,q){
   doSearch(v)}
 sdd.addEventListener('click',e=>{const r=e.target.closest('.sr');if(!r)return;const k=r.dataset.sx,v=r.dataset.v,q=k==='ai'||k==='all'?v:$('#q').value.trim();sPick(k,v,k==='biz'||k==='post'?$('#q').value.trim():q)});
 function doSearch(q){S.sq=(q||'').trim();S.sTab='all';if(S.sq)rsAdd(S.sq);$('#q').value=S.sq;ddClose();go('search')}
-const sTile=p=>`<button class="ptl" data-sx="post" data-v="${esc(p.id)}">${p.kind==='image'?`<img loading="lazy" alt="" src="${esc(p.media_url)}">`:p.kind==='video'?`<video muted playsinline preload="metadata" src="${esc(p.media_url)}#t=0.2"></video><u>▶</u>`:`<div class="ptx">${esc((p.caption||'').slice(0,90))}</div>`}<span><b>${esc((p.caption||'').slice(0,60))}</b><small>${esc(p.biz_name||'')}</small></span></button>`;
+const sTile=p=>`<button class="ptl" data-sx="post" data-v="${esc(p.id)}">${p.kind==='image'?`<img loading="lazy" decoding="async" alt="" src="${esc(p.media_url)}">`:p.kind==='video'?`<video muted playsinline preload="metadata" src="${esc(p.media_url)}#t=0.2"></video><u>▶</u>`:`<div class="ptx">${esc((p.caption||'').slice(0,90))}</div>`}<span><b>${esc((p.caption||'').slice(0,60))}</b><small>${esc(p.biz_name||'')}</small></span></button>`;
 async function renderSearch(){
   const el=$('#v-search'),q=S.sq||'';
   el.innerHTML=`<h1>Search</h1><div class="sbx"><input id="sqi" value="${esc(q)}" placeholder="Businesses, @users, #hashtags, videos, places…" autocomplete="off"><button class="sv" id="sqg">Search</button></div><div class="dchips" id="sqt"></div><div id="sqr"><div class="sk2"></div></div>`;
@@ -3433,13 +3516,134 @@ const socRead=()=>{const o={};$$('#v-profile [data-soc]').forEach(i=>{const v=i.
 /* ABEN AI: profile cards under answers */
 const aiCards=m=>m.cards&&m.cards.length?'<div class="aicds">'+m.cards.map(c=>`<button class="aic1" data-open="${esc(c.slug)}"><i class="sav"${avStyle(c)}>${c.photo_url?'':esc((c.name||'?')[0])}</i><span><b>${esc(c.name)}</b><small>${bflag(c,14)} ${esc(c.city||'')}</small></span></button>`).join('')+'</div>':'';
 
+/* ===== v10 ===== */
+Object.assign(P,{rp:'M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3',coin:'M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v10M9.5 9.5h4a1.8 1.8 0 010 3.6h-3a1.8 1.8 0 000 3.6h4.5'});
+/* lazy videos: only set src when near the viewport */
+const LV=new Map();
+const vsrc=v=>{if(v&&v.dataset.s){v.src=v.dataset.s;delete v.dataset.s;v.preload='metadata'}};
+function lazyVid(root,scroller){
+  const k=scroller||0;let io=LV.get(k);
+  if(!io){io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const v=en.target;io.unobserve(v);if(v.dataset.s){v.src=v.dataset.s;delete v.dataset.s;v.preload='metadata'}}),{root:scroller||null,rootMargin:'800px 0px'});LV.set(k,io)}
+  root.querySelectorAll('video[data-s]').forEach(v=>io.observe(v));
+}
+/* timeline paging: first 16 cards, rest while scrolling */
+function tlPage(L){
+  if(S.tmo)S.tmo.disconnect();const box=$('#tlist');if(!box)return;lazyVid(box,$('#tlc'));if(L.length<=20)return;let n=20;
+  const s=document.createElement('div');s.style.height='1px';box.after(s);
+  S.tmo=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;const nx=L.slice(n,n+12);if(!nx.length){S.tmo.disconnect();s.remove();return}n+=12;box.insertAdjacentHTML('beforeend',nx.map((p,i)=>tCard(p,i)).join(''));tlObs($('#tlc'));lazyVid(box,$('#tlc'))},{root:$('#tlc'),rootMargin:'1600px 0px'});
+  S.tmo.observe(s);
+}
+/* ---- smarter, unpredictable For-you mix ---- */
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const seenP=id=>{try{return!!sessionStorage.getItem('abw_v:'+id)}catch(e){return false}};
+function mixFeed(L){
+  const key=[S.pt,S.fseed,L.length,S.fol?S.fol.size:0,S.me&&S.me.id,S.pr?S.pr.size:0].join();
+  if(S.mixK===key&&S.mixL)return S.mixL;
+  const R=rng(S.fseed||1),now=Date.now(),myCat=S.me&&S.me.category,bizOf=id=>S.biz.find(x=>x.id===id)||{};
+  const info=new Map(),sc=p=>{
+    const h=Math.max(0,(now-new Date(p.created_at))/36e5),eng=(p.likes||0)*3+(p.reposts||0)*5+(p.saves||0)*4+(p.comments||0)*5+(p.views||0)*.2;
+    const mine=S.me&&p.business_id===S.me.id,b=bizOf(p.business_id);
+    let s=10*Math.log10(1+eng)+4*Math.log10(1+eng/(1+h/6))      /* quality + momentum */
+      +26*Math.exp(-h/36)+(h<3?10:0)                              /* news first, fades fast */
+      +(S.fol&&S.fol.has(p.business_id)?14:0)+(S.links.get(p.business_id)==='accepted'?10:0)+(myCat&&b.category===myCat?5:0)
+      +((p.plan_rank||1)-1)*3+(p.boost_until&&new Date(p.boost_until)>now?22:0)   /* artificial boosts stay modest */
+      +(seenP(p.id)?-28:0)+(mine?(h<1?25:-6):0)
+      +11*-Math.log(-Math.log(R()||.5)||1e-9);                    /* Gumbel noise = unpredictable */
+    info.set(p.id,{h,eng,s});return s};
+  const pool=L.map(p=>({p,s:sc(p)})).sort((a,b)=>b.s-a.s),out=[];
+  const fresh=pool.filter(x=>info.get(x.p.id).h<6).slice(0,1);
+  const wild=x=>{const i=info.get(x.p.id);return!(S.fol&&S.fol.has(x.p.business_id))&&((x.p.views||0)<40||(i.h>72&&i.eng>10))};
+  let slot=3+Math.floor(R()*3);
+  while(pool.length){
+    const last=out.slice(-2).map(x=>x.p),lb=last.map(p=>p.business_id),lk=last.map(p=>p.kind+(p.is_ad?'a':''));
+    let pick=-1;
+    if(out.length===slot){const w=pool.map((x,i)=>wild(x)?i:-1).filter(i=>i>=0);if(w.length&&!lb.includes(pool[w[0]].p.business_id)){pick=w[Math.floor(R()*Math.min(w.length,6))];slot+=4+Math.floor(R()*3)}else slot++}
+    if(pick<0)for(let i=0;i<Math.min(6,pool.length);i++){const q=pool[i].p;if(lb.includes(q.business_id))continue;if(q.is_ad&&last.some(p=>p.is_ad))continue;if(lk.length>1&&lk[0]===lk[1]&&lk[0]===q.kind+(q.is_ad?'a':''))continue;pick=i;break}
+    if(pick<0)pick=0;out.push(pool.splice(pick,1)[0]);
+  }
+  const res=out.map(x=>x.p);
+  if(fresh.length&&!res.slice(0,3).includes(fresh[0].p)){const i=res.indexOf(fresh[0].p);if(i>2){res.splice(i,1);res.splice(1+Math.floor(R()*2),0,fresh[0].p)}}
+  S.mixK=key;return S.mixL=res;
+}
+/* ---- Repost = organic boost (does not create a post) ---- */
+async function fRepost(p){
+  if(!S.me)return toast('Create a business profile first');
+  if(p.business_id===S.me.id)return toast('This is your post. Other people can repost it to lift it.');
+  const on=S.pr.has(p.id);try{buzz()}catch(e){}
+  if(on){S.pr.delete(p.id);p.reposts=Math.max(0,(p.reposts||0)-1)}else{S.pr.add(p.id);p.reposts=(p.reposts||0)+1}
+  syncItem(p,'rp');if(!on)toast('Reposted. You helped this post rise.');
+  const r=on?await sb.from('post_reposts').delete().eq('post_id',p.id).eq('user_id',S.uid):await sb.from('post_reposts').insert({post_id:p.id,user_id:S.uid});
+  if(r.error&&r.error.code!=='23505'){
+    if(on){S.pr.add(p.id);p.reposts=(p.reposts||0)+1}else{S.pr.delete(p.id);p.reposts=Math.max(0,(p.reposts||0)-1)}
+    syncItem(p);const m=String(r.error.message||'');toast(/limit|profile|own/i.test(m)?m:'Could not repost. Is the v7 SQL installed?');
+  }
+}
+/* ---- glass sheet + comments ---- */
+function gsheet(title,html,cls){
+  const v=document.createElement('div');v.className='gls';
+  v.innerHTML=`<div class="glb"></div><div class="glp ${cls||''}" role="dialog" aria-label="${esc(title)}"><div class="glg"><i></i></div><div class="glh"><b>${esc(title)}</b><span class="glc"></span><button class="glx" aria-label="Close">✕</button></div><div class="glbd">${html}</div></div>`;
+  $('#dash').appendChild(v);document.body.classList.add('glo');
+  const esck=e=>{if(e.key==='Escape')close()},close=()=>{if(v._c)return;v._c=1;v.classList.add('out');document.body.classList.remove('glo');document.removeEventListener('keydown',esck);setTimeout(()=>v.remove(),270)};
+  document.addEventListener('keydown',esck);
+  v.querySelector('.glb').onclick=close;v.querySelector('.glx').onclick=close;
+  const pn=v.querySelector('.glp'),gr=v.querySelector('.glg');let y0=null,dy=0;
+  gr.addEventListener('pointerdown',e=>{y0=e.clientY;dy=0;try{gr.setPointerCapture(e.pointerId)}catch(x){}pn.style.transition='none'});
+  gr.addEventListener('pointermove',e=>{if(y0==null)return;dy=Math.max(0,e.clientY-y0);pn.style.transform='translateY('+dy+'px)'});
+  const end=()=>{if(y0==null)return;y0=null;pn.style.transition='';if(dy>110)close();else pn.style.transform=''};
+  gr.addEventListener('pointerup',end);gr.addEventListener('pointercancel',end);
+  v.close=close;return v;
+}
+const cmHTML=t=>hashHTML(t).replace(/(^|[\s>])@([\w.-]{2,30})/g,'$1<span class="mn">@$2</span>');
+async function openComments(p){
+  const o=S.biz.find(x=>x.id===p.business_id)||{name:'Business'};
+  const v=gsheet('Comments',`<div class="cmgl" id="cml"><div class="cmsk"><i></i><i></i><i></i></div></div><div class="cmq">${['🔥','👏','😍','💯','🙌','😂'].map(e=>`<button data-e="${e}" aria-label="${e}">${e}</button>`).join('')}</div><div class="cmf">${S.me?AV(S.me):''}<input id="cmi" placeholder="Comment on ${esc(o.name)}…" maxlength="300" autocomplete="off"><button class="cms" id="cms" aria-label="Send" disabled>${ic('send')}</button></div>`,'cmp');
+  const L=v.querySelector('#cml'),cnt=v.querySelector('.glc'),inp=v.querySelector('#cmi'),btn=v.querySelector('#cms');let n=0;
+  const row=(c,i,nw)=>{const b=S.biz.find(x=>x.id===c.business_id)||{name:'Business',id:''};return`<div class="cmr${nw?' new':''}" style="--i:${Math.min(i||0,10)}">${AV(b)}<div class="cmb"><div class="cmn"><b data-biz="${esc(b.id)}">${esc(b.name)}</b>${b.is_verified?'<span class="vf">✓</span>':''}${c.business_id===p.business_id?'<em>Author</em>':''}<small>${ago(c.created_at)}</small></div><p>${cmHTML(c.body)}</p><div class="cma"><button data-re="${esc(b.slug||b.name)}">Reply</button></div></div></div>`};
+  const cc=()=>{cnt.textContent=n+' comment'+(n===1?'':'s')};
+  const r=await sb.from('post_comments').select('*').eq('post_id',p.id).order('created_at',{ascending:true}).limit(100);
+  const D=r.data||[];n=D.length;cc();L.innerHTML=D.map((c,i)=>row(c,i)).join('')||'<div class="cmempty">No comments yet. Start the conversation.</div>';L.scrollTop=L.scrollHeight;
+  const send=async()=>{
+    const t=inp.value.trim();if(!t)return;if(!S.me)return toast('Create a business profile first');
+    btn.disabled=true;const ins=await sb.from('post_comments').insert({post_id:p.id,business_id:S.me.id,body:t}).select().single();
+    if(ins.error){btn.disabled=false;return toast('Could not post your comment')}
+    inp.value='';p.comments=(p.comments||0)+1;n++;cc();if(L.querySelector('.cmempty'))L.innerHTML='';L.insertAdjacentHTML('beforeend',row(ins.data,0,true));L.scrollTo({top:L.scrollHeight,behavior:'smooth'});syncItem(p);
+  };
+  inp.oninput=()=>{btn.disabled=!inp.value.trim()};btn.onclick=send;inp.onkeydown=e=>{if(e.key==='Enter')send()};
+  v.addEventListener('click',e=>{
+    const q=e.target.closest('[data-e]');if(q){inp.value+=q.dataset.e;btn.disabled=false;inp.focus();return}
+    const re=e.target.closest('[data-re]');if(re){inp.value='@'+re.dataset.re.replace(/\s+/g,'')+' ';btn.disabled=false;inp.focus()}
+  });
+  if(innerWidth>820)inp.focus();
+}
+/* ---- gain credits (template) ---- */
+$('#gc').addEventListener('click',()=>{
+  const link=BASE+'?ref='+encodeURIComponent((S.me&&S.me.slug)||String(S.uid||'').slice(0,8));
+  const v=gsheet('Gain credits',`<div class="cdb"><b>${S.credits||0}</b><small>credits · preview, launching soon</small></div>
+   <div class="cdc"><h4>Refer a friend <em>SOON</em></h4><p>Earn credits when a friend joins with your link and completes their profile.</p><div class="cdl"><input readonly value="${esc(link)}"><button id="cdcp">Copy</button></div></div>
+   <div class="cdc"><h4>Upgrade to Premium</h4><p>More monthly boosts, longer videos and higher reach for every post.</p><button class="sv" id="cdup" style="width:100%">See plans</button></div>
+   <div class="cdc"><h4>Boost with credits <em>SOON</em></h4><p>Spend credits to push any post higher for 24 hours.</p></div>`);
+  v.querySelector('#cdcp').onclick=async()=>{try{await navigator.clipboard.writeText(link);toast('Link copied')}catch(e){toast('Copy the link manually')}};
+  v.querySelector('#cdup').onclick=()=>{v.close();upgradeModal()};
+});
+/* ---- smart start page ---- */
+function startRoute(){
+  const uid=S.uid||'x',kv=(k,val)=>{try{if(val===undefined)return localStorage.getItem(k);localStorage.setItem(k,val)}catch(e){return null}};
+  const vc=+kv('abw_vc:'+uid)||0,hist=kv('abw_st:'+uid)||'';kv('abw_vc:'+uid,String(vc+1));
+  const cr=Date.parse(S.ucreated||(S.prof&&S.prof.created_at)||'')||0,young=cr&&Date.now()-cr<3*864e5;
+  let r='home';
+  if(!(vc<3||young)){r=Math.random()<(/FF$/.test(hist)?.35:.72)?'feed':'home'}
+  kv('abw_st:'+uid,(hist+(r==='feed'?'F':'H')).slice(-4));
+  if(r==='feed'){S.fmode='tl';S.ftab='foryou'}
+  return r;
+}
+
 /* ---------- boot ---------- */
 (async function(){
   let demo=false;
   try{
     const s=await sb.auth.getSession();
     if(!s.data.session){history.replaceState(null,'',location.pathname+location.search);location.reload();return}
-    S.uid=s.data.session.user.id;S.email=s.data.session.user.email||'';
+    S.uid=s.data.session.user.id;S.email=s.data.session.user.email||'';S.ucreated=s.data.session.user.created_at||'';
     const [pr,bz,ct,lk,cn,sub]=await Promise.all([
       sb.from('profiles').select('*').eq('id',S.uid).maybeSingle(),
       sb.from('businesses').select('*').order('like_count',{ascending:false}),
@@ -3458,10 +3662,9 @@ const aiCards=m=>m.cards&&m.cards.length?'<div class="aicds">'+m.cards.map(c=>`<
   if(!S.cats.length)S.cats=DEFCATS;
   const nm=(S.prof&&S.prof.owner_name)||'Guest';
   $('#mename').textContent=nm;$('#meplan').textContent=planName()+' plan';$('#meav').textContent=nm[0].toUpperCase();paintMe();
-  if(S.me&&!demo){try{await loadChats();subscribeRT()}catch(e){console.error(e)}
-    try{await loadFollows();loadNotifs();loadRx();subscribeFeed()}catch(e){console.error(e)}}
+  if(S.me&&!demo){await Promise.all([(async()=>{try{await loadChats();subscribeRT()}catch(e){console.error(e)}})(),(async()=>{try{await loadFollows();loadNotifs();loadRx();subscribeFeed()}catch(e){console.error(e)}})()])}
   buildNav();renderChips();renderGrid();seedChats();photoCheck();
-  go(location.hash.slice(1)||'home');
+  go(location.hash.slice(1)||startRoute());
   if(S.role==='seeker'&&S.sk&&S.sk.photo_url){const e=$('#meav');e.textContent='';e.style.cssText=phS(S.sk.photo_url)+';background-size:cover;background-position:center 20%'}
   v8Boot().then(()=>{renderGrid();badgeAp()});
   {const mp=new URLSearchParams(location.search).get('m');if(mp){history.replaceState(null,'',location.pathname+location.hash);const t=S.biz.find(x=>x.id===mp);if(t&&!(S.me&&t.id===S.me.id))openChat(t)}}
