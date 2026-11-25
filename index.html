@@ -1086,10 +1086,16 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .ib,#dash .up,#dash .gc,#dash .sv,#dash .gh,#dash .ms,#dash .ln,#dash .hb,#dash .fol,#dash .dchips button,#dash .ftb button,#dash .tlt button,#dash .tca2 button,#dash .fdr .ci{transition:transform .4s var(--spring),box-shadow .3s,background-color .25s,color .2s,border-color .25s,opacity .2s}
 #dash .ib:active,#dash .up:active,#dash .gc:active,#dash .sv:active,#dash .gh:active,#dash .ms:active,#dash .ln:active,#dash .hb:active,#dash .fol:active,#dash .dchips button:active,#dash .tca2 button:active,#dash .ftb button:active,#dash .tlt button:active{transform:scale(.92)}
 #dash .ib:hover,#dash .sv:hover{transform:translateY(-2px) scale(1.04)}
-#dash .card{animation:up2 .6s var(--spring) backwards;animation-delay:calc(min(var(--n),10)*40ms);transition:transform .45s var(--spring),border .3s,box-shadow .3s}
-#dash .card:hover{transform:translateY(-8px) scale(1.012)}
-#dash .tc{animation:up2 .55s var(--spring) backwards;animation-delay:calc(min(var(--n),8)*45ms)}
-#dash .dview.on{animation:vin .5s var(--spring) backwards}
+#dash .card{animation:up3 .5s var(--smooth) backwards;animation-delay:calc(min(var(--n),10)*35ms);transition:transform .35s var(--spring),border-color .25s}
+#dash #grid.ng .card{animation:none}
+#dash .card:hover{transform:translateY(-5px)}
+#dash .bi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .7s var(--smooth)}
+#dash .bn::before{z-index:1}
+#dash .bn span{z-index:2}
+#dash .card:hover .bi{transform:scale(1.06)}
+body.scr #dash .card,body.scr #dash .tc{pointer-events:none}
+#dash .tc{animation:up3 .45s var(--smooth) backwards;animation-delay:calc(min(var(--n),8)*40ms)}
+#dash .dview.on{animation:fi .3s}
 #dash #v-feed.on{animation:fi .3s}
 #dash .vw.on{animation:vin .45s var(--spring) backwards}
 #dash .dd.on{animation:ddin .4s var(--spring)}
@@ -1099,6 +1105,7 @@ h2{font-size:25px;letter-spacing:-.02em}
 #dash .fdr .pp svg,#dash .tca2 .pp svg,#dash .act .pp svg{animation:hb .65s var(--spring)}
 #dash .rp.pp svg{animation:spin .7s var(--spring)!important}
 .toast{transition:transform .5s var(--spring),opacity .25s!important}
+@keyframes up3{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes up2{from{opacity:0;transform:translateY(26px) scale(.94)}to{opacity:1;transform:none}}
 @keyframes vin{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
 @keyframes ddin{from{opacity:0;transform:translateY(-8px) scale(.95)}to{opacity:1;transform:none}}
@@ -2082,7 +2089,7 @@ const avStyle=b=>b.photo_url&&/^https:\/\//.test(b.photo_url)?` style="backgroun
 function cardHTML(b,n){
   const th=TH[b.banner_theme]||TH.amber,mine=b.owner_id===S.uid&&!!S.uid,ls=S.links.get(b.id);
   const cat=(S.cats.find(c=>c.slug===b.category)||{}).label||'Business';
-  return `<article class="card" data-biz="${esc(b.id)}" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn"${bannerStyle(b)}>${b.banner_url?'':MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
+  return `<article class="card" data-biz="${esc(b.id)}" style="--c1:${th[0]};--c2:${th[1]};--n:${n}"><div class="bn">${bannerImg(b)}${b.banner_url?'':MK}<span class="cat">${esc(cat)}</span><span class="rt">★ ${Number(b.rating||0).toFixed(1)}</span></div>
   <div class="cb">${AV(b)}<h3>${nameLink(b)}${b.is_verified?'<span class="vf">✓</span>':''}</h3>
   <p>${esc(b.tagline||b.description||'New on ABENWERK')}</p><small>${bflag(b,16)}${esc(b.place_name||b.city||'')}${mine?' · Your business':''}${b.is_bot?'':' · <span data-fc="'+esc(b.id)+'">'+fnum(b.follower_count)+'</span> followers'}</small>${siteLink(b)}${statusHTML(b)}
   <div class="act"><button class="hb ${S.liked.has(b.id)?'on':''}" data-id="${b.id}" aria-label="Like">${ic('heart')}<span>${b.like_count||0}</span></button>
@@ -2095,6 +2102,7 @@ function renderChips(){
 function renderGrid(){
   const l=S.biz.filter(b=>(S.cat==='all'||b.category===S.cat)&&(!S.open||openStatus(b).open)&&(!S.q||[b.name,b.tagline,b.city,b.category].join(' ').toLowerCase().includes(S.q)));
   $('#hs').textContent=l.length+' business'+(l.length===1?'':'es')+' on ABENWERK';
+  {const g=$('#grid');g.classList.toggle('ng',g.querySelectorAll('.card').length>2)}
   $('#grid').innerHTML=l.length?withRow(l.map((b,i)=>cardHTML(b,Math.min(i,12)))).join(''):'<div class="empty">No businesses match that filter yet.</div>';
 }
 $('#chips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-o'))S.open=!S.open;else S.cat=b.dataset.c;renderChips();renderGrid()});
@@ -3636,6 +3644,10 @@ function startRoute(){
   if(r==='feed'){S.fmode='tl';S.ftab='foryou'}
   return r;
 }
+
+/* smooth scroll: no hover work while the wheel/finger is moving */
+{let t=0;document.addEventListener('scroll',()=>{if(!t)document.body.classList.add('scr');clearTimeout(t);t=setTimeout(()=>{t=0;document.body.classList.remove('scr')},140)},{capture:true,passive:true})}
+const bannerImg=b=>b.banner_url&&/^https:\/\//.test(b.banner_url)?'<img class="bi" loading="lazy" decoding="async" alt="" src="'+esc(b.banner_url)+'">':'';
 
 /* ---------- boot ---------- */
 (async function(){
